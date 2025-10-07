@@ -1,5 +1,10 @@
 //landing page component with weekly lesson sector
 //main job is to route to weekly lesson pages
+//.map will loop through weekly lessons array to create the links for each week 
+//destruction the slug and title from each object in the array ->{slug,title}
+//key={slug} -> that unique key 
+//link to={`/lessons/${slug}`} -> link to the path that we set up in main.jsx
+
 
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
@@ -26,16 +31,13 @@ export default function Landing() {
         <div>
         <h2> Weekly Lessons: </h2>
         <ul> 
-        {weeklyLessons.map(lesson => (
-            <li key={lesson.slug}>
-                <Link to={`/lessons/${lesson.slug}`}>{lesson.title}</Link>
-            </li> 
-        ))}
+            {weeklyLessons.map(({slug,title}) => (
+                <li key={slug}>
+                    <Link to={`/lessons/${slug}`}>{title}</Link>
+                </li>
+            ))}
         </ul>
-
-
         </div>
-
         </div>
     );
 }
