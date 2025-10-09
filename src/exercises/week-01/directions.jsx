@@ -1,0 +1,12 @@
+//this file will hold the directions week 01 exercises 
+import React from 'react';
+
+export default function Directions() {
+    return(
+        <div>
+            <h1>Week 01 Directions</h1>
+            <p>For week 01, you will be working on the following exercises:</p>
+        </div>
+    )
+
+}

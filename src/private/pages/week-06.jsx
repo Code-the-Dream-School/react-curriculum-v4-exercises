@@ -2,9 +2,11 @@
 //will hold weeks files and directions 
 
 import React from 'react';
-
+import Directions from '../../exercises/week-06/directions';
 export default function Week06() {
-
-
-    
+    return (
+        <div>
+            <Directions />
+        </div>
+    );
 }
