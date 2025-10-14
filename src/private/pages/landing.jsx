@@ -4,11 +4,13 @@
 //destruction the slug and title from each object in the array ->{slug,title}
 //key={slug} -> that unique key 
 //link to={`/lessons/${slug}`} -> link to the path that we set up in main.jsx
+//will create a dropdown menu with all the weekly lessons
 
 
 import React from 'react';
-import {useNavigate} from 'react-router-dom';
+import {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom'; 
+
 
 const weeklyLessons = [
     {slug: 'week-01', title: 'Week 01: Introduction to React'},
@@ -25,19 +27,24 @@ const weeklyLessons = [
 ]
 
 export default function Landing() {
+    //cretae state 
+    const [open, setOpen]= useState(false);
+
     return (
-        <div>
-        <h1> WELCOME, to our react exercises </h1>
-        <div>
-        <h2> Weekly Lessons: </h2>
-        <ul> 
-            {weeklyLessons.map(({slug,title}) => (
-                <li key={slug}>
-                    <Link to={`/lessons/${slug}`}>{title}</Link>
-                </li>
-            ))}
-        </ul>
-        </div>
+        <div classname="landing-page">
+            <h1>Welcome to React Exercises</h1>
+            <div className="dropdown">
+                <button onClick={() => setOpen(!open)}> Select a weekly lesson </button>
+                {open && (
+                    <ul className="dropdown-menu">
+                        {weeklyLessons.map(({slug, title}) => (
+                            <li key={slug}>
+                                <Link to={`/lessons/${slug}`}> {title} </Link>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
         </div>
     );
 }

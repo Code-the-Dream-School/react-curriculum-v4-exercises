@@ -3,22 +3,17 @@
 //will hold weeks files and directions 
 
 import React from 'react';
+import ExerciseSection from '../../exercises/exerciseSection';
 import Directions from '../../exercises/week-01/directions';
-import StudentWork from '../../exercises/week-01/file1';
+import StudentWork from '../../exercises/week-01/studentWork';
 
 export default function Week01() {
     return (
-        <div>
-            <section>
-                <Directions />
-            </section>
-            <section>
-                <StudentWork/>
-            </section>
-        </div>
+       <ExerciseSection
+        title = "Week 01 - Introduction to React"
+        Directions = {Directions}
+        StudentWork = {StudentWork}
+       />
 
     );
-
-
-    
 }

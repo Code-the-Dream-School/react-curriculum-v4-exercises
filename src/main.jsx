@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./layout";
 import Landing from "./private/pages/landing";
 import Week01 from "./private/pages/week-01";
 import Week02 from "./private/pages/week-02";
@@ -18,6 +19,7 @@ import Week11 from "./private/pages/week-11";
 
 createRoot(document.getElementById("root")).render(
     <BrowserRouter> 
+    <Layout />
         <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/lessons/week-01" element={<Week01 />} />
