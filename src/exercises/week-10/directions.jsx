@@ -1,11 +1,8 @@
-import React from 'react';
-
 export default function Directions() {
-    return(
-        <div>
-            <h1>Week 10 Directions</h1>
-            <p>For week 10, you will be working on the following exercises:</p>
-        </div>
-    )
-
+  return (
+    <div>
+      <h1>Week 10 Directions</h1>
+      <p>For week 10, you will be working on the following exercises:</p>
+    </div>
+  );
 }
