@@ -9,7 +9,7 @@ export default function Week08() {
     return (
        <ExerciseSection
         title = "Week 08 - "
-        Directions = {Directions}
+        // Directions = {Directions}
         StudentWork = {StudentWork}
        />
 

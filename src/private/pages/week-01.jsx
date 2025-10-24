@@ -10,7 +10,7 @@ export default function Week01() {
   return (
     <ExerciseSection
       title="Week 01 - Introduction to React"
-      Directions={Directions}
+      // Directions={Directions}
       StudentWork={StudentWork}
     />
   );

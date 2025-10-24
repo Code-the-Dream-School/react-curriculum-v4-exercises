@@ -25,6 +25,8 @@ import Directions10 from '../../exercises/week-10/directions';
 import StudentWork10 from '../../exercises/week-10/studentWork';
 import Directions11 from '../../exercises/week-11/directions';
 import StudentWork11 from '../../exercises/week-11/studentWork';
+
+
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -33,100 +35,100 @@ export const router = createBrowserRouter([
   {
     path: '/lessons/week-01',
     element: (
-      <Pages.WeeklyPage>
-        <Directions01></Directions01>
+      <Pages.WeekPage>
+        {/* <Directions01></Directions01> */}
         <StudentWork01></StudentWork01>
-      </Pages.WeeklyPage>
+      </Pages.WeekPage>
     ),
   },
   {
     path: '/lessons/week-02',
     element: (
-      <Pages.WeeklyPage>
-        <Directions02></Directions02>
+      <Pages.WeekPage>
+        {/* <Directions02></Directions02> */}
         <StudentWork02></StudentWork02>
-      </Pages.WeeklyPage>
+      </Pages.WeekPage>
     ),
   },
   {
     path: '/lessons/week-03',
     element: (
-      <Pages.WeeklyPage>
-        <Directions03></Directions03>
+      <Pages.WeekPage>
+        {/* <Directions03></Directions03> */}
         <StudentWork03></StudentWork03>
-      </Pages.WeeklyPage>
+      </Pages.WeekPage>
     ),
   },
   {
     path: '/lessons/week-04',
     element: (
-      <Pages.WeeklyPage>
-        <Directions04></Directions04>
+      <Pages.WeekPage>
+        {/* <Directions04></Directions04> */}
         <StudentWork04></StudentWork04>
-      </Pages.WeeklyPage>
+      </Pages.WeekPage>
     ),
   },
   {
     path: '/lessons/week-05',
     element: (
-      <Pages.WeeklyPage>
-        <Directions05></Directions05>
+      <Pages.WeekPage>
+        {/* <Directions05></Directions05> */}
         <StudentWork05></StudentWork05>
-      </Pages.WeeklyPage>
+      </Pages.WeekPage>
     ),
   },
   {
     path: '/lessons/week-06',
     element: (
-      <Pages.WeeklyPage>
-        <Directions06></Directions06>
+      <Pages.WeekPage>
+        {/* <Directions06></Directions06> */}
         <StudentWork06></StudentWork06>
-      </Pages.WeeklyPage>
+      </Pages.WeekPage>
     ),
   },
   {
     path: '/lessons/week-07',
     element: (
-      <Pages.WeeklyPage>
-        <Directions07></Directions07>
+      <Pages.WeekPage>
+        {/* <Directions07></Directions07> */}
         <StudentWork07></StudentWork07>
-      </Pages.WeeklyPage>
+      </Pages.WeekPage>
     ),
   },
   {
     path: '/lessons/week-08',
     element: (
-      <Pages.WeeklyPage>
-        <Directions08></Directions08>
+      <Pages.WeekPage>
+        {/* <Directions08></Directions08> */}
         <StudentWork08></StudentWork08>
-      </Pages.WeeklyPage>
+      </Pages.WeekPage>
     ),
   },
   {
     path: '/lessons/week-09',
     element: (
-      <Pages.WeeklyPage>
-        <Directions09></Directions09>
+      <Pages.WeekPage>
+        {/* <Directions09></Directions09> */}
         <StudentWork09></StudentWork09>
-      </Pages.WeeklyPage>
+      </Pages.WeekPage>
     ),
   },
   {
     path: '/lessons/week-10',
     element: (
-      <Pages.WeeklyPage>
-        <Directions10></Directions10>
+      <Pages.WeekPage>
+        {/* <Directions10></Directions10> */}
         <StudentWork10></StudentWork10>
-      </Pages.WeeklyPage>
+      </Pages.WeekPage>
     ),
   },
   {
     path: '/lessons/week-11',
     element: (
-      <Pages.WeeklyPage>
-        <Directions11></Directions11>
+      <Pages.WeekPage>
+        {/* <Directions11></Directions11> */}
         <StudentWork11></StudentWork11>
-      </Pages.WeeklyPage>
+      </Pages.WeekPage>
     ),
   },
 ]);

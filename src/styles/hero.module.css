@@ -1,0 +1,54 @@
+:root {
+    --off-white: #f8f9fa;
+    --navy-blue: #12274b;
+}
+
+.hero {
+    background-color: var(--off-white);
+    padding: 6rem 2rem;
+    text-align: center;
+}
+.heroContainer {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.heroTitle {
+  font-size: 3.5rem;
+  font-family: "Roc Grotesk", sans-serif;
+  color: var(--navy-blue);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.paragraph {
+    font-size: 1.25rem;
+    font-family: "Roc Grotesk", sans-serif;
+    font-weight: 400;
+    color: var(--navy-blue);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;  
+}
+.primaryButton{
+    background-color: var(--navy-blue);
+    font-family: "Montserrat", sans-serif;
+    color: var(--off-white);
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+}
+.secondaryButton{
+    background-color: transparent;
+    color: var(--navy-blue);
+    padding: 1rem 2rem;
+    border: 2px solid var(--navy-blue);
+    border-radius: 6px;
+    font-weight: 600;
+}

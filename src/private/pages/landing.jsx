@@ -8,6 +8,9 @@
 
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../../styles/landingPage.css';
+import { Hero } from '../components/hero';
+// import { Header } from '../components/header';
 
 const weeklyLessons = [
   { slug: 'week-01', title: 'Week 01: Introduction to React' },
@@ -28,20 +31,33 @@ export default function Landing() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div classname="landing-page">
-      <h1>Welcome to React Exercises</h1>
-      <div className="dropdown">
-        <button onClick={() => setOpen(!open)}> Select a weekly lesson </button>
-        {open && (
-          <ul className="dropdown-menu">
-            {weeklyLessons.map(({ slug, title }) => (
-              <li key={slug}>
-                <Link to={`/lessons/${slug}`}> {title} </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+    <div className="landing-page">
+      {/* <Header /> */}
+      <Hero/>
+
+      <section className="excercises-section">
+        <div className='excercises-container'>
+          <h2 className='section-title'>Weekly Exercises</h2>
+          <p className='text'>
+            Practice your React skills with our weekly excercises to reinforce your learing and build the confidence you need to succeed as a developer.
+          </p>
+          <div className='dropdown-container'>
+            <button onClick={() => setOpen(!open)} className='dropdown-button'> Select a weekly lesson </button>
+            {open && (
+              <ul className='dropdown-menu'>
+                {weeklyLessons.map(({ slug, title }) => (
+                  <li key={slug} className='dropdown-item'>
+                    <Link to={`/lessons/${slug}`}> {title} </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+        </div>
+
+      </section>
     </div>
   );
 }
+
