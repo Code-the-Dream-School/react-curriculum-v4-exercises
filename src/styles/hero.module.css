@@ -9,11 +9,12 @@
     text-align: center;
 }
 .heroContainer {
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 48rem;
+    margin: auto;
+    text-align: center;
 }
 .heroTitle {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-family: "Roc Grotesk", sans-serif;
   color: var(--navy-blue);
   margin-bottom: 1.5rem;

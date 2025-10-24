@@ -1,4 +1,28 @@
-// //this file will hold the header component for all pages
+import logo from '../assets/ctd_worded_logo_720.png';
+import Styles from '../../styles/header.module.css';
+
+export default function Header() {
+  return (
+    <header className={Styles.header}>
+      <div className= {Styles.container}>
+        <a href="/" style={{ display: 'inline-block' }}>
+          <img src={logo} alt="CTD Logo" style={{ height: 48 }} />
+        </a>
+      </div>
+    </header>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
 
 // import { Link } from 'react-router-dom';
 // import styles from '../../styles/header.css'

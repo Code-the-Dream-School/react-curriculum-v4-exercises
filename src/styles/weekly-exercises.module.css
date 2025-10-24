@@ -1,0 +1,40 @@
+.section{
+    background-color: #f9fafb;
+    padding: 4rem 2rem;
+}
+.container{
+    max-width: 42rem;
+    margin: 0 auto;
+    text-align: center;
+}
+.title{
+    font-size: 1.875rem;
+    font-weight: 700rem;
+    margin-bottom: 1rem;
+}
+.description{
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+
+
+
+}
+.card{
+    max-width: 28rem;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+
+
+}
+.cardHeader{
+    
+
+}
+.cardTitle{
+
+}
+.cardText{
+
+}
