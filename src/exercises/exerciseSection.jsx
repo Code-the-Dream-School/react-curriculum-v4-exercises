@@ -1,22 +1,18 @@
-//add boundry 
+// this file will be the exercise section that will render title and student work 
 
-import React from 'react';
-import ErrorBoundary from './errorBoundary';
+import { StudentOutput } from "../private/components/studentOutput.jsx";
 
-export default function ExerciseSection({ title, Directions, StudentWork }) {
+export default function ExerciseSection ({title, StudentWork, week }) {
     return (
-        <ErrorBoundary>
-        <div>
-            <h2 style={{ textAlign: 'center' }}>{title}</h2>
-            <div style={{ display: 'flex' }}>
-                <section style={{ flex: 1 }}>
-                    <Directions />
-                </section>
-                <section style={{ flex: 1 }}>
-                    <StudentWork />
-                </section>
-            </div>
-        </div>
-        </ErrorBoundary>
+        <section>
+            <h2>
+                {title}
+            </h2>
+            <StudentOutput title= 'student output' week= {week}>
+                {StudentWork ? <StudentWork/> : null}
+
+            </StudentOutput>
+        </section>
     );
+
 }

@@ -1,0 +1,57 @@
+.outputSection {
+  padding: 2rem 1.5rem;
+}
+
+.outputCard {
+  /* Updated to use Code the Dream brand colors with white background */
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid #1e3a5f;
+  box-shadow: 0 4px 12px rgba(30, 58, 95, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.outputHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: #1e3a5f;
+ 
+}
+
+.outputHeader h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.weekTitle {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.875rem;
+  color: white;
+  background: #ff6b5a;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.codeBox {
+  padding: 2rem;
+  background: #f0f9f9;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.codeContent {
+  margin: 0;
+  font-family:'Work Sans', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #1e3a5f;
+}
+
