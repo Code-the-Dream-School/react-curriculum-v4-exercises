@@ -3,15 +3,16 @@
 
 import ExerciseSection from '../../exercises/exerciseSection';
 import StudentWork from '../../exercises/week-09/studentWork';
-import Directions from '../../exercises/week-09/directions';
+import WeekPage from './WeekPage.jsx';
 
-export default function Week02() {
+export default function Week09() {
     return (
-       <ExerciseSection
-        title = "Week 09 - "
-        // Directions = {Directions}
-        StudentWork = {StudentWork}
-       />
-
+        <WeekPage>
+            <ExerciseSection
+            title="Week 09 - "
+            week="09"
+            StudentWork={StudentWork09}
+            />
+        </WeekPage>
     );
 }

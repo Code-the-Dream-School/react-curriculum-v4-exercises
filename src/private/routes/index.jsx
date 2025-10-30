@@ -3,29 +3,6 @@
 
 import { createBrowserRouter } from 'react-router-dom';
 import * as Pages from '../pages';
-import Directions01 from '../../exercises/week-01/directions';
-import StudentWork01 from '../../exercises/week-01/studentWork';
-import Directions02 from '../../exercises/week-02/directions';
-import StudentWork02 from '../../exercises/week-02/studentWork';
-import Directions03 from '../../exercises/week-03/directions';
-import StudentWork03 from '../../exercises/week-03/studentWork';
-import Directions04 from '../../exercises/week-04/directions';
-import StudentWork04 from '../../exercises/week-04/studentWork';
-import Directions05 from '../../exercises/week-05/directions';
-import StudentWork05 from '../../exercises/week-05/studentWork';
-import Directions06 from '../../exercises/week-06/directions';
-import StudentWork06 from '../../exercises/week-06/studentWork';
-import Directions07 from '../../exercises/week-07/directions';
-import StudentWork07 from '../../exercises/week-07/studentWork';
-import Directions08 from '../../exercises/week-08/directions';
-import StudentWork08 from '../../exercises/week-08/studentWork';
-import Directions09 from '../../exercises/week-09/directions';
-import StudentWork09 from '../../exercises/week-09/studentWork';
-import Directions10 from '../../exercises/week-10/directions';
-import StudentWork10 from '../../exercises/week-10/studentWork';
-import Directions11 from '../../exercises/week-11/directions';
-import StudentWork11 from '../../exercises/week-11/studentWork';
-
 
 export const router = createBrowserRouter([
   {
@@ -35,100 +12,67 @@ export const router = createBrowserRouter([
   {
     path: '/lessons/week-01',
     element: (
-      <Pages.WeekPage>
-        {/* <Directions01></Directions01> */}
-        <StudentWork01></StudentWork01>
-      </Pages.WeekPage>
+      <Pages.Week01></Pages.Week01>
     ),
   },
   {
     path: '/lessons/week-02',
     element: (
-      <Pages.WeekPage>
-        {/* <Directions02></Directions02> */}
-        <StudentWork02></StudentWork02>
-      </Pages.WeekPage>
+     <Pages.Week02></Pages.Week02>
     ),
   },
   {
     path: '/lessons/week-03',
     element: (
-      <Pages.WeekPage>
-        {/* <Directions03></Directions03> */}
-        <StudentWork03></StudentWork03>
-      </Pages.WeekPage>
+     <Pages.Week03></Pages.Week03>
     ),
   },
   {
     path: '/lessons/week-04',
     element: (
-      <Pages.WeekPage>
-        {/* <Directions04></Directions04> */}
-        <StudentWork04></StudentWork04>
-      </Pages.WeekPage>
+    <Pages.Week04></Pages.Week04>
     ),
   },
   {
     path: '/lessons/week-05',
     element: (
-      <Pages.WeekPage>
-        {/* <Directions05></Directions05> */}
-        <StudentWork05></StudentWork05>
-      </Pages.WeekPage>
+     <Pages.Week05></Pages.Week05>
     ),
   },
   {
     path: '/lessons/week-06',
     element: (
-      <Pages.WeekPage>
-        {/* <Directions06></Directions06> */}
-        <StudentWork06></StudentWork06>
-      </Pages.WeekPage>
+      <Pages.Week06></Pages.Week06>
     ),
   },
   {
     path: '/lessons/week-07',
     element: (
-      <Pages.WeekPage>
-        {/* <Directions07></Directions07> */}
-        <StudentWork07></StudentWork07>
-      </Pages.WeekPage>
+      <Pages.Week07></Pages.Week07>
     ),
   },
   {
     path: '/lessons/week-08',
     element: (
-      <Pages.WeekPage>
-        {/* <Directions08></Directions08> */}
-        <StudentWork08></StudentWork08>
-      </Pages.WeekPage>
+      <Pages.Week08></Pages.Week08>
     ),
   },
   {
     path: '/lessons/week-09',
     element: (
-      <Pages.WeekPage>
-        {/* <Directions09></Directions09> */}
-        <StudentWork09></StudentWork09>
-      </Pages.WeekPage>
+      <Pages.Week09></Pages.Week09>
     ),
   },
   {
     path: '/lessons/week-10',
     element: (
-      <Pages.WeekPage>
-        {/* <Directions10></Directions10> */}
-        <StudentWork10></StudentWork10>
-      </Pages.WeekPage>
+     <Pages.Week10></Pages.Week10>
     ),
   },
   {
     path: '/lessons/week-11',
     element: (
-      <Pages.WeekPage>
-        {/* <Directions11></Directions11> */}
-        <StudentWork11></StudentWork11>
-      </Pages.WeekPage>
+      <Pages.Week11></Pages.Week11>
     ),
   },
 ]);

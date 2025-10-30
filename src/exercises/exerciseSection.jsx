@@ -1,12 +1,18 @@
-//this file will be the exercise section that will render title and student work 
-export default function ExerciseSection ({title, StudentWork }) {
+// this file will be the exercise section that will render title and student work 
+
+import { StudentOutput } from "../private/components/studentOutput.jsx";
+
+export default function ExerciseSection ({title, StudentWork, week }) {
     return (
-        <div>
+        <section>
             <h2>
                 {title}
             </h2>
-            <StudentWork />
-        </div>
+            <StudentOutput title= 'student output' week= {week}>
+                {StudentWork ? <StudentWork/> : null}
+
+            </StudentOutput>
+        </section>
     );
 
 }

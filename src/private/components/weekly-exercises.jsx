@@ -1,5 +1,9 @@
 
 import Styles from '../../styles/weekly-exercises.module.css';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const weeklyLessons = [
   { slug: 'week-01', title: 'Week 01: Introduction to React' },
@@ -17,31 +21,34 @@ const weeklyLessons = [
 
 
 export default function WeeklyExercises() {
+    const navigate = useNavigate();
+    const [open, setOpen] = useState(false);
 
-
+    const handleLessonClick = (slug)=>{
+        navigate(`/lessons/${slug}`);    
+        setOpen(false);
+    }
     return (
         <section className={Styles.section}>
             <div className={Styles.container}>
                 <h2 className={Styles.title}>Weekly Exercises</h2>
-                <p className={Styles.description}>Practice your React skills with our weekly exercises to reinforce your learing and build the confidence you need to succeed as a developer.</p>
-                <div className={Styles.card}>
-                    <div className={Styles.cardHeader}>
-                        <h3 className="card-title">
-                            Select your lesson
-                        </h3>
-                        <p className="card-text">
-                            choose a week to start practicing
-                        </p>
-                        <div>
-                            <select >
-                                <option value=""> Select a weekly lesson </option>
-                                {weeklyLessons.map(({ slug, title }) => (
-                                    <option key={slug} value={slug}> {title} </option>
-                                ))} 
-                                </select>  
-                                
-                        </div>
-                    </div>
+                <p className={Styles.description}>Practice your React skills with our weekly execises to reinforce your learing and build the confidence you need to succeed as a developer.</p>
+                <div className={Styles.dropdownContainer}>
+                    <button onClick={() => setOpen(!open)} className={Styles.dropdownButton}>
+                        Select a weekly lesson
+                    <span className={Styles.arrow}>{open ? '▲' : '▼'}</span>
+                    </button>
+                    {open && (
+                        <ul className={Styles.dropdownMenu}>
+                            {weeklyLessons.map(({ slug, title }) => (
+                                <li key={slug} className={Styles.dropdownItem}>
+                                    <button onClick={() => handleLessonClick(slug)} className={Styles.lessonButton}>
+                                        {title}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>   
+                    )}
                 </div>
             </div>
         </section>

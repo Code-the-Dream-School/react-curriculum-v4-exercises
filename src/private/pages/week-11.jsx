@@ -2,15 +2,18 @@
 // //will hold weeks files and directions
 
 import ExerciseSection from '../../exercises/exerciseSection';
-import StudentWork from '../../exercises/week-11/studentWork';
-import Directions from '../../exercises/week-11/directions';
+import StudentWork11 from '../../exercises/week-11/studentWork';
+import WeekPage from './WeekPage.jsx';
+
 
 export default function Week11() {
   return (
-    <ExerciseSection
-      title="Week 11 - "
-      // Directions={Directions}
-      StudentWork={StudentWork}
-    />
+    <WeekPage>
+      <ExerciseSection
+        title="Week 11 - "
+        week="11"
+        StudentWork={StudentWork11}
+      />
+    </WeekPage>
   );
 }

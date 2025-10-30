@@ -1,5 +1,5 @@
 //this file will be the students work 
 
 export default function StudentWork({ name }) {
-  return <h1> Hello, {name || 'World'}!</h1>;
+  return <h1> Hellooo, {name || 'World'}!</h1>;
 }
