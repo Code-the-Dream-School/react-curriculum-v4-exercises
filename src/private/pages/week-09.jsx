@@ -1,15 +1,13 @@
-//will hold error boundary for lessons in the future
-//will hold weeks files and directions 
 
 import ExerciseSection from '../../exercises/exerciseSection';
-import StudentWork from '../../exercises/week-09/studentWork';
+import StudentWork09 from '../../exercises/week-09/studentWork';
 import WeekPage from './WeekPage.jsx';
 
 export default function Week09() {
     return (
         <WeekPage>
             <ExerciseSection
-            title="Week 09 - "
+            title="Week 09 - Managing Global State with Context"
             week="09"
             StudentWork={StudentWork09}
             />

@@ -1,5 +1,3 @@
-//will hold error boundary for lessons in the future
-//will hold weeks files and directions 
 
 import ExerciseSection from '../../exercises/exerciseSection';
 import StudentWork06 from '../../exercises/week-06/studentWork';
@@ -9,7 +7,7 @@ export default function Week06() {
     return (
         <WeekPage>
         <ExerciseSection
-        title="Week 06 - "
+        title="Week 06 - Writing Reusable Components"
         week="06"
         StudentWork={StudentWork06}
         />

@@ -12,5 +12,4 @@ export {default as Week09} from './week-09.jsx';
 export {default as Week10} from './week-10.jsx';
 export {default as Week11} from './week-11.jsx';
 export {default as Landing} from './landing.jsx';
-export {default as WeekPage} from './WeekPage.jsx'
-// export {default as WeekPage} from './WeekPage.jsx';
+export {default as WeekPage} from './WeekPage.jsx';

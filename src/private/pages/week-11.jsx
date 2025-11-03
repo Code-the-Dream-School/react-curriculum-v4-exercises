@@ -10,7 +10,7 @@ export default function Week11() {
   return (
     <WeekPage>
       <ExerciseSection
-        title="Week 11 - "
+        title="Week 11 - Security and Deployment"
         week="11"
         StudentWork={StudentWork11}
       />
