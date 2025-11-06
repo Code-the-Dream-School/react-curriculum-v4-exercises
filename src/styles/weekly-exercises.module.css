@@ -1,0 +1,140 @@
+.section {
+  background-color: #ffffff;
+  padding: 3rem 1.5rem;
+}
+.container {
+  max-width: 42rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-family: 'work-sans', sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #11284c; /* Navy blue */
+  text-wrap: balance;
+}
+
+
+.description {
+  font-family: 'work-sans', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #11284c;
+  margin-bottom: 3rem;
+  text-wrap: pretty;
+}
+
+.card {
+  max-width: 28rem;
+  margin: 0 auto;
+  background-color: #ff7f5c; /* Coral orange */
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.cardTitle {
+  font-family: 'work-sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+
+
+.dropdownContainer {
+  position: relative;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.dropdownButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #ff7f5c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  line-height: 1;
+  
+}
+
+
+.dropdownButton:hover {
+  background-color: #ff6b47;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropdownButton:active {
+  transform: translateY(1px);
+}
+
+.dropdownArrow {
+  font-size: 0.75rem;
+  transition: transform 0.2s;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  left: auto;
+  margin-top: 0.5rem;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  max-height: 60vh;
+  min-width: 220px;
+  overflow-y: auto;
+  z-index: 10;
+  animation: slideDown 0.2s ease-out;
+  white-space: nowrap;
+}
+
+.dropdownItem button {
+  width: 100%;
+  text-align: left;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  color: #1b2a4e;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.dropdownItem button:hover {
+  background-color: #b8dbd9;
+  color: #1b2a4e;
+}
+
+.dropdownItem button:active {
+  background-color: #a0ccc9;
+}
+
+
+
+
+
+
+

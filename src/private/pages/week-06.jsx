@@ -1,17 +1,16 @@
-//will hold error boundary for lessons in the future
-//will hold weeks files and directions 
 
 import ExerciseSection from '../../exercises/exerciseSection';
-import StudentWork from '../../exercises/week-06/studentWork';
-import Directions from '../../exercises/week-06/directions';
+import StudentWork06 from '../../exercises/week-06/studentWork';
+import WeekPage from './WeekPage.jsx';
 
-export default function Week02() {
+export default function Week06() {
     return (
-       <ExerciseSection
-        title = "Week 06 - "
-        Directions = {Directions}
-        StudentWork = {StudentWork}
-       />
-
+        <WeekPage>
+        <ExerciseSection
+        title="Week 06 - Writing Reusable Components"
+        week="06"
+        StudentWork={StudentWork06}
+        />
+       </WeekPage>
     );
 }

@@ -1,7 +1,4 @@
-//This file will hold layout for all pages
-//import header component
-
-import Header from './private/components/header';
+import Header from "./private/components/header";
 
 export default function Layout({ children }) {
   return (
