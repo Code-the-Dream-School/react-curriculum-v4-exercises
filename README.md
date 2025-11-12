@@ -21,7 +21,7 @@ Run `npm run dev` to start the development server. The application displays a na
 
 ## Weekly Exercise Workflow
 
-> **Important**: Always work on your own forked repository. Do NOT create pull requests against the original Code-the-Dream-School repository. Your pull requests should be within your own fork.
+> **Important**: Always work on your own forked repository. Do NOT create pull requests against the original Code-the-Dream-School repository.
 
 1. **Version Control Setup**
    - Merge previous week's approved pull request into main branch
