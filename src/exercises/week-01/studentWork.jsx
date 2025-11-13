@@ -23,7 +23,7 @@ export default function StudentWork() {
         The Whimsical Wizard: {student.firstName} {student.lastName}
       </h1>
       <p>
-        When I am not at working, preparing some wonderful food. I am home at my
+        When I am not at work, preparing some wonderful food. I am home at my
         make shift little office, studying hard for class. But thats not always
         the case and I do enjoy a good pod cast, StarTalk being one.
       </p>
