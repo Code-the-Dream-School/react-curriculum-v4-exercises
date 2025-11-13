@@ -3,6 +3,7 @@
 
 export default function StudentWork() {
   //add variables here
+  let id = window.crypto.randomUUID();
   const student = {
     firstName: 'Stephen',
     lastName: 'Lewis',
@@ -18,8 +19,20 @@ export default function StudentWork() {
   return (
     <div>
       {/* add JSX here */}
-      <h1>The Whimsical Wizard: {student.firstName}</h1>
-      <p> Students output will go here </p>
+      <h1>
+        The Whimsical Wizard: {student.firstName} {student.lastName}
+      </h1>
+      <p>
+        When I am not at working, preparing some wonderful food. I am home at my
+        make shift little office, studying hard for class. But thats not always
+        the case and I do enjoy a good pod cast, StarTalk being one.
+      </p>
+      <h3>Other Hobbies Include:</h3>
+      <ul>
+        {student.hobbies.map((hobbies) => {
+          return <li key={id}>{hobbies}</li>;
+        })}
+      </ul>
     </div>
   );
 }
