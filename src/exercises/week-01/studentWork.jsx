@@ -18,6 +18,7 @@ export default function StudentWork() {
   return (
     <div>
       {/* add JSX here */}
+      <h1>The Whimsical Wizard: {student.firstName}</h1>
       <p> Students output will go here </p>
     </div>
   );
