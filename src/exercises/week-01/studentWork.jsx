@@ -3,6 +3,18 @@
 
 export default function StudentWork() {
   //add variables here
+  const student = {
+    firstName: 'Stephen',
+    lastName: 'Lewis',
+    age: 40,
+    hobbies: [
+      'Disc Golf',
+      'XR Research',
+      'Reading my Bible',
+      'Magic the Gathering',
+      'Putting good Vibes out there',
+    ],
+  };
   return (
     <div>
       {/* add JSX here */}
