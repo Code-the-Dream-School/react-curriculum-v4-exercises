@@ -19,20 +19,23 @@ Make sure your Vite development server is running!
 4. Woohoo! 🎉 You’ve successfully spun up your Vite app. Open the local URL in your browser to confirm it’s working.
 
 ## Steps
-1. Open this file:
-   `src/exercises/week-02/studentWork.jsx`  
-   - Import and render your top-level component (SnackApp).
 
-2. In `src/exercises/week-02/` create these component files (one component per file):
-   - SnackHeader.jsx  
+1. In `src/exercises/week-02/` create these component files (one component per file):
+   - **SnackHeader.jsx**
      - Default export a simple component that returns the app heading.
-   - SnackList.jsx  
-     - Default export a component that creates an array of snack objects (each with `name` and `rank`, where 1 = favorite). Sort by rank and render the list (ordered list or mapped list). Include at least 3–5 snacks.
-   - SnackFooter.jsx  
+   - **SnackList.jsx**
+     - Default export a component that **contains** an array of snack objects (each with `name` and `rank`, where `1` = favorite).  
+     - Start with the array ordered from **least favorite to most favorite**.  
+      - Use JavaScript’s `.sort()` to return a new array ordered from **most favorite (rank 1) to least favorite**.  
+     - Render the sorted snacks as a list (ordered list or using `.map()`).  
+     - Include at least **3–5** snacks.
+   - **SnackFooter.jsx** 
      - Default export a small component that returns a fun footer message.
-   - SnackApp.jsx  
-     - Default export a component that composes the app: imports SnackHeader, SnackList, and SnackFooter and returns them inside a container. 
-   - Now make your way up to  step #1. 
+
+2. Open this file:
+   `src/exercises/week-02/studentWork.jsx`  
+   - Import your `SnackApp` component.  
+   - Render `<SnackApp />` as the main output of this file.
 
 ## Proof of completion
 
