@@ -56,3 +56,4 @@ Once your Snack Ranking app displays correctly in the browser:
 
 Great Job getting through Week 02! 
 You’re building real React apps now. On to Week 03!
+

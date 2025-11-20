@@ -1,5 +1,8 @@
 # React Curriculum v4 Exercises
 
+> [!WARNING]
+> **Always work on your own forked repository. Do NOT create pull requests against the original Code-the-Dream-School repository.**
+
 This repository contains weekly exercises for Code the Dream's 11-week Introduction to React. Each week builds upon previous concepts, covering everything from basic React fundamentals to advanced topics like routing and deployment. Students will work through structured exercises that reinforce core React development skills and best practices.
 
 ## Getting Started
@@ -21,7 +24,8 @@ Run `npm run dev` to start the development server. The application displays a na
 
 ## Weekly Exercise Workflow
 
-> **Important**: Always work on your own forked repository. Do NOT create pull requests against the original Code-the-Dream-School repository.
+> [!WARNING]
+> **Always work on your own forked repository. Do NOT create pull requests against the original Code-the-Dream-School repository.**
 
 1. **Version Control Setup**
    - Merge previous week's approved pull request into main branch
