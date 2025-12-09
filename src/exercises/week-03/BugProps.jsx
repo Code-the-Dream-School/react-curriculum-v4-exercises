@@ -8,6 +8,8 @@
 
   Right now, the message is being stored in a way that React does not track,
   so the UI does not update when the value changes.
+
+  Use the commented "Explanation" section at the bottom of this week's components.
 */
 
 
