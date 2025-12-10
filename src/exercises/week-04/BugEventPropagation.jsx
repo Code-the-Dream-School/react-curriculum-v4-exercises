@@ -3,7 +3,7 @@
 
 export default function BugEventPropagation() {
   function handleOuterClick() {
-    alert("Sensitive action triggered! ❌ Dont show me!");
+    alert("Sensitive action triggered! ❌ Don't show me!");
   }
 
   function handleInnerClick() {

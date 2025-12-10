@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from "react";
 
-export default function BugStrictModeEffect() {
+export default function BugStrictMode() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {

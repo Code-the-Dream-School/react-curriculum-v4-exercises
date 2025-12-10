@@ -1,6 +1,8 @@
 // Topic: Passing callbacks from parent → child
 // TASK: Make the child button increment the parent's count when clicked.
 
+import { useState } from "react";
+
 export default function BugChildParentCommunication() {
   function Parent() {
     const [count, setCount] = useState(0);

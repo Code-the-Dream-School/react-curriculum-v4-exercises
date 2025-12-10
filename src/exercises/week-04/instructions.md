@@ -57,10 +57,6 @@ You will complete five exercises in the `src/exercises/week-04/` folder:
 
 - Make the child update the parent's counter
 
-### After fixing all five files:
-
-
-
 ---
 
 ## Assessment Criteria
