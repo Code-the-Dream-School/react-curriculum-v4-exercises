@@ -20,4 +20,4 @@ export default function BugStrictModeEffect() {
   );
 }
 
-// Write you explanation of how StrictMode helps us catch this bug
+// Write your explanation of how StrictMode helps us catch this bug
