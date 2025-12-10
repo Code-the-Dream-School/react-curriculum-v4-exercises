@@ -55,7 +55,7 @@ You will complete five exercises in the `src/exercises/week-04/` folder:
 
 ### 5. BugChildParent.jsx
 
-- Make the child update the parents counter
+- Make the child update the parent's counter
 
 ### After fixing all five files:
 
