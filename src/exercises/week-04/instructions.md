@@ -60,8 +60,12 @@ You will complete five exercises in the `src/exercises/week-04/` folder:
 ---
 
 ## Assessment Criteria
-
-To complete this week successfully, you must check the console to ensure there are no warnings or errors
+Open this file:  
+   `src/exercises/week-04/studentWork.jsx`  
+   - Import all the exercise files
+   - Render them inside the `StudentWork` component so all appear on the page and make sure the page loads without errors  
+   - Verify that each component now behaves according to the task assigned
+   - Check the console to ensure no warnings appear
 
 ---
 

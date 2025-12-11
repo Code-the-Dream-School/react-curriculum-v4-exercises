@@ -1,4 +1,4 @@
-// Topic: Passing callbacks from parent → child
+// TOPIC: Passing callbacks from parent → child
 // TASK: Make the child button increment the parent's count when clicked.
 
 import { useState } from "react";
