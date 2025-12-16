@@ -3,10 +3,10 @@
 //test will check if the component renders without crashing
 //test will check if the component renders the correct text based on the name prop
 
-import { render, screen } from '@testing-library/react';
-import ExerciseSection from '../exercises/exerciseSection';
-import { describe, it, expect } from 'vitest';
-import '@testing-library/jest-dom/vitest';
+// import { render, screen } from '@testing-library/react';
+// import ExerciseSection from '../exercises/exerciseSection';
+// import { describe, it, expect } from 'vitest';
+// import '@testing-library/jest-dom/vitest';
 
 // //will describe what we are testing
 // describle('StudentWork', () =>{
