@@ -1,4 +1,4 @@
-import { useRef, useId, useState } from 'react';
+import { useEffect, useRef, useId, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import styles from '../../styles/weekly-exercises.module.css';
@@ -21,6 +21,7 @@ export default function WeekDropdown({ buttonLabel }) {
   const [open, setOpen] = useState(false);
   const dropdownId = useId();
   const buttonElementRef = useRef();
+  const rootRef = useRef();
 
   function handleKeyDown(event) {
     if (event.key === 'Escape') {
@@ -29,8 +30,22 @@ export default function WeekDropdown({ buttonLabel }) {
     }
   }
 
+  useEffect(() => {
+    const handleWindowClick = (event) => {
+      console.log('root', event.currentTarget);
+      if (open && !event.target.contains(rootRef.current)) {
+        setOpen(false);
+      }
+    };
+    window.addEventListener('click', handleWindowClick, true);
+  }, [open]);
+
   return (
-    <div className={styles.dropdownContainer} onKeyDown={handleKeyDown}>
+    <div
+      className={styles.dropdownContainer}
+      onKeyDown={handleKeyDown}
+      ref={rootRef}
+    >
       <button
         aria-controls={dropdownId}
         aria-expanded={open}
