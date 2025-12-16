@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Styles from '../../styles/weekly-exercises.module.css';
@@ -21,15 +21,22 @@ const weeklyLessons = [
 
 export default function WeekDropdown({ buttonLabel }) {
   const [open, setOpen] = useState(false);
+  const dropdownId = useId();
 
   return (
     <div className={Styles.dropdownContainer}>
-      <button className={Styles.dropdownButton} onClick={() => setOpen(!open)}>
+      <button
+        aria-controls={dropdownId}
+        aria-expanded={open}
+        aria-haspopup="true"
+        className={Styles.dropdownButton}
+        onClick={() => setOpen((prev) => !prev)}
+      >
         {buttonLabel}
-        <span>{open ? '▲' : '▼'}</span>
+        <span aria-hidden="true">{open ? '▲' : '▼'}</span>
       </button>
       {open && (
-        <ul className={Styles.dropdownMenu}>
+        <ul className={Styles.dropdownMenu} id={dropdownId}>
           {weeklyLessons.map(({ slug, title }) => (
             <li className={Styles.dropdownItem} key={slug}>
               <NavLink to={`/lessons/${slug}`}>{title}</NavLink>
