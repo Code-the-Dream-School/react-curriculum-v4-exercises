@@ -21,8 +21,14 @@ export default function WeekDropdown({ buttonLabel }) {
   const [open, setOpen] = useState(false);
   const dropdownId = useId();
 
+  function handleKeyDown(event) {
+    if (event.key === 'Escape') {
+      setOpen(false);
+    }
+  }
+
   return (
-    <div className={styles.dropdownContainer}>
+    <div className={styles.dropdownContainer} onKeyDown={handleKeyDown}>
       <button
         aria-controls={dropdownId}
         aria-expanded={open}
