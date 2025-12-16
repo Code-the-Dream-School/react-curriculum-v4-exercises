@@ -13,7 +13,6 @@ export default function FindCorrectHook() {
   return (
     <div>
       <h2>useRef vs useState Decision</h2>
-      <p>Open the console to see the counter updates.</p>
       <button onClick={handleClick}>{clickCount} Clicks</button>
     </div>
   );
