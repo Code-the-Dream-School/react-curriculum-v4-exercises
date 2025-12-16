@@ -111,24 +111,26 @@
   white-space: nowrap;
 }
 
-.dropdownItem button {
-  width: 100%;
+.dropdownItem a {
+  display: block;
   text-align: left;
   padding: 0.875rem 1rem;
+  font-family: 'work-sans', sans-serif;
   font-size: 1rem;
   color: #1b2a4e;
   background-color: transparent;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.dropdownItem button:hover {
+.dropdownItem a:hover {
   background-color: #b8dbd9;
   color: #1b2a4e;
 }
 
-.dropdownItem button:active {
+.dropdownItem a:active {
   background-color: #a0ccc9;
 }
 
