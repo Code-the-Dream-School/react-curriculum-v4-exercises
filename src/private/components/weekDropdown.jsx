@@ -1,4 +1,4 @@
-import { useId, useState } from 'react';
+import { useRef, useId, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import styles from '../../styles/weekly-exercises.module.css';
@@ -20,10 +20,12 @@ const weeklyLessons = [
 export default function WeekDropdown({ buttonLabel }) {
   const [open, setOpen] = useState(false);
   const dropdownId = useId();
+  const buttonElementRef = useRef();
 
   function handleKeyDown(event) {
     if (event.key === 'Escape') {
       setOpen(false);
+      buttonElementRef.current?.focus();
     }
   }
 
@@ -34,6 +36,7 @@ export default function WeekDropdown({ buttonLabel }) {
         aria-expanded={open}
         aria-haspopup="true"
         className={styles.dropdownButton}
+        // ref={buttonElementRef}
         onClick={() => setOpen((prev) => !prev)}
       >
         {buttonLabel}
