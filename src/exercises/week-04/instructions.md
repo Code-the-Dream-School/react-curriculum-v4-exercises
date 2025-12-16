@@ -35,37 +35,44 @@ You will complete five exercises in the `src/exercises/week-04/` folder:
 
 ### 1. BugStrictMode.jsx
 
-- This component uses `useEffect` but does not clean up properly.
-- In StrictMode, this causes the effect to run twice, creating duplicate timers.
-- Fix the timer so it cleans up correctly.
+- Fix the timer so it increments by 1 instead of by 2.
 
 ### 2. FindCorrectHook.jsx
 
+- Refactor the component so that the click counter increments.
 - You must decide whether to use `useRef` or `useState`.
-- The value should update without causing re-renders, and the UI should only display it when requested.
 
 ### 3. BugEventPropagation.jsx
 
-- Clicking the child button also triggers the parent's click handler.
-- Use your knowledge of event bubbling to stop the event at the correct level.
+- Prevent clicks in button from bubbling up to the event listener on the box with the red border.
 
 ### 4. FillRefFocus.jsx
 
-- Imperatively focus the input when the button is clicked
+- Imperatively re-focus the input when the button is clicked.
 
-### 5. BugChildParent.jsx
+### 5. BugChildParentCommunication/Child.jsx and BugChildParentCommunication/Parent.jsx
 
-- Make the child update the parent's counter
+- Refactor components so that Child's button updates Parent's counter
 
 ---
 
 ## Assessment Criteria
-Open this file:  
-   `src/exercises/week-04/studentWork.jsx`  
-   - Import all the exercise files
-   - Render them inside the `StudentWork` component so all appear on the page and make sure the page loads without errors  
-   - Verify that each component now behaves according to the task assigned
-   - Check the console to ensure no warnings appear
+
+- **Exercise #1:**
+  - [ ] `useEffect` includes a cleanup function
+  - [ ] The number increments by one in the UI
+- **Exercise #2**
+  - [ ] Helper function is refactored to use appropriate hook to manage `clickCount`
+  - [ ] The Clicks's counter in the button increments
+- **Exercise #3**
+  - [ ] Clicking the inner button results in only one alert: "Button Clicked ✅"
+  - [ ] Clicking outside the button but inside the box with the red outline still alerts "RED BOX CLICKED ❌ Don't show me!"
+- **Exercise #4**
+  - [ ]After the "Focus Input" button is clicked the user can type into the input field without having to select it.
+- **Exercise #5**
+  - [ ] state is managed in Parent
+  - [ ] button in Child updates the counter using helper function in Parent
+  - [ ] The "Increment Counter" button results in the counter incrementing
 
 ---
 
