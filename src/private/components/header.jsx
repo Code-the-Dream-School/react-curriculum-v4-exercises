@@ -10,9 +10,7 @@ export default function Header() {
         <a href="/" style={{ display: 'inline-block' }}>
           <img src={logo} alt="CTD Logo" style={{ height: 48 }} />
         </a>
-        <a>
         <WeekDropdown buttonLabel="Lessons" />
-        </a>
       </div>
     </header>
   );
