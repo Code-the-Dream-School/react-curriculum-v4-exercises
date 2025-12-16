@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
+
 import Styles from '../../styles/weekly-exercises.module.css';
 
 //only cares about navigation 
@@ -18,35 +19,24 @@ const weeklyLessons = [
   { slug: 'week-11', title: 'Week 11: Security and Deployment' },
 ];
 
-export default function WeekDropdown({buttonLabel}) {
-    const navigate =useNavigate();
-    const [open, setOpen] = useState(false);
+export default function WeekDropdown({ buttonLabel }) {
+  const [open, setOpen] = useState(false);
 
-    const handleLessonClick = (slug)=>{
-        navigate(`/lessons/${slug}`);
-        setOpen(false);
-    };
-
-    return (
-        <div className={Styles.dropdownContainer}>
-            <button className={Styles.dropdownButton}
-            onClick={() => setOpen(!open)} 
-            >
-                {buttonLabel}
-                <span className={Styles.arrow}>{open ? '▲' : '▼'}</span>
-            </button>
-            {open && (
-                <ul className={Styles.dropdownMenu}>
-                    {weeklyLessons.map(({ slug, title }) => (
-                        <li className={Styles.dropdownItem} key={slug}  >
-                            <button className={Styles.lessonButton} onClick={() => handleLessonClick(slug)} >
-                                {title}
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </div>
-
-    );
+  return (
+    <div className={Styles.dropdownContainer}>
+      <button className={Styles.dropdownButton} onClick={() => setOpen(!open)}>
+        {buttonLabel}
+        <span>{open ? '▲' : '▼'}</span>
+      </button>
+      {open && (
+        <ul className={Styles.dropdownMenu}>
+          {weeklyLessons.map(({ slug, title }) => (
+            <li className={Styles.dropdownItem} key={slug}>
+              <NavLink to={`/lessons/${slug}`}>{title}</NavLink>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
 }
