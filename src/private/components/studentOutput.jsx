@@ -5,7 +5,6 @@ export function StudentOutput({ title, week, children }) {
   return (
     <section className={Styles.outputSection}>
       <div className={Styles.outputCard}>
-
         <header className={Styles.outputHeader}>
           <h3>{title}</h3>
           {week && <p className={Styles.weekTitle}>{week}</p>}
@@ -16,12 +15,7 @@ export function StudentOutput({ title, week, children }) {
             {children ?? <p className={Styles.empty}>No output yet.</p>}
           </div>
         </div>
-
       </div>
     </section>
   );
 }
-
-
-
-

@@ -12,12 +12,11 @@
   Use the commented "Explanation" section at the bottom of this week's components.
 */
 
-
-export default function BugProps({ name = "friend" }) {
-  let message = "Hello, " + name;
+export default function BugProps({ name = 'friend' }) {
+  let message = 'Hello, ' + name;
 
   function handleChange() {
-    message = "Hi, " + name + "!";
+    message = 'Hi, ' + name + '!';
   }
 
   return (
@@ -27,7 +26,6 @@ export default function BugProps({ name = "friend" }) {
     </div>
   );
 }
-
 
 // Explanation:
 // (Write your explanation here)

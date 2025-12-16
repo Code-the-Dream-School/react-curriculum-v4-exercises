@@ -5,7 +5,6 @@ import ExerciseSection from '../../exercises/exerciseSection';
 import StudentWork11 from '../../exercises/week-11/studentWork';
 import WeekPage from './WeekPage.jsx';
 
-
 export default function Week11() {
   return (
     <WeekPage>

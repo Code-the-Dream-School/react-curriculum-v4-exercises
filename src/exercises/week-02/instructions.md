@@ -1,9 +1,9 @@
 # Week-02 - ReactDOM, Components, JSX, and Troubleshooting
 
-Welcome to **Week 02** of the React curriculum! 🎉  
+Welcome to **Week 02** of the React curriculum! 🎉
 This week you’ll deepen your React foundation by working with ReactDOM, components, and JSX, while organizing your code into multiple files.
 
-## Exercise: Snack Rankings App 
+## Exercise: Snack Rankings App
 
 In this exercise, you’ll build a small **Snack Rankings** app where you rank your favorite snacks from #1 (favorite) downward.
 You’ll create four components, each in its own file in the folder corresponding to week-02, and assemble them into a complete app.
@@ -24,17 +24,17 @@ Make sure your Vite development server is running!
    - **SnackHeader.jsx**
      - Default export a simple component that returns the app heading.
    - **SnackList.jsx**
-     - Default export a component that **contains** an array of snack objects (each with `name` and `rank`, where `1` = favorite).  
-     - Start with the array ordered from **least favorite to most favorite**.  
-      - Use JavaScript’s `.sort()` to return a new array ordered from **most favorite (rank 1) to least favorite**.  
-     - Render the sorted snacks as a list (ordered list or using `.map()`).  
+     - Default export a component that **contains** an array of snack objects (each with `name` and `rank`, where `1` = favorite).
+     - Start with the array ordered from **least favorite to most favorite**.
+     - Use JavaScript’s `.sort()` to return a new array ordered from **most favorite (rank 1) to least favorite**.
+     - Render the sorted snacks as a list (ordered list or using `.map()`).
      - Include at least **3–5** snacks.
-   - **SnackFooter.jsx** 
+   - **SnackFooter.jsx**
      - Default export a small component that returns a fun footer message.
 
 2. Open this file:
-   `src/exercises/week-02/studentWork.jsx`  
-   - Import your `SnackApp` component.  
+   `src/exercises/week-02/studentWork.jsx`
+   - Import your `SnackApp` component.
    - Render `<SnackApp />` as the main output of this file.
 
 ## Proof of completion
@@ -54,6 +54,5 @@ Once your Snack Ranking app displays correctly in the browser:
 
 ---
 
-Great Job getting through Week 02! 
+Great Job getting through Week 02!
 You’re building real React apps now. On to Week 03!
-

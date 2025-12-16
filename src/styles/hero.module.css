@@ -1,6 +1,6 @@
 :root {
-    --off-white: #f8f9fa;
-    --navy-blue: #11284c;
+  --off-white: #f8f9fa;
+  --navy-blue: #11284c;
 }
 
 .hero {
@@ -11,14 +11,14 @@
 }
 
 .heroBg {
-    position: absolute ;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    opacity: 0.99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.99;
 }
 
 .heroContainer {
@@ -30,9 +30,9 @@
   border-radius: 1rem;
   backdrop-filter: blur(8px);
 }
-.logo{
-    width: 200px;
-    margin-bottom: 2rem;
+.logo {
+  width: 200px;
+  margin-bottom: 2rem;
 }
 .heroTitle {
   font-size: 2.5rem;
@@ -43,13 +43,13 @@
   line-height: 1.1;
 }
 .paragraph {
-    font-size: 1.25rem;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-    color: var(--navy-blue);
-    margin-bottom: 2.5rem;
-    line-height: 1.6;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+  font-size: 1.25rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  color: var(--navy-blue);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
