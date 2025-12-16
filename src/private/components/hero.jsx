@@ -15,7 +15,7 @@ export function Hero() {
                     Welcome, Future Developer! 🚀
                 </h1>
                 <p className={Styles.paragraph}>
-                     Dive in, explore, and let's code the dream together!
+                     Dive in, explore, and let&rsquo;s code the dream together!
                 </p>
             </div>
         </section>
