@@ -1,7 +1,7 @@
 // TOPIC: StrictMode Effects and Cleanup
-// TASK: Try navigating away and back to this page. Notice how the count accelerates. Fix the timer so that it cleans up properly and only one interval runs at a time.
+// TASK: Notice how the count increments incorrectly based on the `setInterval` logic. Fix the useEffect so that the counter increments correctly.
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function BugStrictMode() {
   const [count, setCount] = useState(0);
