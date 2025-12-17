@@ -32,13 +32,13 @@ export default function WeekDropdown({ buttonLabel }) {
 
   useEffect(() => {
     const handleWindowClick = (event) => {
-      console.log('root', event.currentTarget);
-      if (open && !event.target.contains(rootRef.current)) {
+      if (!rootRef.current.contains(event.target)) {
         setOpen(false);
       }
     };
     window.addEventListener('click', handleWindowClick, true);
-  }, [open]);
+    return () => window.removeEventListener('click', handleWindowClick, true);
+  }, []);
 
   return (
     <div
@@ -51,7 +51,7 @@ export default function WeekDropdown({ buttonLabel }) {
         aria-expanded={open}
         aria-haspopup="true"
         className={styles.dropdownButton}
-        // ref={buttonElementRef}
+        ref={buttonElementRef}
         onClick={() => setOpen((prev) => !prev)}
       >
         {buttonLabel}
