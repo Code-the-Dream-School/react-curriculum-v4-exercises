@@ -68,7 +68,7 @@ You will complete five exercises in the `src/exercises/week-04/` folder:
   - [ ] Clicking the inner button results in only one alert: "Button Clicked ✅"
   - [ ] Clicking outside the button but inside the box with the red outline still alerts "RED BOX CLICKED ❌ Don't show me!"
 - **Exercise #4**
-  - [ ]After the "Focus Input" button is clicked the user can type into the input field without having to select it.
+  - [ ] After the "Focus Input" button is clicked the user can type into the input field without having to select it.
 - **Exercise #5**
   - [ ] state is managed in Parent
   - [ ] button in Child updates the counter using helper function in Parent
