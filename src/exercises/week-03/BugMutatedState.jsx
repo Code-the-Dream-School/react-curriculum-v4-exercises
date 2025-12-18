@@ -8,11 +8,11 @@
   incorrectly.
 */
 
-import { useState } from "react";
+import { useState } from 'react';
 export default function BugMutatedState() {
-  const [count, setCount] = useState(0);
+  let [count, setCount] = useState(0);
 
-   function handleAdd() {
+  function handleAdd() {
     count++;
     setCount(count);
   }

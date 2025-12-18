@@ -3,11 +3,10 @@
 //Import components here
 
 export default function StudentWork() {
-  return(
+  return (
     <div>
       {/* add JSX here */}
       <p> Student output will go here</p>
     </div>
-
   );
 }

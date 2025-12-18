@@ -1,4 +1,3 @@
-
 import logo from '../assets/ctd_worded_logo_720.png';
 import Styles from '../../styles/header.module.css';
 import WeekDropdown from './weekDropdown.jsx';
@@ -6,7 +5,7 @@ import WeekDropdown from './weekDropdown.jsx';
 export default function Header() {
   return (
     <header className={Styles.header}>
-      <div className= {Styles.container}>
+      <div className={Styles.container}>
         <a href="/" style={{ display: 'inline-block' }}>
           <img src={logo} alt="CTD Logo" style={{ height: 48 }} />
         </a>
@@ -15,17 +14,6 @@ export default function Header() {
     </header>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // import { Link } from 'react-router-dom';
 // import styles from '../../styles/header.css'

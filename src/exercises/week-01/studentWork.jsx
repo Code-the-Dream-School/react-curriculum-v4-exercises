@@ -1,8 +1,8 @@
 //Week-01 Introduction to React
-//Exercise: Build an "About Me" Component in this file 
+//Exercise: Build an "About Me" Component in this file
 
 export default function StudentWork() {
-  //add variables here 
+  //add variables here
   return (
     <div>
       {/* add JSX here */}

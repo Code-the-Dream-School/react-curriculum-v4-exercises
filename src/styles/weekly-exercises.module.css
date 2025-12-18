@@ -18,7 +18,6 @@
   text-wrap: balance;
 }
 
-
 .description {
   font-family: 'work-sans', sans-serif;
   font-size: 1.125rem;
@@ -47,8 +46,6 @@
   padding: 1.5rem;
 }
 
-
-
 .dropdownContainer {
   position: relative;
   max-width: 28rem;
@@ -72,9 +69,7 @@
   transition: all 0.2s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   line-height: 1;
-  
 }
-
 
 .dropdownButton:hover {
   background-color: #ff6b47;
@@ -133,10 +128,3 @@
 .dropdownItem a:active {
   background-color: #a0ccc9;
 }
-
-
-
-
-
-
-

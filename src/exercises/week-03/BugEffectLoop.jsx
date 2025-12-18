@@ -1,6 +1,6 @@
-  //src/exercises/week-03/BugEffectLoop.jsx
+//src/exercises/week-03/BugEffectLoop.jsx
 
-  /* 
+/* 
   BUG #1 — Effect Issue 
 
   This component uses useState and useEffect to update a value.
@@ -8,7 +8,7 @@
   component to behave incorrectly.
   */
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function BugEffectLoop() {
   const [count, setCount] = useState(0);

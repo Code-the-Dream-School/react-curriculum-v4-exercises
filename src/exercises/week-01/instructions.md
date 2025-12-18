@@ -22,13 +22,13 @@ Make sure your Vite development server is running!
 1. **Open the file:**  
    `src/exercises/week-01/studentWork.jsx`
 2. **Inside of the component** create:
-     - A variable for your name
-     - A variable for your age
-     - A list of your hobbies using an array
+   - A variable for your name
+   - A variable for your age
+   - A list of your hobbies using an array
 3. **Return JSX** includes:
-    - A heading about you
-    - A short paragraph introducing yourself
-    - Map out your hobbies or interests so they all appear on the page in a list.
+   - A heading about you
+   - A short paragraph introducing yourself
+   - Map out your hobbies or interests so they all appear on the page in a list.
 
 ---
 

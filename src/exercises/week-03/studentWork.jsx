@@ -9,4 +9,4 @@ export default function StudentWork() {
       <p>Student output will go here</p>
     </div>
   );
-} 
+}
