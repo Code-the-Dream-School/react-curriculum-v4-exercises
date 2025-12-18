@@ -40,6 +40,6 @@
     "vitest": "^3.2.4"
   },
   "lint-staged": {
-    "*.{js,jsx,css,md}": "prettier --write --experimental-cli"
+    "*.{js,jsx,css,md}": "prettier --cache --write --experimental-cli"
   }
 }
