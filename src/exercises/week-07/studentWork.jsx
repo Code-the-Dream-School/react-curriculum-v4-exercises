@@ -1,3 +1,11 @@
-export default function StudentWork({ name }) {
-  return <h1>Hello, {name || 'World'} 07!</h1>;
+import FetchOnClick from './FetchOnClick';
+import FetchOnRender from './FetchOnRender';
+
+export default function StudentWork() {
+  return (
+    <>
+      <FetchOnClick />
+      <FetchOnRender />
+    </>
+  );
 }
