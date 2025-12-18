@@ -13,7 +13,6 @@ export function Hero() {
         <h1 className={Styles.heroTitle}>Welcome, Future Developer! 🚀</h1>
         <p className={Styles.paragraph}>
           Dive in, explore, and let&#39;s code the dream together!
-
         </p>
       </div>
     </section>

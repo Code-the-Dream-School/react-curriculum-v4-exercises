@@ -15,7 +15,7 @@ This repository contains weekly exercises for Code the Dream's 11-week Introduct
 ### Repository Structure
 
 - `src/exercises/` - Contains directories for each week's assignments and instructions
-- `src/private/` - Application framework code (do not modify)  
+- `src/private/` - Application framework code (do not modify)
 - `src/tests/` - Test files for validating your work (do not modify)
 
 ### User Interface
