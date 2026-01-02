@@ -13,43 +13,42 @@ const PostManager = () => {
   const [selectedUserId, setSelectedUserId] = useState('');
   const [sortBy, setSortBy] = useState('id');
 
-  // TODO: This fetches posts on EVERY render when dependencies change
-  // TASK: Wrap this with useMemo to cache the API call results
-  const fetchPosts = async () => {
-    setLoading(true);
-    console.log('🔥 Making API call to fetch posts...'); // Shows redundant calls
-
-    try {
-      const response = await fetch(
-        'https://jsonplaceholder.typicode.com/posts'
-      );
-      const postsData = await response.json();
-      setPosts(postsData);
-    } catch (error) {
-      console.error('Error fetching posts:', error);
-    }
-
-    setLoading(false);
-  };
-
-  // TODO: This fetches users on EVERY render
-  // TASK: Wrap this with useMemo to cache the API call results
-  const fetchUsers = async () => {
-    console.log('🔥 Making API call to fetch users...'); // Shows redundant calls
-
-    try {
-      const response = await fetch(
-        'https://jsonplaceholder.typicode.com/users'
-      );
-      const usersData = await response.json();
-      setUsers(usersData);
-    } catch (error) {
-      console.error('Error fetching users:', error);
-    }
-  };
-
   // This useEffect runs on every render due to function recreations
   useEffect(() => {
+    // TODO: This fetches posts on EVERY render when dependencies change
+    // TASK: Wrap this with useMemo to cache the API call results
+    const fetchPosts = async () => {
+      setLoading(true);
+      console.log('🔥 Making API call to fetch posts...'); // Shows redundant calls
+
+      try {
+        const response = await fetch(
+          'https://jsonplaceholder.typicode.com/posts'
+        );
+        const postsData = await response.json();
+        setPosts(postsData);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+
+      setLoading(false);
+    };
+
+    // TODO: This fetches users on EVERY render
+    // TASK: Wrap this with useMemo to cache the API call results
+    const fetchUsers = async () => {
+      console.log('🔥 Making API call to fetch users...'); // Shows redundant calls
+
+      try {
+        const response = await fetch(
+          'https://jsonplaceholder.typicode.com/users'
+        );
+        const usersData = await response.json();
+        setUsers(usersData);
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
+    };
     fetchPosts();
     fetchUsers();
   }, [searchTerm, selectedUserId, sortBy]); // Triggers on every filter change
