@@ -2,6 +2,7 @@ import {
   useRenderCounter,
   RenderCounter,
 } from '../../private/components/renderCounter.jsx';
+import styles from './BookStats.module.css';
 
 // Book Statistics Component - Expensive calculations run unnecessarily
 function BookStats({ books }) {
@@ -39,49 +40,37 @@ function BookStats({ books }) {
   const stats = calculateStats();
 
   return (
-    <div
-      style={{
-        backgroundColor: '#e3f2fd',
-        padding: '16px',
-        borderRadius: '8px',
-        position: 'relative',
-      }}
-    >
+    <div className={styles.statsContainer}>
       <RenderCounter
         componentName="BookStats"
         count={count}
-        style={{
-          position: 'absolute',
-          top: '8px',
-          right: '8px',
-          zIndex: 1000,
-        }}
+        className={styles.renderCounter}
       />
-      <h3>Library Statistics</h3>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
-          gap: '12px',
-        }}
-      >
-        <div>
-          <strong>Total Books:</strong> {stats.totalBooks}
+      <h3 className={styles.statsTitle}>📊 Library Statistics</h3>
+      <div className={styles.statsGrid}>
+        <div className={styles.statItem}>
+          <div className={styles.statLabel}>Total Books</div>
+          <div className={styles.statValue}>{stats.totalBooks}</div>
         </div>
-        <div>
-          <strong>Average Rating:</strong> ⭐ {stats.averageRating}
+        <div className={styles.statItem}>
+          <div className={styles.statLabel}>Average Rating</div>
+          <div className={styles.statValue}>⭐ {stats.averageRating}</div>
         </div>
-        <div>
-          <strong>Average Pages:</strong> {stats.averagePages}
+        <div className={styles.statItem}>
+          <div className={styles.statLabel}>Average Pages</div>
+          <div className={styles.statValue}>{stats.averagePages}</div>
         </div>
-        <div>
-          <strong>Average Price:</strong> ${stats.averagePrice}
+        <div className={styles.statItem}>
+          <div className={styles.statLabel}>Average Price</div>
+          <div className={styles.statValue}>${stats.averagePrice}</div>
         </div>
-        <div>
-          <strong>Highest Rated:</strong> {stats.highestRated}
+        <div className={styles.statItem}>
+          <div className={styles.statLabel}>Highest Rated</div>
+          <div className={styles.statValue}>{stats.highestRated}</div>
         </div>
-        <div>
-          <strong>Oldest Book:</strong> {stats.oldestBook}
+        <div className={styles.statItem}>
+          <div className={styles.statLabel}>Oldest Book</div>
+          <div className={styles.statValue}>{stats.oldestBook}</div>
         </div>
       </div>
     </div>

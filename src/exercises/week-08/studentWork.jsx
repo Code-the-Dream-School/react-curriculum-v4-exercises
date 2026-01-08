@@ -9,6 +9,7 @@ import {
 } from '../../private/components/renderCounter.jsx';
 import BookStats from './BookStats.jsx';
 import BookList from './BookList.jsx';
+import styles from './StudentWork.module.css';
 
 // Main Dashboard Component - Contains performance issues to be optimized
 export default function StudentWork() {
@@ -53,36 +54,16 @@ export default function StudentWork() {
   filteredBooks = filterBooksByGenre(filteredBooks, selectedGenres);
 
   return (
-    <div
-      style={{
-        padding: '20px',
-        maxWidth: '1200px',
-        margin: '0 auto',
-        position: 'relative',
-      }}
-    >
+    <div className={styles.dashboard}>
       <RenderCounter
         componentName="BookDashboard"
         count={count}
-        style={{
-          position: 'absolute',
-          top: '10px',
-          right: '10px',
-          zIndex: 1000,
-        }}
+        className={styles.renderCounter}
       />
 
-      <h1>📚 Professional Book Library Dashboard</h1>
+      <h1 className={styles.title}>📚 Professional Book Library Dashboard</h1>
 
-      <div
-        style={{
-          backgroundColor: '#fff3cd',
-          border: '1px solid #ffeaa7',
-          borderRadius: '8px',
-          padding: '16px',
-          margin: '16px 0',
-        }}
-      >
+      <div className={styles.performanceNotice}>
         <h3>⚠️ Performance Notice</h3>
         <p>
           This dashboard has performance issues! Watch the render counters on
@@ -95,13 +76,13 @@ export default function StudentWork() {
       </div>
 
       {/* Statistics and Favorites Section */}
-      <div style={{ display: 'flex', gap: '20px', margin: '16px 0' }}>
-        <div style={{ flex: 1 }}>
+      <div className={styles.statsAndFavorites}>
+        <div className={styles.statsSection}>
           <BookStats books={filteredBooks} />
         </div>
 
         {/* Favorites Summary */}
-        <div style={{ flex: 1 }}>
+        <div className={styles.favoritesSection}>
           {favorites.length > 0 ? (
             <div
               style={{
@@ -113,20 +94,66 @@ export default function StudentWork() {
               }}
             >
               <h3>❤️ Your Favorites ({favorites.length})</h3>
-              <p>You have {favorites.length} book(s) in your favorites list.</p>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  padding: '8px 0',
+                  borderBottom: '2px solid #c3e6cb',
+                  fontWeight: 'bold',
+                  fontSize: '14px',
+                  marginBottom: '4px',
+                }}
+              >
+                <span>Title</span>
+                <span>Remove from Favorites</span>
+              </div>
+              <ul
+                style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: '0',
+                }}
+              >
+                {favorites.map((favoriteId) => {
+                  const book = bookData.find((b) => b.id === favoriteId);
+                  return book ? (
+                    <li
+                      key={book.id}
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        padding: '4px 0',
+                        fontSize: '14px',
+                        borderBottom: '1px solid #c3e6cb',
+                      }}
+                    >
+                      <span style={{ flexGrow: 1, paddingRight: '8px' }}>
+                        {book.title}
+                      </span>
+                      <button
+                        onClick={() => handleToggleFavorite(book.id)}
+                        style={{
+                          background: 'none',
+                          border: 'none',
+                          cursor: 'pointer',
+                          fontSize: '16px',
+                          color: '#6c757d',
+                          padding: '2px',
+                        }}
+                        title="Remove from favorites"
+                      >
+                        💔
+                      </button>
+                    </li>
+                  ) : null;
+                })}
+              </ul>
             </div>
           ) : (
-            <div
-              style={{
-                backgroundColor: '#f8f9fa',
-                border: '1px solid #dee2e6',
-                borderRadius: '8px',
-                padding: '16px',
-                height: 'fit-content',
-                textAlign: 'center',
-                color: '#6c757d',
-              }}
-            >
+            <div className={styles.favoritesEmpty}>
               <h3>❤️ Your Favorites</h3>
               <p>Add books to your favorites to see them here!</p>
             </div>
@@ -135,60 +162,26 @@ export default function StudentWork() {
       </div>
 
       {/* Search Controls */}
-      <div
-        style={{
-          backgroundColor: '#f8f9fa',
-          padding: '16px',
-          borderRadius: '8px',
-          marginBottom: '20px',
-        }}
-      >
+      <div className={styles.searchControls}>
         <h3>Search & Filter Controls</h3>
 
-        <div style={{ marginBottom: '12px' }}>
-          <label
-            style={{
-              display: 'block',
-              marginBottom: '4px',
-              fontWeight: 'bold',
-            }}
-          >
-            Search Books:
-          </label>
+        <div className={styles.searchGroup}>
+          <label className={styles.searchLabel}>Search Books:</label>
           <input
             type="text"
             value={searchTerm}
             onChange={handleSearch}
             placeholder="Search by title or author..."
-            style={{
-              width: '100%',
-              padding: '8px',
-              fontSize: '14px',
-              border: '1px solid #ccc',
-              borderRadius: '4px',
-            }}
+            className={styles.searchInput}
           />
         </div>
 
-        <div style={{ marginBottom: '12px' }}>
-          <label
-            style={{
-              display: 'block',
-              marginBottom: '4px',
-              fontWeight: 'bold',
-            }}
-          >
-            Sort By:
-          </label>
+        <div className={styles.searchGroup}>
+          <label className={styles.searchLabel}>Sort By:</label>
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            style={{
-              padding: '8px',
-              fontSize: '14px',
-              border: '1px solid #ccc',
-              borderRadius: '4px',
-            }}
+            className={styles.sortSelect}
           >
             <option value="title">Title</option>
             <option value="author">Author</option>
@@ -199,31 +192,17 @@ export default function StudentWork() {
         </div>
 
         <div>
-          <label
-            style={{
-              display: 'block',
-              marginBottom: '8px',
-              fontWeight: 'bold',
-            }}
-          >
-            Filter by Genre:
-          </label>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+          <label className={styles.searchLabel}>Filter by Genre:</label>
+          <div className={styles.genreFilters}>
             {allGenres.map((genre) => (
               <button
                 key={genre}
                 onClick={() => handleGenreToggle(genre)}
-                style={{
-                  padding: '6px 12px',
-                  fontSize: '12px',
-                  border: '1px solid #007bff',
-                  borderRadius: '4px',
-                  backgroundColor: selectedGenres.includes(genre)
-                    ? '#007bff'
-                    : 'white',
-                  color: selectedGenres.includes(genre) ? 'white' : '#007bff',
-                  cursor: 'pointer',
-                }}
+                className={`${styles.genreButton} ${
+                  selectedGenres.includes(genre)
+                    ? styles.active
+                    : styles.inactive
+                }`}
               >
                 {genre}
               </button>
@@ -237,6 +216,7 @@ export default function StudentWork() {
         books={filteredBooks}
         searchTerm={searchTerm}
         sortBy={sortBy}
+        favorites={favorites}
         onToggleFavorite={handleToggleFavorite}
       />
     </div>

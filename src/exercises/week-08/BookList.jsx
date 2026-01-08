@@ -3,9 +3,10 @@ import {
   RenderCounter,
 } from '../../private/components/renderCounter.jsx';
 import BookCard from './BookCard.jsx';
+import styles from './BookList.module.css';
 
 // Book List Component - Expensive sorting operation runs on every render
-function BookList({ books, searchTerm, sortBy, onToggleFavorite }) {
+function BookList({ books, sortBy, favorites, onToggleFavorite }) {
   const { count } = useRenderCounter('BookList');
 
   // TODO #2: Optimize this expensive sorting operation with useMemo
@@ -28,22 +29,18 @@ function BookList({ books, searchTerm, sortBy, onToggleFavorite }) {
   });
 
   return (
-    <div style={{ marginTop: '20px', position: 'relative' }}>
+    <div className={styles.listContainer}>
       <RenderCounter
         componentName="BookList"
         count={count}
-        style={{
-          position: 'absolute',
-          top: '8px',
-          right: '8px',
-          zIndex: 1000,
-        }}
+        className={styles.renderCounter}
       />
-      <h2>Books ({sortedBooks.length} found)</h2>
+      <h2 className={styles.listTitle}>Books ({sortedBooks.length} found)</h2>
       {sortedBooks.map((book) => (
         <BookCard
           key={book.id}
           book={book}
+          isFavorite={favorites.includes(book.id)}
           onToggleFavorite={onToggleFavorite}
         />
       ))}

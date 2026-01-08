@@ -1,0 +1,17 @@
+/* Book List Component Styles */
+.listContainer {
+  margin-top: 20px;
+  position: relative;
+}
+
+.renderCounter {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1000;
+}
+
+.listTitle {
+  margin: 0 0 16px 0;
+  font-size: 1.5rem;
+}
