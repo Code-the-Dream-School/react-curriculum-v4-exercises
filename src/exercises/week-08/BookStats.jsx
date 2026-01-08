@@ -44,7 +44,6 @@ function BookStats({ books }) {
         backgroundColor: '#e3f2fd',
         padding: '16px',
         borderRadius: '8px',
-        margin: '16px 0',
         position: 'relative',
       }}
     >

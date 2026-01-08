@@ -94,8 +94,45 @@ export default function StudentWork() {
         </p>
       </div>
 
-      {/* Statistics Section */}
-      <BookStats books={filteredBooks} />
+      {/* Statistics and Favorites Section */}
+      <div style={{ display: 'flex', gap: '20px', margin: '16px 0' }}>
+        <div style={{ flex: 1 }}>
+          <BookStats books={filteredBooks} />
+        </div>
+
+        {/* Favorites Summary */}
+        <div style={{ flex: 1 }}>
+          {favorites.length > 0 ? (
+            <div
+              style={{
+                backgroundColor: '#d4edda',
+                border: '1px solid #c3e6cb',
+                borderRadius: '8px',
+                padding: '16px',
+                height: 'fit-content',
+              }}
+            >
+              <h3>❤️ Your Favorites ({favorites.length})</h3>
+              <p>You have {favorites.length} book(s) in your favorites list.</p>
+            </div>
+          ) : (
+            <div
+              style={{
+                backgroundColor: '#f8f9fa',
+                border: '1px solid #dee2e6',
+                borderRadius: '8px',
+                padding: '16px',
+                height: 'fit-content',
+                textAlign: 'center',
+                color: '#6c757d',
+              }}
+            >
+              <h3>❤️ Your Favorites</h3>
+              <p>Add books to your favorites to see them here!</p>
+            </div>
+          )}
+        </div>
+      </div>
 
       {/* Search Controls */}
       <div
@@ -202,22 +239,6 @@ export default function StudentWork() {
         sortBy={sortBy}
         onToggleFavorite={handleToggleFavorite}
       />
-
-      {/* Favorites Summary */}
-      {favorites.length > 0 && (
-        <div
-          style={{
-            backgroundColor: '#d4edda',
-            border: '1px solid #c3e6cb',
-            borderRadius: '8px',
-            padding: '16px',
-            marginTop: '20px',
-          }}
-        >
-          <h3>❤️ Your Favorites ({favorites.length})</h3>
-          <p>You have {favorites.length} book(s) in your favorites list.</p>
-        </div>
-      )}
     </div>
   );
 }
