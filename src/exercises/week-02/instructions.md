@@ -26,7 +26,7 @@ Make sure your Vite development server is running!
    - **SnackList.jsx**
      - Default export a component that **contains** an array of snack objects (each with `name` and `rank`, where `1` = favorite).
      - Start with the array ordered from **least favorite to most favorite**.
-     - Use JavaScript’s `.sort()` to return a new array ordered from **most favorite (rank 1) to least favorite**.
+     - Use JavaScript’s `.toSorted()` to return a new array ordered from **most favorite (rank 1) to least favorite**.
      - Render the sorted snacks as a list (ordered list or using `.map()`).
      - Include at least **3–5** snacks.
    - **SnackFooter.jsx**
