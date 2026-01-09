@@ -525,7 +525,7 @@ export const bookData = [
   },
 
   {
-    id: 54,
+    id: 52,
     title: 'Introduction to Algorithms',
     author: 'Thomas H. Cormen',
     rating: 4.2,
@@ -536,7 +536,7 @@ export const bookData = [
   },
 
   {
-    id: 56,
+    id: 53,
     title: "You Don't Know JS",
     author: 'Kyle Simpson',
     rating: 4.6,
@@ -547,7 +547,7 @@ export const bookData = [
   },
 
   {
-    id: 58,
+    id: 54,
     title: 'System Design Interview',
     author: 'Alex Xu',
     rating: 4.4,
@@ -558,7 +558,7 @@ export const bookData = [
   },
 
   {
-    id: 60,
+    id: 55,
     title: 'Cracking the Coding Interview',
     author: 'Gayle Laakmann McDowell',
     rating: 4.2,
@@ -569,7 +569,7 @@ export const bookData = [
   },
   // Psychology & Human Behavior
   {
-    id: 61,
+    id: 56,
     title: 'Influence: The Psychology of Persuasion',
     author: 'Robert B. Cialdini',
     rating: 4.3,
@@ -579,7 +579,7 @@ export const bookData = [
     publishYear: 2006,
   },
   {
-    id: 62,
+    id: 57,
     title: 'The Power of Habit',
     author: 'Charles Duhigg',
     rating: 4.2,
@@ -589,7 +589,7 @@ export const bookData = [
     publishYear: 2012,
   },
   {
-    id: 63,
+    id: 58,
     title: 'Nudge',
     author: 'Richard H. Thaler',
     rating: 4.1,
@@ -599,7 +599,7 @@ export const bookData = [
     publishYear: 2008,
   },
   {
-    id: 64,
+    id: 59,
     title: 'The Paradox of Choice',
     author: 'Barry Schwartz',
     rating: 4.0,
@@ -611,7 +611,7 @@ export const bookData = [
 
   // Science & Innovation
   {
-    id: 66,
+    id: 60,
     title: "The Innovator's Dilemma",
     author: 'Clayton M. Christensen',
     rating: 4.2,
@@ -622,7 +622,7 @@ export const bookData = [
   },
 
   {
-    id: 68,
+    id: 61,
     title: 'The Art of War',
     author: 'Sun Tzu',
     rating: 4.0,
@@ -633,7 +633,7 @@ export const bookData = [
   },
 
   {
-    id: 70,
+    id: 62,
     title: 'Sapiens',
     author: 'Yuval Noah Harari',
     rating: 4.4,
@@ -644,7 +644,7 @@ export const bookData = [
   },
   // Data Science & Analytics
   {
-    id: 71,
+    id: 63,
     title: 'Python for Data Analysis',
     author: 'Wes McKinney',
     rating: 4.3,
@@ -654,7 +654,7 @@ export const bookData = [
     publishYear: 2017,
   },
   {
-    id: 72,
+    id: 64,
     title: 'Hands-On Machine Learning',
     author: 'Aurélien Géron',
     rating: 4.5,
@@ -664,7 +664,7 @@ export const bookData = [
     publishYear: 2019,
   },
   {
-    id: 73,
+    id: 65,
     title: 'The Signal and the Noise',
     author: 'Nate Silver',
     rating: 4.1,
@@ -674,7 +674,7 @@ export const bookData = [
     publishYear: 2012,
   },
   {
-    id: 74,
+    id: 66,
     title: 'Storytelling with Data',
     author: 'Cole Nussbaumer Knaflic',
     rating: 4.4,
@@ -684,7 +684,7 @@ export const bookData = [
     publishYear: 2015,
   },
   {
-    id: 75,
+    id: 67,
     title: 'The Elements of Statistical Learning',
     author: 'Trevor Hastie',
     rating: 4.2,
@@ -695,7 +695,7 @@ export const bookData = [
   },
   // Finance & Economics
   {
-    id: 76,
+    id: 68,
     title: 'The Intelligent Investor',
     author: 'Benjamin Graham',
     rating: 4.3,
@@ -705,7 +705,7 @@ export const bookData = [
     publishYear: 2006,
   },
   {
-    id: 77,
+    id: 69,
     title: 'A Random Walk Down Wall Street',
     author: 'Burton G. Malkiel',
     rating: 4.2,
@@ -716,7 +716,7 @@ export const bookData = [
   },
 
   {
-    id: 79,
+    id: 70,
     title: 'The Wealth of Nations',
     author: 'Adam Smith',
     rating: 3.9,
@@ -726,7 +726,7 @@ export const bookData = [
     publishYear: 2003,
   },
   {
-    id: 80,
+    id: 71,
     title: 'Capital in the Twenty-First Century',
     author: 'Thomas Piketty',
     rating: 4.0,
@@ -737,7 +737,7 @@ export const bookData = [
   },
   // Communication & Writing
   {
-    id: 81,
+    id: 72,
     title: 'Made to Stick',
     author: 'Chip Heath',
     rating: 4.2,
@@ -747,7 +747,7 @@ export const bookData = [
     publishYear: 2007,
   },
   {
-    id: 82,
+    id: 73,
     title: 'The Elements of Style',
     author: 'William Strunk Jr.',
     rating: 4.1,
@@ -757,7 +757,7 @@ export const bookData = [
     publishYear: 1999,
   },
   {
-    id: 83,
+    id: 74,
     title: 'On Writing Well',
     author: 'William Zinsser',
     rating: 4.3,
@@ -767,7 +767,7 @@ export const bookData = [
     publishYear: 2006,
   },
   {
-    id: 84,
+    id: 75,
     title: 'Difficult Conversations',
     author: 'Douglas Stone',
     rating: 4.2,
@@ -777,7 +777,7 @@ export const bookData = [
     publishYear: 2010,
   },
   {
-    id: 85,
+    id: 76,
     title: 'Never Eat Alone',
     author: 'Keith Ferrazzi',
     rating: 4.1,
@@ -788,7 +788,7 @@ export const bookData = [
   },
   // Health & Wellness
   {
-    id: 86,
+    id: 77,
     title: 'The 4-Hour Body',
     author: 'Timothy Ferriss',
     rating: 3.9,
@@ -798,7 +798,7 @@ export const bookData = [
     publishYear: 2010,
   },
   {
-    id: 87,
+    id: 78,
     title: 'Why We Sleep',
     author: 'Matthew Walker',
     rating: 4.4,
@@ -808,7 +808,7 @@ export const bookData = [
     publishYear: 2017,
   },
   {
-    id: 88,
+    id: 79,
     title: 'The Blue Zones',
     author: 'Dan Buettner',
     rating: 4.2,
@@ -819,7 +819,7 @@ export const bookData = [
   },
 
   {
-    id: 90,
+    id: 80,
     title: 'Flow: The Psychology of Optimal Experience',
     author: 'Mihaly Csikszentmihalyi',
     rating: 4.2,
@@ -830,7 +830,7 @@ export const bookData = [
   },
   // Philosophy & Critical Thinking
   {
-    id: 91,
+    id: 81,
     title: 'The Republic',
     author: 'Plato',
     rating: 4.0,
@@ -840,7 +840,7 @@ export const bookData = [
     publishYear: 2007,
   },
   {
-    id: 92,
+    id: 82,
     title: 'Meditations',
     author: 'Marcus Aurelius',
     rating: 4.3,
@@ -850,7 +850,7 @@ export const bookData = [
     publishYear: 2006,
   },
   {
-    id: 93,
+    id: 83,
     title: 'The Art of Thinking Clearly',
     author: 'Rolf Dobelli',
     rating: 4.1,
@@ -861,7 +861,7 @@ export const bookData = [
   },
 
   {
-    id: 95,
+    id: 84,
     title: 'The Black Swan',
     author: 'Nassim Nicholas Taleb',
     rating: 4.1,
@@ -873,7 +873,7 @@ export const bookData = [
   // Project Management & Operations
 
   {
-    id: 98,
+    id: 85,
     title: 'Scrum: The Art of Doing Twice the Work',
     author: 'Jeff Sutherland',
     rating: 4.2,
@@ -883,7 +883,7 @@ export const bookData = [
     publishYear: 2014,
   },
   {
-    id: 99,
+    id: 86,
     title: 'The DevOps Handbook',
     author: 'Gene Kim',
     rating: 4.3,
@@ -893,7 +893,7 @@ export const bookData = [
     publishYear: 2016,
   },
   {
-    id: 100,
+    id: 87,
     title: 'Measure What Matters',
     author: 'John Doerr',
     rating: 4.2,
@@ -904,7 +904,7 @@ export const bookData = [
   },
   // Additional Unique Books
   {
-    id: 101,
+    id: 88,
     title: 'The Art of Learning',
     author: 'Josh Waitzkin',
     rating: 4.3,
@@ -914,7 +914,7 @@ export const bookData = [
     publishYear: 2007,
   },
   {
-    id: 102,
+    id: 89,
     title: 'Range: Why Generalists Triumph',
     author: 'David Epstein',
     rating: 4.2,
@@ -924,7 +924,7 @@ export const bookData = [
     publishYear: 2019,
   },
   {
-    id: 103,
+    id: 90,
     title: 'The Design of Everyday Things',
     author: 'Don Norman',
     rating: 4.1,
@@ -934,7 +934,7 @@ export const bookData = [
     publishYear: 2013,
   },
   {
-    id: 104,
+    id: 91,
     title: 'Principles: Life and Work',
     author: 'Ray Dalio',
     rating: 4.0,
@@ -944,7 +944,7 @@ export const bookData = [
     publishYear: 2017,
   },
   {
-    id: 105,
+    id: 92,
     title: 'The Checklist Manifesto',
     author: 'Atul Gawande',
     rating: 4.2,
@@ -954,7 +954,7 @@ export const bookData = [
     publishYear: 2009,
   },
   {
-    id: 106,
+    id: 93,
     title: 'Antifragile',
     author: 'Nassim Nicholas Taleb',
     rating: 4.0,
@@ -964,7 +964,7 @@ export const bookData = [
     publishYear: 2012,
   },
   {
-    id: 107,
+    id: 94,
     title: 'The Mom Test',
     author: 'Rob Fitzpatrick',
     rating: 4.5,
@@ -974,7 +974,7 @@ export const bookData = [
     publishYear: 2013,
   },
   {
-    id: 108,
+    id: 95,
     title: 'Hooked: How to Build Habit-Forming Products',
     author: 'Nir Eyal',
     rating: 4.1,
@@ -984,7 +984,7 @@ export const bookData = [
     publishYear: 2014,
   },
   {
-    id: 109,
+    id: 96,
     title: 'The Hard Thing About Hard Things',
     author: 'Ben Horowitz',
     rating: 4.3,
@@ -994,7 +994,7 @@ export const bookData = [
     publishYear: 2014,
   },
   {
-    id: 110,
+    id: 97,
     title: 'Educated',
     author: 'Tara Westover',
     rating: 4.4,
@@ -1004,7 +1004,7 @@ export const bookData = [
     publishYear: 2018,
   },
   {
-    id: 111,
+    id: 98,
     title: 'The Compound Effect',
     author: 'Darren Hardy',
     rating: 4.1,
@@ -1014,7 +1014,7 @@ export const bookData = [
     publishYear: 2010,
   },
   {
-    id: 112,
+    id: 99,
     title: 'Radical Candor',
     author: 'Kim Scott',
     rating: 4.2,
@@ -1024,7 +1024,7 @@ export const bookData = [
     publishYear: 2017,
   },
   {
-    id: 113,
+    id: 100,
     title: 'The Culture Code',
     author: 'Daniel Coyle',
     rating: 4.3,
