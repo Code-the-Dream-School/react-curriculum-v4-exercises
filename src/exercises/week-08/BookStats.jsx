@@ -98,7 +98,7 @@ function BookStats({ books }) {
         count={count}
         className={styles.renderCounter}
       />
-      <div className={styles.benchmarkInfo}>
+      <div>
         ⏱️ Calculation time: {stats.calculationTime}ms ({stats.microseconds}μs)
       </div>
       <h3 className={styles.statsTitle}>📊 Library Statistics</h3>
