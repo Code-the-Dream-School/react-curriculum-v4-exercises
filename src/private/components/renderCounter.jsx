@@ -9,7 +9,7 @@ export const useRenderCounter = (componentName) => {
   const renderCount = useRef(0);
   const [, forceUpdate] = useState({});
 
-  // eslint-disable-next-line react-hooks/refs
+  // eslint-disable-next-line
   renderCount.current++;
 
   // Optional: Log renders to console for debugging
@@ -17,9 +17,9 @@ export const useRenderCounter = (componentName) => {
     console.log(`${componentName} rendered ${renderCount.current} times`);
   });
 
-  // eslint-disable-next-line react-hooks/refs
+  // eslint-disable-next-line
   return {
-    // eslint-disable-next-line react-hooks/refs
+    // eslint-disable-next-line
     count: renderCount.current,
     reset: () => {
       renderCount.current = 0;
