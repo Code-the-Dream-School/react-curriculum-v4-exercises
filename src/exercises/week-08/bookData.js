@@ -1,5 +1,5 @@
 // Professional Book Library Dataset
-// 1000 curated books appropriate for educational/workplace settings
+// 100 curated books appropriate for educational/workplace settings
 // Array-based genres allow books to span multiple categories
 
 export const bookData = [
