@@ -11,7 +11,7 @@ function BookList({ books, sortBy, favorites, onToggleFavorite }) {
 
   // TODO #3: Optimize this expensive sorting operation with useMemo
   // This sorting runs on every render, even when books haven't changed
-  const sortedBooks = books.sort((a, b) => {
+  const sortedBooks = books.toSorted((a, b) => {
     switch (sortBy) {
       case 'title':
         return a.title.localeCompare(b.title);

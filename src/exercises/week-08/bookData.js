@@ -1041,7 +1041,7 @@ export const getAllGenres = () => {
   bookData.forEach((book) => {
     book.genres.forEach((genre) => genreSet.add(genre));
   });
-  return Array.from(genreSet).sort();
+  return Array.from(genreSet).toSorted();
 };
 
 // Utility function to filter books by genre
