@@ -27,6 +27,7 @@ function BookStats({ books }) {
 
     // Handle empty books array
     if (totalBooks === 0) {
+      // eslint-disable-next-line react-hooks/purity
       const endTime = performance.now();
       const calculationTime = endTime - startTime;
       const microseconds = calculationTime * 1000;
