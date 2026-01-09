@@ -4,7 +4,6 @@ import {
 } from '../../private/components/renderCounter.jsx';
 import styles from './BookCard.module.css';
 
-// Individual Book Card Component - Will re-render unnecessarily without optimization
 function BookCard({ book, isFavorite, onToggleFavorite }) {
   const { count } = useRenderCounter('BookCard');
 
