@@ -173,6 +173,7 @@ Using this naming convention ensures that GitHub's automatic issue tracking link
    npm run lint
    npm test   # optional — only if tests exist for the affected week
    ```
+   Fix any linting errors that appear. Errors caused by intentionally buggy exercise code can be safely ignored.
 5. **Open a pull request** from your branch to `main`.
    - Reference the issue in the PR description using `Closes #<number>` or `Fixes #<number>`.
    - Provide a brief summary of what changed and why.
