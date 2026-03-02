@@ -88,7 +88,7 @@ The project uses **ESLint** and **Prettier** for consistent code style.
 - Prettier is configured in `.prettierrc` and runs automatically via a Husky pre-commit hook (powered by `lint-staged`) on `*.js`, `*.jsx`, `*.css`, and `*.md` files.
 - ESLint is configured in `eslint.config.js`.
 
-Run `npm run lint` before opening a pull request to ensure no linting errors are introduced. If an exercise intentionally introduces buggy code as part of the learning scenario, suppress those specific linting errors with inline `eslint-disable` comments so the rest of the project still lints cleanly.
+Run `npm run lint` before opening a pull request to ensure no linting errors are introduced. Linting errors that result from intentionally buggy code added to support an exercise can be safely ignored.
 
 ---
 
