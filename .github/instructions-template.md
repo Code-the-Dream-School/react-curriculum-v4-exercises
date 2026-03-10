@@ -1,20 +1,20 @@
-# Week-[XX] [Topic Title]
+# Lesson-[XX] [Topic Title]
 
 ## Exercise Objectives
 
-Welcome to Week [XX] of the React curriculum! 🎉 This week you will:
+Welcome to Lesson [XX] of the React curriculum! 🎉 This lesson you will:
 
 - [Learning goal 1 — specific and measurable]
 - [Learning goal 2]
 - [Learning goal 3]
 
-By the end of this week, you should understand [brief summary of key takeaway].
+By the end of this lesson, you should understand [brief summary of key takeaway].
 
 ---
 
 ## Scenario Details
 
-[Describe the fictional app, dataset, or problem that provides the context for this week's exercise. Explain what the app does and what state it is currently in — e.g., "You've been handed a partially built task manager that …".]
+[Describe the fictional app, dataset, or problem that provides the context for this lesson's exercise. Explain what the app does and what state it is currently in — e.g., "You've been handed a partially built task manager that …".]
 
 ---
 
@@ -49,5 +49,5 @@ By the end of this week, you should understand [brief summary of key takeaway].
 
 ## Reminders
 
-- [Tip or common pitfall relevant to this week's topic]
+- [Tip or common pitfall relevant to this lesson's topic]
 - [Another reminder if needed]

@@ -1,11 +1,11 @@
 import { Hero } from '../components/hero';
-import WeeklyExercises from '../components/weekly-exercises';
+import LessonExercises from '../components/lesson-exercises';
 
 export default function Landing() {
   return (
     <div className="landing-page">
       <Hero />
-      <WeeklyExercises />
+      <LessonExercises />
     </div>
   );
 }

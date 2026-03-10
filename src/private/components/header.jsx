@@ -1,6 +1,6 @@
 import logo from '../assets/ctd_worded_logo_720.png';
 import Styles from '../../styles/header.module.css';
-import WeekDropdown from './weekDropdown.jsx';
+import LessonDropdown from './lessonDropdown.jsx';
 
 export default function Header() {
   return (
@@ -9,7 +9,7 @@ export default function Header() {
         <a href="/" style={{ display: 'inline-block' }}>
           <img src={logo} alt="CTD Logo" style={{ height: 48 }} />
         </a>
-        <WeekDropdown buttonLabel="Lessons" />
+        <LessonDropdown buttonLabel="Lessons" />
       </div>
     </header>
   );

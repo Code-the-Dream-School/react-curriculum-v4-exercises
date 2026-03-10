@@ -2,11 +2,11 @@
 
 import { StudentOutput } from '../private/components/studentOutput.jsx';
 
-export default function ExerciseSection({ title, StudentWork, week }) {
+export default function ExerciseSection({ title, StudentWork, lesson }) {
   return (
     <section>
       <h2>{title}</h2>
-      <StudentOutput title="student output" week={week}>
+      <StudentOutput title="student output" lesson={lesson}>
         {StudentWork ? <StudentWork /> : null}
       </StudentOutput>
     </section>
