@@ -2,11 +2,11 @@
 
 ## Exercise objectives
 
-Welcome to Lesson 07 of the React curriculum! 🎉 For this exercise builds on what you've learned about fetching data and updating your UI.
+This exercise builds on what you've learned about fetching data and updating your UI.
 
 ## Scenario details
 
-In lesson-07's exercises, you're going to build two components that fetch and display data from an API.
+In lesson-07's exercise, you're going to build two components that fetch and display data from an API.
 
 - `<FetchOnRender />`: This component fetches _a list of posts_ as soon as it renders, then displays them.
 - `<FetchOnClick />`: This component fetches _a single post_ when a button is clicked, then displays that post.
@@ -17,7 +17,7 @@ These components are partially implemented; your job is to complete them.
 
 ### The relevant files
 
-To complete these exercises, you will work in the following files:
+To complete this exercise, you will work in the following files:
 
 - `src/exercises/lesson-07/FetchOnRender.jsx`: This is the component that fetches a list of posts as soon as it's rendered.
 - `src/exercises/lesson-07/FetchOnClick.jsx`: This is the component that fetches a single post when a button inside of it is clicked.

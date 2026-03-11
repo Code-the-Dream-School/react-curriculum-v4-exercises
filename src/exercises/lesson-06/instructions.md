@@ -2,7 +2,7 @@
 
 ## Exercise Objectives
 
-Welcome to Lesson 06 of the React curriculum! 🎉 This exercise builds directly on what you've learned about state, effects, and component composition in previous lessons. As React applications grow, placing all logic and UI in a single component quickly becomes difficult to read, reuse, and maintain.
+This exercise builds directly on what you've learned about state, effects, and component composition in previous lessons. As React applications grow, placing all logic and UI in a single component quickly becomes difficult to read, reuse, and maintain.
 
 For this exercise, you'll go deeper into:
 
@@ -16,7 +16,7 @@ By the end of this exercise, you should understand how to break large components
 
 ## Scenario Details
 
-In lesson-06's exercises, you are given one large React component that technically works, but is poorly organized and difficult to maintain.
+In lesson-06's exercise, you are given one large React component that technically works, but is poorly organized and difficult to maintain.
 
 The component:
 
@@ -31,7 +31,7 @@ Your job is to refactor the code step by step, improving structure and readabili
 
 ## Instructions
 
-You will complete four refactoring exercises using a single file:
+You will complete four refactoring steps using a single file:
 
 ```
 src/exercises/lesson-06/StudentWork.jsx

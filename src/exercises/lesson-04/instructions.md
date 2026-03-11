@@ -2,7 +2,7 @@
 
 ## Exercise Objectives
 
-Welcome to Lesson 04 of the React curriculum! 🎉 This exercise builds directly on what you learned about state and effects in Lesson 03. You'll go deeper into:
+This exercise builds directly on what you learned about state and effects in Lesson 03. You'll go deeper into:
 
 - Handling StrictMode's double effect invocation
 - Cleanup functions for effects
@@ -17,7 +17,7 @@ By the end of this exercise, you should understand how React actually runs your 
 
 ## Scenario Details
 
-In lesson-04's exercises, you'll be working through five broken or incomplete React components. Each component contains a bug or missing logic related to:
+In lesson-04's exercise, you'll be working through five broken or incomplete React components. Each component contains a bug or missing logic related to:
 
 - Effects
 - Refs
@@ -31,7 +31,7 @@ Your job is to fix the components, understand why they were broken, and write a 
 
 ## Instructions
 
-You will complete five exercises in the `src/exercises/lesson-04/` folder:
+You will complete five exercise files in the `src/exercises/lesson-04/` folder:
 
 ### 1. BugStrictMode.jsx
 

@@ -1,6 +1,5 @@
 # Lesson-01 - Introduction to React
 
-Welcome to **Lesson 01** of the React curriculum! 🎉  
 For this exercise we’ll get familiar with the basics of React and make sure your local environment is working.
 
 ## Exercise: "About Me" Component

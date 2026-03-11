@@ -1,6 +1,5 @@
 # Lesson-03 Component Lifecycle, Basic Hooks, State, and Props
 
-Welcome to **Lesson 03** of the React curriculum! 🎉
 For this exercise, you’ll begin working with state, props, and basic hooks and just as importantly, you’ll start learning how to debug React code like a real developer.
 
 ## Exercise: React Bug Hunt

@@ -2,7 +2,7 @@
 
 ## Exercise Objectives
 
-Welcome to Lesson [XX] of the React curriculum! 🎉 This lesson you will:
+This lesson you will:
 
 - [Learning goal 1 — specific and measurable]
 - [Learning goal 2]

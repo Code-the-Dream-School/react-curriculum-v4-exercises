@@ -1,6 +1,5 @@
 # Lesson-02 - ReactDOM, Components, JSX, and Troubleshooting
 
-Welcome to **Lesson 02** of the React curriculum! 🎉
 For this exercise you’ll deepen your React foundation by working with ReactDOM, components, and JSX, while organizing your code into multiple files.
 
 ## Exercise: Snack Rankings App
