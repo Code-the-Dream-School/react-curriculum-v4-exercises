@@ -3,7 +3,7 @@
 > [!WARNING]
 > **Always work on your own forked repository. Do NOT create pull requests against the original Code-the-Dream-School repository.**
 
-This repository contains weekly exercises for Code the Dream's 11-week Introduction to React. Each week builds upon previous concepts, covering everything from basic React fundamentals to advanced topics like routing and deployment. Students will work through structured exercises that reinforce core React development skills and best practices.
+This repository contains exercises for Code the Dream's 11-lesson Introduction to React. Each lesson builds upon previous concepts, covering everything from basic React fundamentals to advanced topics like routing and deployment. Students will work through structured exercises that reinforce core React development skills and best practices.
 
 ## Getting Started
 
@@ -14,29 +14,29 @@ This repository contains weekly exercises for Code the Dream's 11-week Introduct
 
 ### Repository Structure
 
-- `src/exercises/` - Contains directories for each week's assignments and instructions
+- `src/exercises/` - Contains directories for each lesson's assignments and instructions
 - `src/private/` - Application framework code (do not modify)
 - `src/tests/` - Test files for validating your work (do not modify)
 
 ### User Interface
 
-Run `npm run dev` to start the development server. The application displays a navigation interface where you can select different weeks. Each week's page shows your code outputs. Your work in each week's `studentWork.jsx` file will be rendered and displayed on that week's page. Depending on the exercise scenario, it may render with an error.
+Run `npm run dev` to start the development server. The application displays a navigation interface where you can select each lessons's exercise. After navigating, page shows your code outputs using a `studentWork.jsx` associated with that lesson's directory. For example, if you select lesson-03, the output that is displayed resides in `src/exercises/lesson-03/studentWork.jsx`. Depending on the exercise scenario, it _may_ initially render with an error.
 
-## Weekly Exercise Workflow
+## Lesson Exercise Workflow
 
 > [!WARNING]
 > **Always work on your own forked repository. Do NOT create pull requests against the original Code-the-Dream-School repository.**
 
 1. **Version Control Setup**
-   - Merge previous week's approved pull request into main branch
-   - Create new weekly branch from main
+   - Merge previous lesson's approved pull request into main branch
+   - Create new lesson branch from main
 
 2. **Read Instructions**
-   - Navigate to `src/exercises/week-[XX]/instructions.md`
-   - Review the week's learning objectives and requirements
+   - Navigate to `src/exercises/lesson-[XX]/instructions.md`
+   - Review the lesson's learning objectives and requirements
 
 3. **Complete Exercises**
-   - Open `src/exercises/week-[XX]/studentWork.jsx`
+   - Open `src/exercises/lesson-[XX]/studentWork.jsx`
    - Follow instructions to implement required functionality
    - Test your work using `npm run dev`
 
@@ -55,7 +55,7 @@ Run `npm run dev` to start the development server. The application displays a na
 
 ❌ **Incorrect link format:**
 `https://github.com/your-username/react-curriculum-v4-exercises` (repository link)
-`https://github.com/your-username/react-curriculum-v4-exercises/tree/exercise-week01` (branch link)
+`https://github.com/your-username/react-curriculum-v4-exercises/tree/exercise-lesson01` (branch link)
 
 ## Code Quality Tools
 

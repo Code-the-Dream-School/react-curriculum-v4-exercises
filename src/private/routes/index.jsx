@@ -10,48 +10,48 @@ export const router = createBrowserRouter([
     element: <Pages.Landing />,
   },
   {
-    path: '/lessons/week-01',
-    element: <Pages.Week01></Pages.Week01>,
+    path: '/lessons/lesson-01',
+    element: <Pages.Lesson01></Pages.Lesson01>,
   },
   {
-    path: '/lessons/week-02',
-    element: <Pages.Week02></Pages.Week02>,
+    path: '/lessons/lesson-02',
+    element: <Pages.Lesson02></Pages.Lesson02>,
   },
   {
-    path: '/lessons/week-03',
-    element: <Pages.Week03></Pages.Week03>,
+    path: '/lessons/lesson-03',
+    element: <Pages.Lesson03></Pages.Lesson03>,
   },
   {
-    path: '/lessons/week-04',
-    element: <Pages.Week04></Pages.Week04>,
+    path: '/lessons/lesson-04',
+    element: <Pages.Lesson04></Pages.Lesson04>,
   },
   {
-    path: '/lessons/week-05',
-    element: <Pages.Week05></Pages.Week05>,
+    path: '/lessons/lesson-05',
+    element: <Pages.Lesson05></Pages.Lesson05>,
   },
   {
-    path: '/lessons/week-06',
-    element: <Pages.Week06></Pages.Week06>,
+    path: '/lessons/lesson-06',
+    element: <Pages.Lesson06></Pages.Lesson06>,
   },
   {
-    path: '/lessons/week-07',
-    element: <Pages.Week07></Pages.Week07>,
+    path: '/lessons/lesson-07',
+    element: <Pages.Lesson07></Pages.Lesson07>,
   },
   {
-    path: '/lessons/week-08',
-    element: <Pages.Week08></Pages.Week08>,
+    path: '/lessons/lesson-08',
+    element: <Pages.Lesson08></Pages.Lesson08>,
   },
   {
-    path: '/lessons/week-09',
-    element: <Pages.Week09></Pages.Week09>,
+    path: '/lessons/lesson-09',
+    element: <Pages.Lesson09></Pages.Lesson09>,
   },
   {
-    path: '/lessons/week-10',
-    element: <Pages.Week10></Pages.Week10>,
+    path: '/lessons/lesson-10',
+    element: <Pages.Lesson10></Pages.Lesson10>,
   },
   {
-    path: '/lessons/week-11',
-    element: <Pages.Week11></Pages.Week11>,
+    path: '/lessons/lesson-11',
+    element: <Pages.Lesson11></Pages.Lesson11>,
   },
 ]);
 
