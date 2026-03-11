@@ -2,7 +2,7 @@
 
 ## Exercise Objectives
 
-Welcome to Lesson 06 of the React curriculum! 🎉 For this exercise builds directly on what you've learned about state, effects, and component composition in previous lessons. As React applications grow, placing all logic and UI in a single component quickly becomes difficult to read, reuse, and maintain.
+Welcome to Lesson 06 of the React curriculum! 🎉 This exercise builds directly on what you've learned about state, effects, and component composition in previous lessons. As React applications grow, placing all logic and UI in a single component quickly becomes difficult to read, reuse, and maintain.
 
 For this exercise, you'll go deeper into:
 
@@ -12,7 +12,7 @@ For this exercise, you'll go deeper into:
 - Creating custom hooks for reusable stateful logic
 - Organizing a React project for scalability
 
-By the end of this lesson, you should understand how to break large components apart, decide where logic belongs, and structure React projects like real-world codebases.
+By the end of this exercise, you should understand how to break large components apart, decide where logic belongs, and structure React projects like real-world codebases.
 
 ## Scenario Details
 

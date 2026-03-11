@@ -2,7 +2,7 @@
 
 ## Exercise Objectives
 
-Welcome to Lesson 04 of the React curriculum! 🎉 For this exercise builds directly on what you learned about state and effects in Lesson 03. You'll go deeper into:
+Welcome to Lesson 04 of the React curriculum! 🎉 This exercise builds directly on what you learned about state and effects in Lesson 03. You'll go deeper into:
 
 - Handling StrictMode's double effect invocation
 - Cleanup functions for effects
@@ -11,7 +11,7 @@ Welcome to Lesson 04 of the React curriculum! 🎉 For this exercise builds dire
 - Event bubbling & `stopPropagation()`
 - Child → parent communication using callback props
 
-By the end of this lesson, you should understand how React actually runs your code, how events flow, and how to work with refs like a real React developer.
+By the end of this exercise, you should understand how React actually runs your code, how events flow, and how to work with refs like a real React developer.
 
 ---
 

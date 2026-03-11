@@ -3,7 +3,7 @@
 > [!WARNING]
 > **Always work on your own forked repository. Do NOT create pull requests against the original Code-the-Dream-School repository.**
 
-This repository contains lesson exercises for Code the Dream's 11-lesson Introduction to React. Each lesson builds upon previous concepts, covering everything from basic React fundamentals to advanced topics like routing and deployment. Students will work through structured exercises that reinforce core React development skills and best practices.
+This repository contains exercises for Code the Dream's 11-lesson Introduction to React. Each lesson builds upon previous concepts, covering everything from basic React fundamentals to advanced topics like routing and deployment. Students will work through structured exercises that reinforce core React development skills and best practices.
 
 ## Getting Started
 
@@ -20,7 +20,7 @@ This repository contains lesson exercises for Code the Dream's 11-lesson Introdu
 
 ### User Interface
 
-Run `npm run dev` to start the development server. The application displays a navigation interface where you can select different lessons. Each lesson's page shows your code outputs. Your work in each lesson's `studentWork.jsx` file will be rendered and displayed on that lesson's page. Depending on the exercise scenario, it may render with an error.
+Run `npm run dev` to start the development server. The application displays a navigation interface where you can select each lessons's exercise. After navigating, page shows your code outputs using a `studentWork.jsx` associated with that lesson's directory. For example, if you select lesson-03, the output that is displayed resides in `src/exercises/lesson-03/studentWork.jsx`. Depending on the exercise scenario, it _may_ initially render with an error.
 
 ## Lesson Exercise Workflow
 
