@@ -2,7 +2,7 @@
 
 ## Exercise Objectives
 
-Welcome to Lesson 04 of the React curriculum! 🎉 This lesson builds directly on what you learned about state and effects in Lesson 03. You'll go deeper into:
+Welcome to Lesson 04 of the React curriculum! 🎉 For this exercise builds directly on what you learned about state and effects in Lesson 03. You'll go deeper into:
 
 - Handling StrictMode's double effect invocation
 - Cleanup functions for effects
@@ -17,7 +17,7 @@ By the end of this lesson, you should understand how React actually runs your co
 
 ## Scenario Details
 
-In this lesson's exercises, you'll be working through five broken or incomplete React components. Each component contains a bug or missing logic related to:
+In lesson-04's exercises, you'll be working through five broken or incomplete React components. Each component contains a bug or missing logic related to:
 
 - Effects
 - Refs

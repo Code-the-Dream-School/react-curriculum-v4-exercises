@@ -2,9 +2,9 @@
 
 ## Exercise Objectives
 
-Welcome to Lesson 06 of the React curriculum! 🎉 This lesson builds directly on what you've learned about state, effects, and component composition in previous lessons. As React applications grow, placing all logic and UI in a single component quickly becomes difficult to read, reuse, and maintain.
+Welcome to Lesson 06 of the React curriculum! 🎉 For this exercise builds directly on what you've learned about state, effects, and component composition in previous lessons. As React applications grow, placing all logic and UI in a single component quickly becomes difficult to read, reuse, and maintain.
 
-This lesson, you'll go deeper into:
+For this exercise, you'll go deeper into:
 
 - Identifying reusable components
 - Refactoring large components without breaking behavior
@@ -16,7 +16,7 @@ By the end of this lesson, you should understand how to break large components a
 
 ## Scenario Details
 
-In this lesson's exercises, you are given one large React component that technically works, but is poorly organized and difficult to maintain.
+In lesson-06's exercises, you are given one large React component that technically works, but is poorly organized and difficult to maintain.
 
 The component:
 

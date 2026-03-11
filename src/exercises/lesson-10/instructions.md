@@ -2,9 +2,9 @@
 
 ## Exercise Objectives
 
-Welcome to Lesson 10 of the React curriculum! 🎉 This lesson focuses ONLY on **routing and navigation** inside a React Single Page Application (SPA) using **React Router**.
+Welcome to Lesson 10 of the React curriculum! 🎉 For this exercise focuses ONLY on **routing and navigation** inside a React Single Page Application (SPA) using **React Router**.
 
-This lesson you will practice the key routing tools taught in the article:
+For this exercise you will practice the key routing tools taught in the article:
 
 - `<Routes>` and `<Route>` for route definitions
 - `<Link>` and `<NavLink>` for navigation without refreshing the page
