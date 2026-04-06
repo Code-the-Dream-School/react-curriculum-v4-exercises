@@ -5,8 +5,9 @@ export default function StudentWork() {
   //add variables here
   return (
     <div>
-      {/* add JSX here */}
-      <p> Student output will go here </p>
+      <h2>About Me</h2>
+      <p> Hello,my name is Nasistu.</p>
+      <p>I am learning React and becoming a full-stack devloper.</p>
     </div>
   );
 }
