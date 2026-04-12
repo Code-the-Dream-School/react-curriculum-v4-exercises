@@ -1,6 +1,6 @@
 export default function SnackList() {
   const snacks = [
-    { name: 'Chips,rank: 3' },
+    { name: 'Chips', rank: 3 },
     { name: 'Chocolate', rank: 1 },
     { name: 'Popcorn', rank: 2 },
     { name: 'Cookies', rank: 4 },
