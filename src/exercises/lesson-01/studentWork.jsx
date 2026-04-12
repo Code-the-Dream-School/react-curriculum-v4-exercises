@@ -11,13 +11,13 @@ export default function StudentWork() {
       <h2>About Me</h2>
       <p>
         {' '}
-        Hello, my name is {name}.I am{age} years old.
+        Hello, my name is {name}.I am {age} years old.
       </p>
-      <U1>
+      <u1>
         {hobbies.map((hobby, index) => (
           <li key={index}>{hobby}</li>
         ))}
-      </U1>
+      </u1>
     </div>
   );
 }
