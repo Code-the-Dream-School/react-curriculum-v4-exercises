@@ -1,12 +1,12 @@
 //Lesson-02 Building with ReactDOM and components
 //Exercise: Build a "Snack Ranking App" Component in this file
 //Import components here
-
-export default function StudentWork() {
-  return (
-    <div>
-      {/* add JSX here */}
-      <p> Student output will go here</p>
-    </div>
-  );
+// import './TodoList.jsx';
+import SnackApp from './SnackApp';
+// import SnackList from "./SnackList";
+// import SnackHeader from "./SnackHeader";
+// import SnackFooter from "./SnackFooter";
+function App() {
+  return <SnackRanking />;
 }
+export default App;

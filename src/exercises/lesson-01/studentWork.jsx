@@ -1,8 +1,6 @@
 //Lesson-01 Introduction to React
 //Exercise: Build an "About Me" Component in this file
 
-import React from 'react';
-
 export default function StudentWork() {
   const information = [
     { id: 1, title: 'Lilian' },
