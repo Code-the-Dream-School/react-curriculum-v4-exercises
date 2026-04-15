@@ -1,5 +1,5 @@
-function Snacklist() {
-  const SnackApp = [
+function SnackList() {
+  const snacks = [
     { name: 'cookies', rank: 3 },
     { name: 'chips', rank: 2 },
     { name: 'pretzel', rank: 1 },

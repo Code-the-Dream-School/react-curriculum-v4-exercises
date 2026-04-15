@@ -5,7 +5,7 @@ import SnackFooter from './SnackFooter';
 function SnackApp() {
   return (
     <>
-      <snackHeaderHeader />
+      <SnackHeader />
       <SnackList />
       <SnackFooter />
     </>

@@ -1,9 +1,9 @@
 function SnackHeader() {
   const SnackRankingApp = [];
   return (
-    <heather>
+    <header>
       <h1>Snack Ranking App </h1>
-    </heather>
+    </header>
   );
 }
 export default SnackHeader;

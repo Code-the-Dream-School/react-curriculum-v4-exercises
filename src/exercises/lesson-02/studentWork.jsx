@@ -7,6 +7,6 @@ import SnackApp from './SnackApp';
 // import SnackHeader from "./SnackHeader";
 // import SnackFooter from "./SnackFooter";
 function App() {
-  return <SnackRanking />;
+  return <SnackApp />;
 }
 export default App;
