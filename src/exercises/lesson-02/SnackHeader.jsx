@@ -1,7 +1,7 @@
 function snackHeader() {
   return (
     <div>
-      <h1></h1>
+      <h1>Snack Rankings</h1>
     </div>
   );
 }
