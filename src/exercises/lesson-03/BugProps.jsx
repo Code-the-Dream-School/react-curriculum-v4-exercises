@@ -11,12 +11,13 @@
 
   Use the commented "Explanation" section at the bottom of this lesson's components.
 */
+import React from 'react';
 
 export default function BugProps({ name = 'friend' }) {
-  let message = 'Hello, ' + name;
+  let [message, setMessage] = React.useState(' Hello, ' + name);
 
   function handleChange() {
-    message = 'Hi, ' + name + '!';
+    setMessage(' Hello, ' + name + '!');
   }
 
   return (
@@ -28,4 +29,4 @@ export default function BugProps({ name = 'friend' }) {
 }
 
 // Explanation:
-// (Write your explanation here)
+// Import useState(or React.useState) create a state for the message to live in. In the handleChange function, call a setState to change the message that would simply be appending an exclamation point to the message state. This way if you ever need the value of the message state elsewhere, its accessible.
