@@ -13,8 +13,7 @@ export default function BugMutatedState() {
   let [count, setCount] = useState(0);
 
   function handleAdd() {
-    count++;
-    setCount(count);
+    setCount((prevCount) => prevCount + 1);
   }
 
   return (
@@ -26,4 +25,4 @@ export default function BugMutatedState() {
 }
 
 // Explanation:
-// (Write your explanation here)
+// React batches updates. This means if you rely on the current snapshot of a component and/or app's state, the results can be highly inconsistent. This leads to stale updates. Relying on the previous state gives you a more accurate comparison regardless of when the update runs. count could be outdated, and prevCount is always a fresh value to compare.
