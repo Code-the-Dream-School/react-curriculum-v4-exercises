@@ -7,9 +7,11 @@ export default function BugStrictMode() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       setCount((c) => c + 1);
     }, 1000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -21,3 +23,4 @@ export default function BugStrictMode() {
 }
 
 // Write your explanation of how StrictMode helps us catch this bug
+// Without the cleanup function, StrictMode will double-mount and unmount any useEffect hooks. The 2nd mount and unmount is a simulated version. This is what helps you catch any on-mount bugs. In our BugStrictMode.jsx's case, the interval ran twice in 1 second. This causes the count to increment by two instead of one.
