@@ -1,31 +1,16 @@
-import { useEffect, useState } from 'react';
-import { tasks } from './utils/tasks.js';
-import { taskValidation } from './hooks/filteringLogic.js';
 import TasksList from './components/TasksList.jsx';
-import FilterButton from './components/FilterButton.jsx';
+import TaskFilterButtonGroup from './components/TaskFilterButtonGroup.jsx';
+import UserProfile from './components/UserProfile.jsx';
+import useTasks from './hooks/useTasks.js';
 import { ClipLoader } from 'react-spinners';
+import { useState } from 'react';
+import { taskValidation } from './utils/filteringLogic.js';
 
 export default function StudentWork() {
-  const [checkListState, setCheckListState] = useState({
-    tasks: [],
-    filter: 'all',
-    loading: true,
-  });
+  const [filter, setFilter] = useState('all');
+  const { tasks, loading } = useTasks();
 
-  //  #1: Data fetching + state + UI logic all mixed together
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setCheckListState((prevState) => ({
-        ...prevState,
-        tasks: tasks,
-        loading: false,
-      }));
-    }, 500);
-
-    return () => clearTimeout(timeout);
-  }, []);
-
-  if (checkListState.loading) {
+  if (loading) {
     return (
       <>
         <p>Loading tasks </p>
@@ -35,31 +20,17 @@ export default function StudentWork() {
   }
 
   function handleTaskValidation(selectedFilter) {
-    setCheckListState((prevState) => ({
-      ...prevState,
-      filter: selectedFilter,
-    }));
+    setFilter(selectedFilter);
   }
 
-  const filteredTasks = taskValidation(
-    checkListState.tasks,
-    checkListState.filter
-  );
+  const filteredTasks = taskValidation(tasks, filter);
 
   return (
     <div>
-      <h2>Welcome, Student</h2>
       <div>
-        <FilterButton filter="all" validationCheck={handleTaskValidation}>
-          All
-        </FilterButton>
-        <FilterButton filter="completed" validationCheck={handleTaskValidation}>
-          Completed
-        </FilterButton>
-        <FilterButton filter="pending" validationCheck={handleTaskValidation}>
-          Pending
-        </FilterButton>
-        <p>Current filter: {checkListState.filter}</p>
+        <UserProfile />
+        <TaskFilterButtonGroup handleTaskValidation={handleTaskValidation} />
+        <p>Current filter: {filter}</p>
       </div>
       <TasksList tasks={filteredTasks} />
     </div>
