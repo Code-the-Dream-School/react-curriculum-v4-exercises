@@ -14,8 +14,8 @@ export default function BugEffectLoop() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setCount(count + 1);
-  });
+    setCount((previous) => previous + 1);
+  }, []);
 
   return <p>Bug 1 Count: {count}</p>;
 }
