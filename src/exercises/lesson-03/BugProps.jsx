@@ -29,3 +29,8 @@ export default function BugProps({ name = 'friend' }) {
 
 // Explanation:
 // (Write your explanation here)
+// React does not track changes to normal variables,
+// so updating the value does not trigger a re-render.
+// As a result, the UI does not update when the button is clicked.
+// Use useState and update the value using setMessage,
+// so React can properly re-render the component when the state changes.
