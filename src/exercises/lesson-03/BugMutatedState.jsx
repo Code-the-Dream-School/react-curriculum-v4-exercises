@@ -26,3 +26,4 @@ export default function BugMutatedState() {
 
 // Explanation:
 // (Write your explanation here)
+// By direct changing the state React cann't track direct state mutations, which can cause the UI to behave incorrectly.
