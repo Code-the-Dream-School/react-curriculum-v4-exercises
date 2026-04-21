@@ -50,3 +50,4 @@ Once your About Me page displays correctly in the browser:
 
 Great Job getting through Lesson 01!
 if your page runs without errors, treat yourself to a snack. You’ve earned it. 🍪
+origin lesson-01-setup
