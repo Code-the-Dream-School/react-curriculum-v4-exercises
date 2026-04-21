@@ -14,11 +14,18 @@ export default function BugEffectLoop() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setCount(count + 1);
-  });
+    const timer = setTimeout(() => {
+      setCount((prevCount) => prevCount + 1);
+    }, 0);
 
+    return () => clearTimeout(timer);
+  }, []);
   return <p>Bug 1 Count: {count}</p>;
 }
 
 // Explanation:
 // (Write your explanation here)
+// Earlier useEffect had no dependency array, so it ran after every render.
+// Since setCount updates state, it caused continuous re-renders.
+// Adding [] makes the effect run only once after the first render,
+// preventing the infinite loop.
