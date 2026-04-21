@@ -22,4 +22,7 @@ export default function BugEffectLoop() {
 
 // Explanation:
 // The bug happened because useEffect was running after every render.
-//Inside the effect,set
+//Inside the effect,setCount updated the state, which caused another render.
+// and created an infinite  loop.
+// I fixed it by adding an empty dependency array so the effect only runs once
+// when the componet mounts.
