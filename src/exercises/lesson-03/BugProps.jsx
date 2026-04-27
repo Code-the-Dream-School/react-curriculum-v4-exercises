@@ -11,12 +11,11 @@
 
   Use the commented "Explanation" section at the bottom of this lesson's components.
 */
-
+import { useState } from 'react';
 export default function BugProps({ name = 'friend' }) {
-  let message = 'Hello, ' + name;
-
+  const [message, setMessage] = useState('Hello, ' + name);
   function handleChange() {
-    message = 'Hi, ' + name + '!';
+    setMessage('Hi, ' + name + '!');
   }
 
   return (
@@ -28,4 +27,6 @@ export default function BugProps({ name = 'friend' }) {
 }
 
 // Explanation:
-// (Write your explanation here)
+// The original code used a regular local variable (let message) to store the greeting.
+// React does not track changes to regular variables, so updating it did not trigger a UI re-render.
+// I fixed this by using the useState hook. Now, when handleChange calls setMessage, React knows the state has changed and re-renders the component to show the new message.
