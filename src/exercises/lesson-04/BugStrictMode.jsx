@@ -8,16 +8,23 @@ export default function BugStrictMode() {
 
   useEffect(() => {
     setInterval(() => {
-      setCount((c) => c + 1);
+      setCount((prevCount) => prevCount + 1);
     }, 1000);
   }, []);
 
+  return () => {
+    clearInterval(intevalId);
+  };
+
   return (
-    <div>
-      <h2>StrictMode Timer Bug</h2>
-      <p>Count: {count}</p>
-    </div>
+    <>
+      <h2>Count: {count}</h2>
+      <div>
+        <h2>StrictMode Timer Bug</h2>
+        <p>Count: {count}</p>
+      </div>
+    </>
   );
 }
 
-// Write your explanation of how StrictMode helps us catch this bug
+// Write your explanation of how StrictMode helps us catch this bug because it run it again

@@ -7,6 +7,7 @@ export default function BugEventPropagation() {
   }
 
   function handleInnerClick() {
+    event.stopPropagation();
     alert('Button Clicked ✅');
   }
 
