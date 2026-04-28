@@ -1,13 +1,10 @@
 // TOPIC: Choose the correct tool: useRef vs useState
-
-import { useState } from 'react';
-
 // TASK: Make sure it updates the text *without* triggering a re-render
 export default function FindCorrectHook() {
-  const [clickCount, setClickCount] = useState(0);
+  let clickCount = 0; // ← incorrect implementation
 
   function handleClick() {
-    setClickCount((prev) => prev + 1);
+    clickCount++;
   }
 
   return (
