@@ -4,5 +4,5 @@
 import Parent from './Parent';
 
 export default function BugChildParentCommunication() {
-  return <button onClick={onIncrement}>Increment Counter</button>;
+  return <Parent />;
 }

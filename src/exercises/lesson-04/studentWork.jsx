@@ -18,3 +18,4 @@ function StudentWork() {
     </div>
   );
 }
+export default StudentWork;
