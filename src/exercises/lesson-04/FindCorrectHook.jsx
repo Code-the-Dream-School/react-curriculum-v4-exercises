@@ -21,3 +21,5 @@ export default function FindCorrectHook() {
     </div>
   );
 }
+// useState causes a re-render when the value changes, which automatically updates the UI.
+// But useRef stores a mutable value that does not trigger re-render.
