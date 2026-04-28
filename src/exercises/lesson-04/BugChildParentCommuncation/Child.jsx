@@ -1,3 +1,3 @@
 export default function Child({ addIncrement }) {
-  return <button onClick={() => {}}>Increment Counter</button>;
+  return <button onClick={addIncrement}>Increment Counter</button>;
 }
