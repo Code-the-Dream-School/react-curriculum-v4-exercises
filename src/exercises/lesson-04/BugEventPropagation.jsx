@@ -23,3 +23,4 @@ export default function BugEventPropagation() {
     </>
   );
 }
+// stopPropagation can prevents the click event from bubbling to the parent.
