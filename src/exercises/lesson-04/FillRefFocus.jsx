@@ -17,3 +17,4 @@ export default function FillRefFocus() {
     </div>
   );
 }
+// useRef can get a reference to the input element.
