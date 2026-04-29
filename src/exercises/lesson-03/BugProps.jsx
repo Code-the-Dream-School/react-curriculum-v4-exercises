@@ -14,7 +14,7 @@
 import { useState } from 'react';
 
 export default function BugProps({ name = 'friend' }) {
-  const [message, SetMessage] = useState('Hello,' + name);
+  const [message, setMessage] = useState('Hello,' + name);
 
   function handleChange() {
     setMessage('Hi, ' + name + '!');
