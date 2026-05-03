@@ -1,32 +1,22 @@
 import { useEffect, useState } from 'react';
+import UserProfile from './src/components/UserProfile.jsx';
+import TaskFilterButton from './src/components/TaskFilterButton.jsx';
+import SingleTask from './src/components/SingleTask.jsx';
+import { filterTasks } from './src/utils/filterTasks.js';
+import { useFetchData } from './src/hooks/useFetchData.js';
 
 export default function StudentWork() {
-  const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState('all');
-  const [loading, setLoading] = useState(true);
+  const studentName = 'Kelli';
 
+  // ✔️ data fetching + state moved to fetchData
   //  #1: Data fetching + state + UI logic all mixed together
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setTasks([
-        { id: 1, title: 'Learn React', completed: true },
-        { id: 2, title: 'Refactor code', completed: false },
-        { id: 3, title: 'Organize files', completed: false },
-      ]);
-      setLoading(false);
-    }, 500);
+  const { tasks, loading } = useFetchData();
 
-    return () => clearTimeout(timeout);
-  }, []);
-
+  // ✔️ filtering logic moved to filterTasks.js
   // #2: Filtering logic inside component
-  let visibleTasks = tasks;
-  if (filter === 'completed') {
-    visibleTasks = tasks.filter((task) => task.completed);
-  }
-  if (filter === 'pending') {
-    visibleTasks = tasks.filter((task) => !task.completed);
-  }
+
+  const visibleTasks = filterTasks(tasks, filter);
 
   if (loading) {
     return <p>Loading tasks...</p>;
@@ -34,23 +24,19 @@ export default function StudentWork() {
 
   return (
     <div>
-      {/* #3: Hardcoded UI, not reusable */}
-      <h2>Welcome, Student</h2>
+      {/* ✔️ reusuable now 
+      #3: Hardcoded UI, not reusable */}
+      <UserProfile studentName={studentName} />
 
-      {/* #4: Repeated button JSX */}
-      <div>
-        <button onClick={() => setFilter('all')}>All</button>
-        <button onClick={() => setFilter('completed')}>Completed</button>
-        <button onClick={() => setFilter('pending')}>Pending</button>
-        <p>Current filter: {filter}</p>
-      </div>
+      {/* ✔️ moved to TaskFilterButton
+      #4: Repeated button JSX */}
+      <TaskFilterButton setFilter={setFilter} filter={filter} />
 
-      {/* #5: Inline list rendering */}
+      {/* ✔️ single task moved to SingleTask 
+      #5: Inline list rendering */}
       <ul>
         {visibleTasks.map((task) => (
-          <li key={task.id}>
-            {task.title} {task.completed ? '✅' : '⏳'}
-          </li>
+          <SingleTask task={task} key={task.id} />
         ))}
       </ul>
     </div>
