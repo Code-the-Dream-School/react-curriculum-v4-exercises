@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import styles from './SnackForm.module.css';
 
 export default function SnackForm({
@@ -9,16 +10,31 @@ export default function SnackForm({
 }) {
   const isEditing = Boolean(editingSnack);
 
+  const [name, setName] = useState('');
+  const [rating, setRating] = useState('');
+  const [touched, setTouched] = useState({ name: false, rating: false });
+
+  useEffect(() => {
+    if (isEditing) {
+      setName(editingSnack.name);
+      setRating(editingSnack.rating);
+    } else {
+      setName('');
+      setRating('');
+    }
+    setTouched({ name: false, rating: false });
+  }, [editingSnack, isEditing]);
+
   function handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const rating = formData.get('rating');
+    const formName = formData.get('name');
+    const formRating = formData.get('rating');
 
     if (isEditing) {
-      updateSnack(editingSnack.id, name, rating);
+      updateSnack(editingSnack.id, formName, formRating);
     } else {
-      addSnack(name, rating);
+      addSnack(formName, formRating);
       e.target.reset();
     }
   }
@@ -37,7 +53,9 @@ export default function SnackForm({
         <input
           type="text"
           name="name"
-          defaultValue={isEditing ? editingSnack.name : ''}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          onFocus={() => setTouched((prev) => ({ ...prev, name: true }))}
           required
           className={styles['field-input']}
           placeholder="Enter snack name"
@@ -49,7 +67,9 @@ export default function SnackForm({
         <input
           type="number"
           name="rating"
-          defaultValue={isEditing ? editingSnack.rating : ''}
+          value={rating}
+          onChange={(e) => setRating(e.target.value)}
+          onFocus={() => setTouched((prev) => ({ ...prev, rating: true }))}
           required
           min="1"
           max="5"
