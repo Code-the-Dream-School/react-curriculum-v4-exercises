@@ -7,9 +7,11 @@ export default function BugStrictMode() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       setCount((c) => c + 1);
     }, 1000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -21,3 +23,8 @@ export default function BugStrictMode() {
 }
 
 // Write your explanation of how StrictMode helps us catch this bug
+// The problem was that the effect didn't have a cleanup function, so every time it ran,
+// it would create a new setInterval without stopping the old one. This meant multiple timers
+// were running at the same time, making the count go up way too fast. StrictMode caught this
+// by running the effect twice in development mode, which made the bug super obvious.
+// I fixed it by adding a cleanup function to clear the interval, so now only one timer runs.

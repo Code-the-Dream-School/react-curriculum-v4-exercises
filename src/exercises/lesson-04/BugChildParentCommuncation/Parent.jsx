@@ -12,7 +12,7 @@ export default function Parent() {
     <div>
       <h2>Parent-Child Communication</h2>
       <p>Counter: {count}</p>
-      <Child />
+      <Child onIncrement={increment} />
     </div>
   );
 }
