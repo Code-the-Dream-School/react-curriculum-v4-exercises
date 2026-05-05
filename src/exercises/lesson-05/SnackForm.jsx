@@ -54,6 +54,12 @@ export default function SnackForm({
     return rating !== '';
   }
 
+  function getNameError() {
+    if (!validateName() & touched.name) {
+      return 'Snack name is required';
+    }
+  }
+
   return (
     <form
       onSubmit={handleSubmit}
