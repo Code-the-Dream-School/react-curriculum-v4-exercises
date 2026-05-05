@@ -46,6 +46,10 @@ export default function SnackForm({
     }
   }
 
+  function validateName() {
+    return name.trim() !== '';
+  }
+
   return (
     <form
       onSubmit={handleSubmit}
