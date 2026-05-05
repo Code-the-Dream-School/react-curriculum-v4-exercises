@@ -25,6 +25,11 @@ export default function SnackForm({
       setName('');
       setRating('');
     }
+
+    setTouched({
+      name: false,
+      rating: false,
+    });
   }, [editingSnack]);
 
   function handleSubmit(e) {
