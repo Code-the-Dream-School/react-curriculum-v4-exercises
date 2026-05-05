@@ -34,7 +34,8 @@ export default function SnackForm({
 
   function handleSubmit(e) {
     e.preventDefault();
-
+    name;
+    rating;
     if (isEditing) {
       updateSnack(editingSnack.id, name, rating);
     } else {
