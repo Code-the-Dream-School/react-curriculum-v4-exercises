@@ -55,8 +55,14 @@ export default function SnackForm({
   }
 
   function getNameError() {
-    if (!validateName() & touched.name) {
+    if (!validateName() && touched.name) {
       return 'Snack name is required';
+    }
+  }
+
+  function getRatingError() {
+    if (!validateRating() && touched.rating) {
+      return 'Please select a rating';
     }
   }
 
