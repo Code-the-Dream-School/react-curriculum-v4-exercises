@@ -34,9 +34,6 @@ export default function SnackForm({
 
   function handleSubmit(e) {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const rating = formData.get('rating');
 
     if (isEditing) {
       updateSnack(editingSnack.id, name, rating);
