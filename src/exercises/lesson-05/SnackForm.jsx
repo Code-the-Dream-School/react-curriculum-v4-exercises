@@ -46,7 +46,8 @@ export default function SnackForm({
       updateSnack(editingSnack.id, name, rating);
     } else {
       addSnack(name, rating);
-      e.target.reset();
+      setName('');
+      setRating('');
     }
   }
 
