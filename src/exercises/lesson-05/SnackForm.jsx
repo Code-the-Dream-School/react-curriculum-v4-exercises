@@ -1,5 +1,6 @@
 import styles from './SnackForm.module.css';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 export default function SnackForm({
   addSnack,
@@ -15,6 +16,16 @@ export default function SnackForm({
     name: false,
     rating: false,
   });
+
+  useEffect(() => {
+    if (editingSnack) {
+      setName(editingSnack.name);
+      setRating(editingSnack.rating);
+    } else {
+      setName('');
+      setRating('');
+    }
+  }, [editingSnack]);
 
   function handleSubmit(e) {
     e.preventDefault();
