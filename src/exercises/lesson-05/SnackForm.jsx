@@ -61,6 +61,7 @@ export default function SnackForm({
           type="text"
           name="name"
           value={name}
+          onChange={(e) => setName(e.target.value)}
           required
           className={styles['field-input']}
           placeholder="Enter snack name"
@@ -73,6 +74,7 @@ export default function SnackForm({
           type="number"
           name="rating"
           value={rating}
+          onChange={(e) => setRating(e.target.value)}
           required
           min="1"
           max="5"
