@@ -60,7 +60,7 @@ export default function SnackForm({
         <input
           type="text"
           name="name"
-          defaultValue={isEditing ? editingSnack.name : ''}
+          value={name}
           required
           className={styles['field-input']}
           placeholder="Enter snack name"
@@ -72,7 +72,7 @@ export default function SnackForm({
         <input
           type="number"
           name="rating"
-          defaultValue={isEditing ? editingSnack.rating : ''}
+          value={rating}
           required
           min="1"
           max="5"
