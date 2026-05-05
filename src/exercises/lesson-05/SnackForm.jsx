@@ -11,6 +11,10 @@ export default function SnackForm({
   const isEditing = Boolean(editingSnack);
   const [name, setName] = useState('');
   const [rating, setRating] = useState('');
+  const [touched, setTouched] = useState({
+    name: false,
+    rating: false,
+  });
 
   function handleSubmit(e) {
     e.preventDefault();
