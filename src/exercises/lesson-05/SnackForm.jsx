@@ -50,6 +50,10 @@ export default function SnackForm({
     return name.trim() !== '';
   }
 
+  function validateRating() {
+    return rating !== '';
+  }
+
   return (
     <form
       onSubmit={handleSubmit}
