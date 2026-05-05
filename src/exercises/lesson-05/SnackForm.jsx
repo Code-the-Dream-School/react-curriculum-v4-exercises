@@ -86,6 +86,7 @@ export default function SnackForm({
           className={styles['field-input']}
           placeholder="Enter snack name"
         />
+        {getNameError() && <div className={styles.error}>{getNameError()}</div>}
       </div>
 
       <div className={styles['field-container']}>
