@@ -1,106 +1,151 @@
-import { useState } from 'react';
-import SnackForm from './SnackForm';
-import styles from './SnackManager.module.css';
+import { useEffect, useState } from 'react';
+import styles from './SnackForm.module.css';
 
-export default function SnackManager() {
-  const [snacks, setSnacks] = useState([
-    { id: 1, name: 'Chocolate Chip Cookies', rating: 5 },
-    { id: 2, name: 'Apple Slices', rating: 3 },
-    { id: 3, name: 'Trail Mix', rating: 4 },
-  ]);
+export default function SnackForm({
+  addSnack,
+  editingSnack,
+  cancelEdit,
+  updateSnack,
+  className,
+}) {
+  const isEditing = Boolean(editingSnack);
 
-  const [nextId, setNextId] = useState(4);
-  const [editingSnack, setEditingSnack] = useState(null);
+  const [name, setName] = useState('');
+  const [rating, setRating] = useState('');
+  const [touched, setTouched] = useState({
+    name: false,
+    rating: false,
+  });
 
-  function addSnack(name, rating) {
-    const newSnack = {
-      id: nextId,
-      name: name.trim(),
-      rating: parseInt(rating, 10),
-    };
-    setSnacks([...snacks, newSnack]);
-    setNextId(nextId + 1);
+  useEffect(() => {
+    if (isEditing) {
+      setName(editingSnack.name);
+      setRating(String(editingSnack.rating));
+    } else {
+      setName('');
+      setRating('');
+    }
+
+    setTouched({
+      name: false,
+      rating: false,
+    });
+  }, [editingSnack, isEditing]);
+
+  function validateName() {
+    return name.trim() !== '';
   }
 
-  function updateSnack(id, name, rating) {
-    setSnacks(
-      snacks.map((snack) =>
-        snack.id === id
-          ? { ...snack, name: name.trim(), rating: parseInt(rating, 10) }
-          : snack
-      )
-    );
-    setEditingSnack(null);
+  function validateRating() {
+    return rating !== '';
   }
 
-  function deleteSnack(id) {
-    setSnacks(snacks.filter((snack) => snack.id !== id));
-    if (editingSnack && editingSnack.id === id) {
-      setEditingSnack(null);
+  function getNameError() {
+    if (touched.name && !validateName()) {
+      return 'Snack name is required';
+    }
+
+    return '';
+  }
+
+  function getRatingError() {
+    if (touched.rating && !validateRating()) {
+      return 'Please select a rating';
+    }
+
+    return '';
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!validateName() || !validateRating()) {
+      setTouched({
+        name: true,
+        rating: true,
+      });
+      return;
+    }
+
+    if (isEditing) {
+      updateSnack(editingSnack.id, name, rating);
+    } else {
+      addSnack(name, rating);
+      setName('');
+      setRating('');
+      setTouched({
+        name: false,
+        rating: false,
+      });
     }
   }
 
-  function startEdit(snack) {
-    setEditingSnack(snack);
-  }
-
-  function cancelEdit() {
-    setEditingSnack(null);
-  }
+  const nameError = getNameError();
+  const ratingError = getRatingError();
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>Snack Manager</h2>
+    <form
+      onSubmit={handleSubmit}
+      className={`${styles.form} ${className || ''}`}
+    >
+      <h3 className={styles['form-title']}>
+        {isEditing ? '✏️ Edit Snack' : '➕ Add Snack'}
+      </h3>
 
-      <SnackForm
-        addSnack={addSnack}
-        editingSnack={editingSnack}
-        cancelEdit={cancelEdit}
-        updateSnack={updateSnack}
-        className={styles['exercise-area']}
-      />
+      <div className={styles['field-container']}>
+        <label className={styles['field-label']}>Name:</label>
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          onFocus={() => setTouched((prev) => ({ ...prev, name: true }))}
+          className={`${styles['field-input']} ${
+            nameError ? styles['input-error'] : ''
+          }`}
+          placeholder="Enter snack name"
+        />
 
-      <div className={styles['snacks-section']}>
-        <h3 className={styles['snacks-title']}>
-          Current Snacks ({snacks.length})
-        </h3>
-        {snacks.length === 0 ? (
-          <p className={styles['empty-message']}>
-            No snacks yet. Add one above!
-          </p>
-        ) : (
-          <div className={styles['snacks-list']}>
-            {snacks.map((snack) => (
-              <div
-                key={snack.id}
-                className={`${styles['snack-item']} ${editingSnack && editingSnack.id === snack.id ? styles['snack-item-editing'] : ''}`}
-              >
-                <div className={styles['snack-info']}>
-                  <div className={styles['snack-name']}>{snack.name}</div>
-                  <div className={styles['snack-rating']}>
-                    Rating: {'⭐'.repeat(snack.rating)} ({snack.rating}/5)
-                  </div>
-                </div>
-                <div className={styles['snack-actions']}>
-                  <button
-                    onClick={() => startEdit(snack)}
-                    className={`${styles['action-button']} ${styles['edit-button']}`}
-                    disabled={editingSnack !== null}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => deleteSnack(snack.id)}
-                    className={`${styles['action-button']} ${styles['delete-button']}`}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+        {nameError && <div className={styles.error}>{nameError}</div>}
+      </div>
+
+      <div className={styles['field-container']}>
+        <label className={styles['field-label']}>Rating:</label>
+        <input
+          type="number"
+          name="rating"
+          value={rating}
+          onChange={(e) => setRating(e.target.value)}
+          onFocus={() => setTouched((prev) => ({ ...prev, rating: true }))}
+          min="1"
+          max="5"
+          className={`${styles['field-input']} ${
+            ratingError ? styles['input-error'] : ''
+          }`}
+          placeholder="Rate 1-5"
+        />
+
+        {ratingError && <div className={styles.error}>{ratingError}</div>}
+      </div>
+
+      <div className={styles['button-container']}>
+        <button
+          type="submit"
+          className={`${styles.button} ${styles['submit-button']}`}
+        >
+          {isEditing ? 'Save' : 'Add'}
+        </button>
+
+        {isEditing && (
+          <button
+            type="button"
+            onClick={cancelEdit}
+            className={`${styles.button} ${styles['cancel-button']}`}
+          >
+            Cancel
+          </button>
         )}
       </div>
-    </div>
+    </form>
   );
 }
