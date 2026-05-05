@@ -34,8 +34,14 @@ export default function SnackForm({
 
   function handleSubmit(e) {
     e.preventDefault();
-    name;
-    rating;
+    if (!validateName() || !validateRating()) {
+      setTouched({
+        name: true,
+        rating: true,
+      });
+      return;
+    }
+
     if (isEditing) {
       updateSnack(editingSnack.id, name, rating);
     } else {
