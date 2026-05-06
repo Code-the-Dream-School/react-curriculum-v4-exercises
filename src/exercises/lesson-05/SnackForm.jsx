@@ -1,5 +1,5 @@
 import styles from './SnackForm.module.css';
-
+import { useState } from 'react';
 export default function SnackForm({
   addSnack,
   editingSnack,
@@ -11,16 +11,21 @@ export default function SnackForm({
 
   function handleSubmit(e) {
     e.preventDefault();
+
     const formData = new FormData(e.target);
     const name = formData.get('name');
     const rating = formData.get('rating');
+
+    // if (!name.trim() || !rating) return;
 
     if (isEditing) {
       updateSnack(editingSnack.id, name, rating);
     } else {
       addSnack(name, rating);
-      e.target.reset();
+      // e.target.reset();
     }
+    setName('');
+    setRating('');
   }
 
   return (
@@ -37,6 +42,8 @@ export default function SnackForm({
         <input
           type="text"
           name="name"
+          onChange={(e) => setName(e.target.value)}
+          onFocus={() => setTouched((prev) => ({ ...prev, name: true }))}
           defaultValue={isEditing ? editingSnack.name : ''}
           required
           className={styles['field-input']}

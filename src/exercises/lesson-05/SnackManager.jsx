@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SnackForm from './SnackForm';
 import styles from './SnackManager.module.css';
-
+import { useEffect } from 'react';
 export default function SnackManager() {
   const [snacks, setSnacks] = useState([
     { id: 1, name: 'Chocolate Chip Cookies', rating: 5 },
@@ -9,8 +9,25 @@ export default function SnackManager() {
     { id: 3, name: 'Trail Mix', rating: 4 },
   ]);
 
+  const [name, setName] = useState('');
+  const [rating, setRating] = useState('');
+
+  const [touched, setTouched] = useState({
+    name: false,
+    rating: false,
+  });
+
   const [nextId, setNextId] = useState(4);
   const [editingSnack, setEditingSnack] = useState(null);
+  useEffect(() => {
+    if (editingSnack) {
+      setName(editingSnack.name);
+      setRating(editingSnack.rating);
+    } else {
+      setName('');
+      setRating('');
+    }
+  }, [editingSnack]);
 
   function addSnack(name, rating) {
     const newSnack = {

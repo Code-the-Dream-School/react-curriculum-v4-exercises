@@ -66,13 +66,6 @@ Next, you'll add validation to provide immediate feedback to users.
 - [ ] Create `getRatingError()` function that returns error message if rating is invalid AND touched
   - Example: `"Please select a rating"`
 
-### Step 3: Display Validation Messages
-
-- [ ] Add error message display below each input field
-- [ ] Show error messages only when the field has been touched AND is invalid
-- [ ] Use the existing CSS error styles: `{errorMessage && <div className={styles.error}>{errorMessage}</div>}`
-- [ ] Test that validation appears only after field interaction
-
 ### Validation Requirements
 
 - **Name field**: Must not be empty after trimming whitespace
