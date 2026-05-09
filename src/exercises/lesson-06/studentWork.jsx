@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
+import UserProfile from '../../components/UserProfile';
+import FilterButtonGroup from '../../components/FilterButtonGroup';
+import TaskItem from '../../components/TaskItem';
 
 export default function StudentWork() {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState('all');
   const [loading, setLoading] = useState(true);
 
-  //  #1: Data fetching + state + UI logic all mixed together
+  //  #1: Data fetching + state logic
   useEffect(() => {
     const timeout = setTimeout(() => {
       setTasks([
@@ -34,23 +37,11 @@ export default function StudentWork() {
 
   return (
     <div>
-      {/* #3: Hardcoded UI, not reusable */}
-      <h2>Welcome, Student</h2>
-
-      {/* #4: Repeated button JSX */}
-      <div>
-        <button onClick={() => setFilter('all')}>All</button>
-        <button onClick={() => setFilter('completed')}>Completed</button>
-        <button onClick={() => setFilter('pending')}>Pending</button>
-        <p>Current filter: {filter}</p>
-      </div>
-
-      {/* #5: Inline list rendering */}
+      <UserProfile name="Student" />
+      <FilterButtonGroup filter={filter} setFilter={setFilter} />
       <ul>
         {visibleTasks.map((task) => (
-          <li key={task.id}>
-            {task.title} {task.completed ? '✅' : '⏳'}
-          </li>
+          <TaskItem key={task.id} task={task} />
         ))}
       </ul>
     </div>
