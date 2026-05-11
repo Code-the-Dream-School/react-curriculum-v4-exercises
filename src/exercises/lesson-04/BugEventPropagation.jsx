@@ -6,7 +6,8 @@ export default function BugEventPropagation() {
     alert("RED BOX CLICKED ❌ Don't show me!");
   }
 
-  function handleInnerClick() {
+  function handleInnerClick(event) {
+    event.stopPropagation();
     alert('Button Clicked ✅');
   }
 
@@ -22,3 +23,7 @@ export default function BugEventPropagation() {
     </>
   );
 }
+
+// Click events bubble from the button up to the red box.
+// stopPropagation stops that upward travel.
+// That lets the button show only its own alert.
