@@ -6,7 +6,8 @@ export default function BugEventPropagation() {
     alert("RED BOX CLICKED ❌ Don't show me!");
   }
 
-  function handleInnerClick() {
+  function handleInnerClick(e) {
+    e.stopPropagation();
     alert('Button Clicked ✅');
   }
 
@@ -22,3 +23,22 @@ export default function BugEventPropagation() {
     </>
   );
 }
+
+// If you click the button, the browser fires events in this order:
+// button → click event
+// div (parent) → click event
+// body
+// html
+// document
+// So even though you clicked the button, the parent <div> also receives the click.
+// So both function are called.(handleOuterClick(), handleInnerClick())
+// alert("RED BOX CLICKED");and alert("Button Clicked");
+
+// Event Bubbling
+// Child → Parent → Body → Document
+
+// Stopping Propagation
+// Child (stop)  X  Parent never receives event
+
+// e.stopPropagation();
+// Avoid double actions when child + parent both have click handlers
