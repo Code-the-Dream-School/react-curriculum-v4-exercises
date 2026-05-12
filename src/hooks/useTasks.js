@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function UseTasks() {
+export default function useTasks() {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -17,10 +17,5 @@ export default function UseTasks() {
     return () => clearTimeout(timeout);
   }, []);
 
-  // #2: Filtering logic inside component
-  const visibleTasks = filterTasks(tasks, filter);
-
-  if (loading) {
-    return <p>Loading tasks...</p>;
-  }
+  return { tasks, loading };
 }

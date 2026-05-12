@@ -1,6 +1,6 @@
 export default function TaskItem({ task }) {
   return (
-    <li key={task.id}>
+    <li>
       {task.title} {task.completed ? '✅' : '⏳'}
     </li>
   );
