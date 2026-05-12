@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import UserProfile from '../../components/UserProfile';
 import TaskFilter from '../../components/TaskFilter';
 import TaskItem from '../../components/TaskItem';
+import { filterTasks } from '../../utils/FilterTasks';
 
 export default function StudentWork() {
   const [tasks, setTasks] = useState([]);
