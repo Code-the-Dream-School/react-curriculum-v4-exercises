@@ -20,7 +20,7 @@ export default function StudentWork() {
     <div>
       {/* #3: Hardcoded UI, not reusable */}
 
-      <UserProfile name="Student" />
+      <UserProfile name="Yuhan" />
 
       {/* #4: Repeated button JSX */}
       <TaskFilter filter={filter} onFilterChange={setFilter} />
