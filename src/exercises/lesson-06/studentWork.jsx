@@ -40,20 +40,15 @@ export default function StudentWork() {
       {/* #3: Hardcoded UI, not reusable */}
       <h2>Welcome, Student</h2>
 
+      <UserProfile name="Student" />
+
       {/* #4: Repeated button JSX */}
-      <div>
-        <button onClick={() => setFilter('all')}>All</button>
-        <button onClick={() => setFilter('completed')}>Completed</button>
-        <button onClick={() => setFilter('pending')}>Pending</button>
-        <p>Current filter: {filter}</p>
-      </div>
+      <TaskFilter filter={filter} onFilterChange={setFilter} />
 
       {/* #5: Inline list rendering */}
       <ul>
         {visibleTasks.map((task) => (
-          <li key={task.id}>
-            {task.title} {task.completed ? '✅' : '⏳'}
-          </li>
+          <TaskItem key={task.id} task={task} />
         ))}
       </ul>
     </div>
