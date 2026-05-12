@@ -68,6 +68,7 @@ This exercise is about refactoring safely, not adding new features.
   - Accepts the task list and filter value
   - Returns the filtered tasks
   - Contains no React code
+
 - Place this helper in a `utils/` folder and import it back into `StudentWork.jsx`.
 
 ### 4. Extract a Custom Hook and Organize the Project

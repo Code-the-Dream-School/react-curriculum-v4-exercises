@@ -1,10 +1,17 @@
 import { useEffect, useState } from 'react';
+import UserProfile from './UserProfile';
+import TaskFilterButtons from './TaskFilterButtons';
+import TaskItem from './TaskItem';
+import filterTasks from './utils/filterTasks';
 
+function UserProfile({ name }) {
+  return <h2>Welcome, {name}</h2>;
+}
 export default function StudentWork() {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState('all');
   const [loading, setLoading] = useState(true);
-
+  const visibleTasks = filterTasks(tasks, filter);
   //  #1: Data fetching + state + UI logic all mixed together
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -48,9 +55,11 @@ export default function StudentWork() {
       {/* #5: Inline list rendering */}
       <ul>
         {visibleTasks.map((task) => (
-          <li key={task.id}>
-            {task.title} {task.completed ? '✅' : '⏳'}
-          </li>
+          <TaskItem key={task.id} task={task} />
+          // {visibleTasks.map((task) => (
+          //   <li key={task.id}>
+          //     {task.title} {task.completed ? '✅' : '⏳'}
+          //   </li>
         ))}
       </ul>
     </div>
