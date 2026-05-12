@@ -38,7 +38,6 @@ export default function StudentWork() {
   return (
     <div>
       {/* #3: Hardcoded UI, not reusable */}
-      <h2>Welcome, Student</h2>
 
       <UserProfile name="Student" />
 
