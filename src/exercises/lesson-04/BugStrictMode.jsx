@@ -7,17 +7,23 @@ export default function BugStrictMode() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       setCount((c) => c + 1);
     }, 1000);
-  }, []);
 
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
   return (
     <div>
-      <h2>StrictMode Timer Bug</h2>
+      <h2>StricMode Timer Bug</h2>
       <p>Count: {count}</p>
     </div>
   );
 }
 
 // Write your explanation of how StrictMode helps us catch this bug
+// StrictMode helps catch bugs by running effects twice in development.
+// The cleanup function clears the old timer
+// so only one interval runs.

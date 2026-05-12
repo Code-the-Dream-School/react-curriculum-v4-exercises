@@ -3,7 +3,7 @@ import FindCorrectHook from './FindCorrectHook';
 import BugEventPropagation from './BugEventPropagation';
 import FillRefFocus from './FillRefFocus';
 import BugChildParentCommunication from './BugChildParentCommuncation/BugChildParentCommunication';
-export default function StudentWork() {
+function StudentWork() {
   return (
     <div>
       <BugStrictMode />
@@ -18,3 +18,4 @@ export default function StudentWork() {
     </div>
   );
 }
+export default StudentWork;
