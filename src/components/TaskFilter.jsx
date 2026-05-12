@@ -1,9 +1,9 @@
 export default function TaskFilter({ filter, onFilterChange }) {
   return (
     <div>
-      <button onClick={() => setFilter('all')}>All</button>
-      <button onClick={() => setFilter('completed')}>Completed</button>
-      <button onClick={() => setFilter('pending')}>Pending</button>
+      <button onClick={() => onFilterChange('all')}>All</button>
+      <button onClick={() => onFilterChange('completed')}>Completed</button>
+      <button onClick={() => onFilterChange('pending')}>Pending</button>
       <p>Current filter: {filter}</p>
     </div>
   );
