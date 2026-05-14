@@ -24,26 +24,54 @@ export default function SnackManager() {
 
   function updateSnack(id, name, rating) {
     setSnacks(
-      snacks.map((snack) =>
-        snack.id === id
-          ? { ...snack, name: name.trim(), rating: parseInt(rating, 10) }
-          : snack
+      snacks.map(
+        (snack) =>
+          snack.id === id
+            ? { ...snack, name: name.trim(), rating: parseInt(rating, 10) } // ← UPDATE matched snack
+            : snack // ← keep unchanged
+        // map loops through all snacks — updates the matching one, keeps the rest unchanged!
       )
     );
     setEditingSnack(null);
   }
 
   function deleteSnack(id) {
-    setSnacks(snacks.filter((snack) => snack.id !== id));
+    setSnacks(snacks.filter((snack) => snack.id !== id)); // keep all snacks where id DOESN'T match → removes the matched one from the list!
+
     if (editingSnack && editingSnack.id === id) {
-      setEditingSnack(null);
+      //if matched id(removed),
+      setEditingSnack(null); // close the form
     }
-  }
+  } //snacks list  → remove the deleted snack
+  // edit form   → close it if it was showing that snack
 
   function startEdit(snack) {
     setEditingSnack(snack);
   }
+  // user clicks Edit on "Trail Mix"
+  //       ↓
+  // startEdit({ id:3, name:"Trail Mix", rating:4 })
+  //       ↓
+  // setEditingSnack({ id:3, name:"Trail Mix", rating:4 })
+  //       ↓
+  // editingSnack = { id:3, name:"Trail Mix", rating:4 }
+  //       ↓
+  // isEditing = true → edit form opens ✅
+  // useEffect detects editingSnack changed → fills form ✅
 
+  // startEdit(snack) → saves that snack into editingSnack state
+  //                  → triggers useEffect
+  //                  → fills form with snack data ✅
+
+  // startEdit saves the clicked snack into editingSnack state — which triggers useEffect to fill the form! ✅
+
+  // setEditingSnack(snack)
+  //       ↓
+  // editingSnack = snack  ← changes
+  //       ↓
+  // isEditing = Boolean(editingSnack)  ← automatically recalculates!
+  //       ↓
+  // isEditing = true ✅
   function cancelEdit() {
     setEditingSnack(null);
   }
