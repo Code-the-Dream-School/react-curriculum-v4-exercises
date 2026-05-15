@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import UserProfile from '../../../components/UserProfile';
-import FilterButtonGroup from '../../../components/FilterButtonGroup';
-import TaskItem from '../../../components/TaskItem';
-import { filterTasks } from '../../../utils/filterTasks';
-import { useTasks } from '../../../hooks/useTasks';
+import UserProfile from '../../components/UserProfile';
+import FilterButtonGroup from '../../components/FilterButtonGroup';
+import TaskItem from '../../components/TaskItem';
+import { filterTasks } from '../../utils/filterTasks';
+import { useTasks } from '../../hooks/useTasks';
 
 export default function StudentWork() {
   const [filter, setFilter] = useState('all');
