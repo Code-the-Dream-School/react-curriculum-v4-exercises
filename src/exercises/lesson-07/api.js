@@ -1,4 +1,5 @@
-const POSTS_ENDPOINT = 'https://jsonplaceholder.typicode.com/posts/';
+const POSTS_ENDPOINT =
+  'https://jsonplaceholder.typicode.com/posts/';
 
 /**
  * Instructions:
@@ -22,14 +23,23 @@ const POSTS_ENDPOINT = 'https://jsonplaceholder.typicode.com/posts/';
  * - title
  * - body
  */
-export function getPosts() {
-  console.log('[getPosts]: fetching list of posts');
 
-  // TODO: use this `url` const to fetch the list of posts
-  // and return some JSON data.
-  // You may delete this comment once you've finished the implementation.
-  // eslint-disable-next-line no-unused-vars
+export async function getPosts() {
+  console.log('[getPosts]: fetching list of posts');
   const url = POSTS_ENDPOINT;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(
+        `Response status: ${response.status}`
+      );
+    }
+    const result = await response.json();
+    console.log(result);
+    return result;
+  } catch (error) {
+    console.error(error.message);
+  }
 }
 
 /**
@@ -39,16 +49,30 @@ export function getPosts() {
  * - title
  * - body
  */
-export function getSinglePost(postId) {
+export async function getSinglePost(postId) {
   if (!postId) {
-    throw new Error('[getSinglePost]: postId parameter is required!');
+    throw new Error(
+      '[getSinglePost]: postId parameter is required!'
+    );
   }
 
-  console.log('[getSinglePost]: fetching post with id:', postId);
-
-  // TODO: use this `url` const to fetch the single post
-  // and return some JSON data.
-  // You may delete this comment once you've finished the implementation.
-  // eslint-disable-next-line no-unused-vars
   const url = `${POSTS_ENDPOINT}${postId}`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(
+        `Response status: ${response.status}`
+      );
+    }
+    const data = await response.json();
+    console.log(
+      '[getSinglePost]: fetching post with id:',
+      postId
+    );
+    return data;
+  } catch (error) {
+    console.error(error.message);
+    return null;
+  }
 }
