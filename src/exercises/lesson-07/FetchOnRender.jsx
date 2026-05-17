@@ -3,8 +3,6 @@ import './Lesson07Styles.css';
 import { getPosts } from './api';
 
 export default function FetchOnRender() {
-  // When the component renders, call getPosts().
-
   const [posts, setPosts] = useState([]);
   // const [error, setError] = useState('');
 
@@ -24,7 +22,10 @@ export default function FetchOnRender() {
       <div className="content">
         <ul>
           {posts.map((post) => (
-            <li key={post.id}>{post.title}</li>
+            <li key={post.id}>
+              <h2>{post.title}</h2>
+              <p>{post.body}</p>
+            </li>
           ))}
         </ul>
       </div>
