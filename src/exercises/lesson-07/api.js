@@ -26,7 +26,7 @@ const POSTS_ENDPOINT =
 
 export async function getPosts() {
   console.log('[getPosts]: fetching list of posts');
-  const url = POSTS_ENDPOINT;
+  const url = `${POSTS_ENDPOINT}?_limit=10`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
