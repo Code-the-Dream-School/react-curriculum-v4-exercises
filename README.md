@@ -1,80 +1,16 @@
-# React Curriculum v4 Exercises
+# React + Vite
 
-> [!WARNING]
-> **Always work on your own forked repository. Do NOT create pull requests against the original Code-the-Dream-School repository.**
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-This repository contains exercises for Code the Dream's 11-lesson Introduction to React. Each lesson builds upon previous concepts, covering everything from basic React fundamentals to advanced topics like routing and deployment. Students will work through structured exercises that reinforce core React development skills and best practices.
+Currently, two official plugins are available:
 
-## Getting Started
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-### Setup
+## React Compiler
 
-1. **Fork and clone locally**: Fork this repository to your GitHub account, then clone your fork to your local machine
-2. **Install dependencies**: Run `npm install` to install all required packages
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-### Repository Structure
+## Expanding the ESLint configuration
 
-- `src/exercises/` - Contains directories for each lesson's assignments and instructions
-- `src/private/` - Application framework code (do not modify)
-- `src/tests/` - Test files for validating your work (do not modify)
-
-### User Interface
-
-Run `npm run dev` to start the development server. The application displays a navigation interface where you can select each lessons's exercise. After navigating, page shows your code outputs using a `studentWork.jsx` associated with that lesson's directory. For example, if you select lesson-03, the output that is displayed resides in `src/exercises/lesson-03/studentWork.jsx`. Depending on the exercise scenario, it _may_ initially render with an error.
-
-## Lesson Exercise Workflow
-
-> [!WARNING]
-> **Always work on your own forked repository. Do NOT create pull requests against the original Code-the-Dream-School repository.**
-
-1. **Version Control Setup**
-   - Merge previous lesson's approved pull request into main branch
-   - Create new lesson branch from main
-
-2. **Read Instructions**
-   - Navigate to `src/exercises/lesson-[XX]/instructions.md`
-   - Review the lesson's learning objectives and requirements
-
-3. **Complete Exercises**
-   - Open `src/exercises/lesson-[XX]/studentWork.jsx`
-   - Follow instructions to implement required functionality
-   - Test your work using `npm run dev`
-
-4. **Commit and Publish**
-   - Stage and commit your changes with descriptive message
-   - Push your branch to your fork
-
-5. **Create Pull Request**
-   - Open a PR from your branch to your fork's main branch
-   - Copy the PR URL for submission
-
-### Submission Links
-
-✅ **Correct PR link format:**
-`https://github.com/your-username/react-curriculum-v4-exercises/pull/1`
-
-❌ **Incorrect link format:**
-`https://github.com/your-username/react-curriculum-v4-exercises` (repository link)
-`https://github.com/your-username/react-curriculum-v4-exercises/tree/exercise-lesson01` (branch link)
-
-## Code Quality Tools
-
-This project includes ESLint and Prettier to help maintain consistent code quality and formatting. We strongly recommend installing the VS Code extensions for the best development experience.
-
-### Recommended VS Code Extensions
-
-1. **ESLint Extension**
-   - Search for "ESLint" in VS Code Extensions marketplace
-   - Install the official ESLint extension by Microsoft
-   - Provides real-time linting and error highlighting
-
-2. **Prettier Extension**
-   - Search for "Prettier - Code formatter" in VS Code Extensions marketplace
-   - Install the official Prettier extension
-   - Enables automatic code formatting on save
-
-### Usage
-
-- **ESLint**: Run `npm run lint` to check for code quality issues
-- **Prettier**: Your code will be automatically formatted when you save files (if extension is installed)
-- Both tools are pre-configured for this project and will help you write cleaner, more consistent React code
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

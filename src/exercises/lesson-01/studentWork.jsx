@@ -1,12 +1,16 @@
-//Lesson-01 Introduction to React
-//Exercise: Build an "About Me" Component in this file
-
 export default function StudentWork() {
-  //add variables here
+  // 1. Add your variables here
+  const name = "Matheus";
+  const role = "React Developer in training";
+  const hobby = "Coding and solving bugs";
+
   return (
-    <div>
-      {/* add JSX here */}
-      <p> Student output will go here </p>
+    <div style={{ padding: '20px', border: '1px solid #ccc', borderRadius: '8px' }}>
+      <h2>About Me</h2>
+      {/* 2. Inject your variables into the JSX */}
+      <p><strong>Name:</strong> {name}</p>
+      <p><strong>Role:</strong> {role}</p>
+      <p><strong>Favorite Hobby:</strong> {hobby}</p>
     </div>
   );
 }

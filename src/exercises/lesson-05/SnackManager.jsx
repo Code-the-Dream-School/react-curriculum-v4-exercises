@@ -16,7 +16,7 @@ export default function SnackManager() {
     const newSnack = {
       id: nextId,
       name: name.trim(),
-      rating: parseInt(rating, 10),
+      rating: Number(rating),
     };
     setSnacks([...snacks, newSnack]);
     setNextId(nextId + 1);
@@ -26,7 +26,7 @@ export default function SnackManager() {
     setSnacks(
       snacks.map((snack) =>
         snack.id === id
-          ? { ...snack, name: name.trim(), rating: parseInt(rating, 10) }
+          ? { ...snack, name: name.trim(), rating: Number(rating) }
           : snack
       )
     );
@@ -35,7 +35,7 @@ export default function SnackManager() {
 
   function deleteSnack(id) {
     setSnacks(snacks.filter((snack) => snack.id !== id));
-    if (editingSnack && editingSnack.id === id) {
+    if (editingSnack?.id === id) {
       setEditingSnack(null);
     }
   }
@@ -64,6 +64,7 @@ export default function SnackManager() {
         <h3 className={styles['snacks-title']}>
           Current Snacks ({snacks.length})
         </h3>
+        
         {snacks.length === 0 ? (
           <p className={styles['empty-message']}>
             No snacks yet. Add one above!
@@ -73,7 +74,7 @@ export default function SnackManager() {
             {snacks.map((snack) => (
               <div
                 key={snack.id}
-                className={`${styles['snack-item']} ${editingSnack && editingSnack.id === snack.id ? styles['snack-item-editing'] : ''}`}
+                className={`${styles['snack-item']} ${editingSnack?.id === snack.id ? styles['snack-item-editing'] : ''}`}
               >
                 <div className={styles['snack-info']}>
                   <div className={styles['snack-name']}>{snack.name}</div>

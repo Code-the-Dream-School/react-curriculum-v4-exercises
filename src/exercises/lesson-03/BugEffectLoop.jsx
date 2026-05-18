@@ -9,6 +9,9 @@
   */
 
 import { useEffect, useState } from 'react';
+useEffect(() => {
+  setCount(count + 1);
+}, [someOtherVariable]); // Only runs when someOtherVariable changes
 
 export default function BugEffectLoop() {
   const [count, setCount] = useState(0);

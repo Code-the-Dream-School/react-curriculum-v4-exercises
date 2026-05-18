@@ -6,19 +6,14 @@ export default function BugEventPropagation() {
     alert("RED BOX CLICKED ❌ Don't show me!");
   }
 
-  function handleInnerClick() {
+  function handleInnerClick(e) {
+    e.stopPropagation(); // Stops the event from hitting the div
     alert('Button Clicked ✅');
   }
 
   return (
-    <>
-      <h2>Stopping Event Propagation</h2>
-      <div
-        style={{ padding: 20, border: '2px solid red' }}
-        onClick={handleOuterClick}
-      >
-        <button onClick={handleInnerClick}>Click inner button</button>
-      </div>
-    </>
+    <div style={{ padding: 20, border: '2px solid red' }} onClick={handleOuterClick}>
+      <button onClick={handleInnerClick}>Click inner button</button>
+    </div>
   );
 }
