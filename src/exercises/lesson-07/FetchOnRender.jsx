@@ -2,17 +2,22 @@ import { useEffect, useState } from 'react';
 import './Lesson07Styles.css';
 import { getPosts } from './api';
 import LoadingIndicator from './LoadingIndicator';
+import ErrorMessage from './ErrorMessage';
 
 export default function FetchOnRender() {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  // const [error, setError] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     async function startFetching() {
-      const result = await getPosts();
-      setPosts(result);
-      setIsLoading(false);
+      try {
+        const result = await getPosts();
+        setPosts(result);
+        setIsLoading(false);
+      } catch (error) {
+        setErrorMessage(error.message);
+      }
     }
     startFetching();
   }, []);
@@ -22,7 +27,10 @@ export default function FetchOnRender() {
       <h1 className="heading">
         Fetch list of posts on render
       </h1>
-      {isLoading ? (
+      {/* perhaps provide some logic that checks if error is true then display error messge */}
+      {errorMessage ? (
+        <ErrorMessage message={errorMessage} />
+      ) : isLoading ? (
         <LoadingIndicator IsLoading={isLoading} />
       ) : (
         <div className="content">
@@ -39,8 +47,3 @@ export default function FetchOnRender() {
     </div>
   );
 }
-// Fetching data on render
-// In FetchOnRender.jsx, import the getPosts() function from src/exercises/lesson-07/api.js.
-// Note: This function doesn't do anything yet! You need to finish the logic to make a fetch request in src/exercises/lesson-07/api.js.
-// Once getPosts() returns data, display the list of posts in the component.
-// Each post should display its title and body. Render these in an <h2> and a <p>, respectively.

@@ -27,6 +27,8 @@ const POSTS_ENDPOINT =
 export async function getPosts() {
   console.log('[getPosts]: fetching list of posts');
   const url = `${POSTS_ENDPOINT}?_limit=10`;
+  // testing the error case
+  // const url = ``;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -39,6 +41,7 @@ export async function getPosts() {
     return result;
   } catch (error) {
     console.error(error.message);
+    throw new Error(error.message);
   }
 }
 
