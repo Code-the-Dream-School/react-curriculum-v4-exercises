@@ -13,8 +13,7 @@ export default function FetchOnClick() {
       <h1 className="heading">Fetch single post on click</h1>
       <button type="button">Get post</button>
       <div className="content">
-        TODO: Replace me with fetched data when the <code>Get post</code> button
-        is clicked
+        <button onClick={getPost}>Get post</button>
       </div>
     </div>
   );
