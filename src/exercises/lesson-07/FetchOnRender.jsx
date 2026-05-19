@@ -1,12 +1,12 @@
 import './Lesson07Styles.css';
 import { useEffect, useState } from 'react';
-import { fetchPosts } from './api';
+import { getPosts } from './api';
 
 export default function FetchOnRender() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetchPosts().then((data) => {
+    getPosts().then((data) => {
       setPosts(data);
     });
   }, []);
@@ -16,11 +16,12 @@ export default function FetchOnRender() {
       <h1 className="heading">Fetch list of posts on render</h1>
 
       <div className="content">
-        <ul>
-          {posts.map((post) => (
-            <li key={post.id}>{post.title}</li>
-          ))}
-        </ul>
+        {posts.map((post) => (
+          <div key={post.id}>
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
