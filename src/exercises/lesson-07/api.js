@@ -46,9 +46,9 @@ export function getSinglePost(postId) {
 
   console.log('[getSinglePost]: fetching post with id:', postId);
 
-  // TODO: use this `url` const to fetch the single post
-  // and return some JSON data.
-  // You may delete this comment once you've finished the implementation.
-  // eslint-disable-next-line no-unused-vars
   const url = `${POSTS_ENDPOINT}${postId}`;
+
+  return fetch(url).then((response) => {
+    return response.json();
+  });
 }
