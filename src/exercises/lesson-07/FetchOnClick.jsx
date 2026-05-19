@@ -4,6 +4,10 @@ import { getSinglePost } from './api';
 export default function FetchOnClick() {
   const [post, setPost] = useState(null);
 
+  function getPost() {
+    getSinglePost(1);
+  }
+
   return (
     <div className="root">
       <h1 className="heading">Fetch single post on click</h1>
