@@ -2,6 +2,8 @@ import './Lesson07Styles.css';
 import { useState } from 'react';
 import { getSinglePost } from './api';
 export default function FetchOnClick() {
+  const [post, setPost] = useState(null);
+
   return (
     <div className="root">
       <h1 className="heading">Fetch single post on click</h1>
