@@ -1,5 +1,6 @@
 import './Lesson07Styles.css';
-
+import { useState } from 'react';
+import { getSinglePost } from './api';
 export default function FetchOnClick() {
   return (
     <div className="root">
