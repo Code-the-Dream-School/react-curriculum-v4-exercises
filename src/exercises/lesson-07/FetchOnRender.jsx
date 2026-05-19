@@ -15,7 +15,10 @@ export default function FetchOnRender() {
       <h1 className="heading">Fetch list of posts on render</h1>
       <div className="content">
         {posts.map((post) => (
-          <div key={post.id}></div>
+          <div key={post.id}>
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
+          </div>
         ))}
       </div>
     </div>
