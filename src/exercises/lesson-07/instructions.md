@@ -23,7 +23,7 @@ To complete this exercise, you will work in the following files:
 - `src/exercises/lesson-07/FetchOnClick.jsx`: This is the component that fetches a single post when a button inside of it is clicked.
 - `src/exercises/lesson-07/api.js`: This is where the functions used to fetch posts will live.
 
-**Note:** You do not need to modify `src/exercises/lesson-07/studentWork.jsx` — it already imports and uses the relevant components for you.
+**Note:** You do not need to modify `src/exercises/lesson-07/studentWork.jsx` — it already imports and uses the relevant components for you.S
 
 ### The data
 
