@@ -11,10 +11,11 @@ export default function FetchOnRender() {
     getPosts()
       .then((data) => {
         setPosts(data);
-        setLoading(false);
       })
       .catch((err) => {
         setError(err.message);
+      })
+      .finally(() => {
         setLoading(false);
       });
   }, []);
