@@ -5,6 +5,7 @@ import { getPosts } from './api';
 export default function FetchOnRender() {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     setIsLoading(true);
@@ -12,6 +13,9 @@ export default function FetchOnRender() {
     getPosts()
       .then((data) => {
         setPosts(data);
+      })
+      .catch((err) => {
+        setError('Failed to fetch posts');
       })
       .finally(() => {
         setIsLoading(false);
@@ -22,6 +26,7 @@ export default function FetchOnRender() {
       <h1 className="heading">Fetch list of posts on render</h1>
       <div className="content">
         {isLoading && <p>Loading</p>}
+        {error && <p>{error}</p>}
         {posts.map((post) => (
           <div key={post.id}>
             <h2>{post.title}</h2>
