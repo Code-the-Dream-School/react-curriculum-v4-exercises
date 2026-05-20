@@ -28,6 +28,7 @@ export default function FetchOnClick() {
       <button type="button">Get post</button>
       <div className="content">
         {isLoading && <p>Loading</p>}
+        {error && <p>{error}</p>}
         {post && (
           <div>
             <h2>{post.title}</h2>
