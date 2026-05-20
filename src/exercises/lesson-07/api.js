@@ -10,13 +10,6 @@ export function getPosts() {
   });
 }
 
-/**
- * Should return a single post object with the following properties:
- * - userId
- * - id
- * - title
- * - body
- */
 export function getSinglePost(postId) {
   if (!postId) {
     throw new Error('[getSinglePost]: postId parameter is required!');
