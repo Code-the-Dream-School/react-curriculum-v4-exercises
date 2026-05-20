@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { getSinglePost } from './api';
 export default function FetchOnClick() {
   const [post, setPost] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   function getPost() {
     getSinglePost(1);

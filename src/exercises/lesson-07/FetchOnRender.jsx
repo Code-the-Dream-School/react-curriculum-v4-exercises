@@ -4,11 +4,18 @@ import { getPosts } from './api';
 
 export default function FetchOnRender() {
   const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getPosts().then((data) => {
-      setPosts(data);
-    });
+    setIsLoading(true);
+
+    getPosts()
+      .then((data) => {
+        setPosts(data);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, []);
   return (
     <div className="root">
