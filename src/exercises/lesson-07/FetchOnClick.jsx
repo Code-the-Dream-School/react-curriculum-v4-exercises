@@ -4,13 +4,18 @@ import { getSinglePost } from './api';
 export default function FetchOnClick() {
   const [post, setPost] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   function getPost() {
     setIsLoading(true);
+    setError('');
 
     getSinglePost(1)
       .then((data) => {
         setPost(data);
+      })
+      .catch(() => {
+        setError('Failed to fetch post');
       })
       .finally(() => {
         setIsLoading(false);
