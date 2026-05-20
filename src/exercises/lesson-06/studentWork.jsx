@@ -1,13 +1,12 @@
-import { useEffect, useState } from 'react';
-import UserProfile from './UserProfile';
-import TaskFilterButtons from './TaskFilterButtons';
-import TaskItem from './TaskItem';
-import filterTasks from './utils/filterTasks';
+// import { useEffect,
+//    useState } from 'react';
+// import UserProfile from './UserProfile';
+// import TaskFilterButtons from './TaskFilterButtons';
+// import TaskItem from './TaskItem';
+// import filterTasks from './utils/filterTasks';
 
-function UserProfile({ name }) {
-  return <h2>Welcome, {name}</h2>;
-}
-export default function StudentWork() {
+function userProfile({ name }) {}
+function StudentWork() {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState('all');
   const [loading, setLoading] = useState(true);
@@ -27,7 +26,7 @@ export default function StudentWork() {
   }, []);
 
   // #2: Filtering logic inside component
-  let visibleTasks = tasks;
+  let VisibleTasks = tasks;
   if (filter === 'completed') {
     visibleTasks = tasks.filter((task) => task.completed);
   }
@@ -42,7 +41,7 @@ export default function StudentWork() {
   return (
     <div>
       {/* #3: Hardcoded UI, not reusable */}
-      <h2>Welcome, Student</h2>
+      <h2>UserProfile, Lilian</h2>
 
       {/* #4: Repeated button JSX */}
       <div>
@@ -65,3 +64,4 @@ export default function StudentWork() {
     </div>
   );
 }
+export default StudentWork;
