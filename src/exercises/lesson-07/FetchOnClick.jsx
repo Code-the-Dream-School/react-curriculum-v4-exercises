@@ -6,7 +6,15 @@ export default function FetchOnClick() {
   const [isLoading, setIsLoading] = useState(false);
 
   function getPost() {
-    getSinglePost(1);
+    setIsLoading(true);
+
+    getSinglePost(1)
+      .then((data) => {
+        setPost(data);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }
 
   return (
