@@ -9,6 +9,7 @@ export default function FetchOnRender() {
 
   useEffect(() => {
     setIsLoading(true);
+    setError('');
 
     getPosts()
       .then((data) => {
