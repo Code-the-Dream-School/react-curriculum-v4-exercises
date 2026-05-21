@@ -27,7 +27,6 @@ export default function FetchOnRender() {
       <h1 className="heading">
         Fetch list of posts on render
       </h1>
-      {/* perhaps provide some logic that checks if error is true then display error messge */}
       {errorMessage ? (
         <ErrorMessage message={errorMessage} />
       ) : isLoading ? (
