@@ -2,16 +2,28 @@ import './Lesson07Styles.css';
 import LoadingIndicator from './LoadingIndicator';
 import { getSinglePost } from './api';
 import { useState } from 'react';
+import ErrorMessage from './ErrorMessage';
 
 export default function FetchOnClick() {
   const [postData, setPostData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   // const [error, setError] = useState('');
 
   async function handleClick() {
-    const result = await getSinglePost(1);
-    setPostData(result);
-    setIsLoading(false);
+    setErrorMessage('');
+    setPostData(null);
+    setIsLoading(true);
+
+    try {
+      const result = await getSinglePost(1);
+      setPostData(result);
+      setIsLoading(false);
+    } catch (error) {
+      setErrorMessage(error.message);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -22,7 +34,9 @@ export default function FetchOnClick() {
       <button type="button" onClick={handleClick}>
         Get post
       </button>
-      {isLoading ? (
+      {errorMessage ? (
+        <ErrorMessage message={errorMessage} />
+      ) : isLoading ? (
         <LoadingIndicator IsLoading={isLoading} />
       ) : (
         postData && (

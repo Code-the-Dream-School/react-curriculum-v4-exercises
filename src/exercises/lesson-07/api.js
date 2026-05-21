@@ -53,10 +53,15 @@ export async function getPosts() {
  * - body
  */
 export async function getSinglePost(postId) {
-  if (!postId) {
-    throw new Error(
-      '[getSinglePost]: postId parameter is required!'
-    );
+  try {
+    if (!postId) {
+      throw new Error(
+        '[getSinglePost]: postId parameter is required!'
+      );
+    }
+  } catch (error) {
+    console.error(error.message);
+    throw new Error(error.message);
   }
 
   const url = `${POSTS_ENDPOINT}${postId}`;
