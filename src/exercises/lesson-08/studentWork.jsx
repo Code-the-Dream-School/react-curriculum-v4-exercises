@@ -1,7 +1,7 @@
-//Lesson-08 Advanced Hooks: useCallback and useMemo, Optimizing a React App
-//Exercise: Book Library Dashboard Performance Optimization
+// Lesson-08 Advanced Hooks: useCallback and useMemo, Optimizing a React App
+// Exercise: Book Library Dashboard Performance Optimization
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { bookData, getAllGenres, filterBooksByGenre } from './bookData.js';
 import {
   useRenderCounter,
@@ -11,7 +11,6 @@ import BookStats from './BookStats.jsx';
 import BookList from './BookList.jsx';
 import styles from './StudentWork.module.css';
 
-// Main Dashboard Component - Contains performance issues to be optimized
 export default function StudentWork() {
   const { count } = useRenderCounter('BookDashboard');
 
@@ -22,21 +21,19 @@ export default function StudentWork() {
 
   const allGenres = getAllGenres();
 
-  // TODO #1: Optimize this search handler with useCallback
-  // This function is recreated on every render, causing BookCard re-renders
-  const handleSearch = (e) => {
+  // TODO
+  const handleSearch = useCallback((e) => {
     setSearchTerm(e.target.value);
-  };
+  }, []);
 
-  // TODO #2: Optimize this favorite toggle handler with useCallback
-  // This function is recreated on every render, causing BookCard re-renders
-  const handleToggleFavorite = (bookId) => {
+  // TODO
+  const handleToggleFavorite = useCallback((bookId) => {
     setFavorites((prev) =>
       prev.includes(bookId)
         ? prev.filter((id) => id !== bookId)
         : [...prev, bookId]
     );
-  };
+  }, []);
 
   const handleGenreToggle = (genre) => {
     setSelectedGenres((prev) =>
@@ -75,19 +72,17 @@ export default function StudentWork() {
         </p>
       </div>
 
-      {/* Statistics and Favorites Section */}
       <div className={styles.statsAndFavorites}>
         <div className={styles.statsSection}>
           <BookStats books={filteredBooks} />
         </div>
 
-        {/* Favorites Summary */}
         <div className={styles.favoritesSection}>
           {favorites.length > 0 ? (
             <div
               style={{
-                backgroundColor: '#d4edda',
-                border: '1px solid #c3e6cb',
+                backgroundColor: '
+                border: '1px solid
                 borderRadius: '8px',
                 padding: '16px',
                 height: 'fit-content',
@@ -100,7 +95,7 @@ export default function StudentWork() {
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   padding: '8px 0',
-                  borderBottom: '2px solid #c3e6cb',
+                  borderBottom: '2px solid
                   fontWeight: 'bold',
                   fontSize: '14px',
                   marginBottom: '4px',
@@ -109,13 +104,7 @@ export default function StudentWork() {
                 <span>Title</span>
                 <span>Remove from Favorites</span>
               </div>
-              <ul
-                style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: '0',
-                }}
-              >
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0' }}>
                 {favorites.map((favoriteId) => {
                   const book = bookData.find((b) => b.id === favoriteId);
                   return book ? (
@@ -127,7 +116,7 @@ export default function StudentWork() {
                         alignItems: 'center',
                         padding: '4px 0',
                         fontSize: '14px',
-                        borderBottom: '1px solid #c3e6cb',
+                        borderBottom: '1px solid
                       }}
                     >
                       <span style={{ flexGrow: 1, paddingRight: '8px' }}>
@@ -140,7 +129,7 @@ export default function StudentWork() {
                           border: 'none',
                           cursor: 'pointer',
                           fontSize: '16px',
-                          color: '#6c757d',
+                          color: '
                           padding: '2px',
                         }}
                         title="Remove from favorites"
@@ -161,7 +150,6 @@ export default function StudentWork() {
         </div>
       </div>
 
-      {/* Search Controls */}
       <div className={styles.searchControls}>
         <h3>Search & Filter Controls</h3>
 
@@ -211,10 +199,8 @@ export default function StudentWork() {
         </div>
       </div>
 
-      {/* Book List */}
       <BookList
         books={filteredBooks}
-        searchTerm={searchTerm}
         sortBy={sortBy}
         favorites={favorites}
         onToggleFavorite={handleToggleFavorite}

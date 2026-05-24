@@ -1,10 +1,12 @@
+import React from 'react';
 import {
   useRenderCounter,
   RenderCounter,
 } from '../../private/components/renderCounter.jsx';
 import styles from './BookCard.module.css';
 
-function BookCard({ book, isFavorite, onToggleFavorite }) {
+// Wrapped in React.memo to leverage stabilized handler paths
+const BookCard = React.memo(({ book, isFavorite, onToggleFavorite }) => {
   const { count } = useRenderCounter('BookCard');
 
   return (
@@ -30,6 +32,7 @@ function BookCard({ book, isFavorite, onToggleFavorite }) {
       </button>
     </div>
   );
-}
+});
 
+BookCard.displayName = 'BookCard';
 export default BookCard;
