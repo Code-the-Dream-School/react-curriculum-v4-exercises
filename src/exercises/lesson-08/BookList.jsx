@@ -10,8 +10,6 @@ import styles from './BookList.module.css';
 function BookList({ books, sortBy, favorites, onToggleFavorite }) {
   const { count } = useRenderCounter('BookList');
 
-  // TODO #3: Optimize this expensive sorting operation with useMemo
-  // This sorting runs on every render, even when books haven't changed
   const sortedBooks = useMemo(() => (books.toSorted((a, b) => {
     switch (sortBy) {
       case 'title':
