@@ -4,12 +4,21 @@ import { useState } from 'react';
 
 export default function FetchOnClick() {
   const [post, setPost] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   async function fetchPost() {
-    const number = Math.floor(Math.random() * 100);
+    setIsLoading(true);
+    const number = Math.floor(Math.random() * 100) + 1;
     console.log(number);
-    const post = await getSinglePost(number);
-    setPost(post);
+    try {
+      const post = await getSinglePost(number);
+      setPost(post);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setIsLoading(false);
+    }
   }
   return (
     <div className="root">
@@ -18,8 +27,17 @@ export default function FetchOnClick() {
         Get post
       </button>
       <div className="content">
-        <h2>{post.title}</h2>
-        <p>{post.body}</p>
+        {error ? (
+          <p>{error}</p>
+        ) : isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <>
+            {' '}
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
+          </>
+        )}
       </div>
     </div>
   );

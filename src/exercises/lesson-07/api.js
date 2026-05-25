@@ -23,7 +23,7 @@ const POSTS_ENDPOINT = 'https://jsonplaceholder.typicode.com/posts/';
  * - body
  */
 export async function getPosts() {
-  const url = POSTS_ENDPOINT;
+  const url = POSTS_ENDPOINT + '?_limit=10';
   console.log('[getPosts]: fetching list of posts');
   try {
     const response = await fetch(url, {
@@ -34,6 +34,7 @@ export async function getPosts() {
     return data;
   } catch (error) {
     console.error(error);
+    throw error;
   }
 
   // TODO: use this `url` const to fetch the list of posts
@@ -65,6 +66,7 @@ export async function getSinglePost(postId) {
     return data;
   } catch (error) {
     console.error(error);
+    throw error;
   }
 
   // TODO: use this `url` const to fetch the single post
