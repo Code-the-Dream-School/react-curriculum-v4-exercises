@@ -2,6 +2,7 @@ import {
   useRenderCounter,
   RenderCounter,
 } from '../../private/components/renderCounter.jsx';
+import { useMemo } from 'react';
 import styles from './BookStats.module.css';
 
 // Book Statistics Component - Expensive calculations run unnecessarily
@@ -89,7 +90,7 @@ function BookStats({ books }) {
     };
   };
 
-  const stats = calculateStats();
+  const stats = useMemo(() => calculateStats(), [books]);
 
   return (
     <div className={styles.statsContainer}>
