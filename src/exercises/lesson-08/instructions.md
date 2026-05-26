@@ -159,7 +159,10 @@ You're working on a **Professional Book Library Dashboard** for a company's inte
 
 - 🎯 **Focus on the TODOs**: Each TODO comment marks exactly where to apply optimizations
 - 📊 **Use the render counters**: They're your performance measurement tools
-- 🐛 **Test after each change**: Verify functionality still works after each optimization
+- 🐛 \*\*Test after each
+
+change\*\*: Verify functionality still works after each optimization
+
 - 🔍 **Dependency arrays matter**: Include all variables used inside `useMemo` and `useCallback`
 - ⚡ **Measure the impact**: Compare render counts before and after optimization
 - 🚫 **Don't over-optimize**: Only optimize where you see actual performance problems

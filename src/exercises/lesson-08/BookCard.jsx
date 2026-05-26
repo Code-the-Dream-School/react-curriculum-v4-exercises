@@ -3,10 +3,19 @@ import {
   RenderCounter,
 } from '../../private/components/renderCounter.jsx';
 import styles from './BookCard.module.css';
+// import { useState, useCallback } from 'react';
 
 function BookCard({ book, isFavorite, onToggleFavorite }) {
   const { count } = useRenderCounter('BookCard');
-
+  // new
+  // const handleToggleFavorite = useCallback((bookId) => {
+  //   setFavorites((previousFavorites) =>
+  //     previousFavorites.includes(bookId)
+  //       ? previousFavorites.filter((id) => id !== bookId)
+  //       : [...previousFavorites, bookId]
+  //   );
+  // }, []);
+  // new
   return (
     <div className={styles.cardContainer}>
       <RenderCounter

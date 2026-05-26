@@ -10,8 +10,21 @@ import {
 import BookStats from './BookStats.jsx';
 import BookList from './BookList.jsx';
 import styles from './StudentWork.module.css';
+// import { useMemo, useCallback } from "react";
 
 // Main Dashboard Component - Contains performance issues to be optimized
+// new
+
+// const state = useMemo(() => {
+//   console.log('Calculating stats...');
+
+//   return calculateStats(books);
+// }, [books]);
+// const handleSearch = useCallback((e) => {
+//   setSearch(e.target.value);
+// }, []);
+
+// new
 export default function StudentWork() {
   const { count } = useRenderCounter('BookDashboard');
 

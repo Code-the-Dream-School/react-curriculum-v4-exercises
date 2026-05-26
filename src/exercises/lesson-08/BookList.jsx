@@ -4,7 +4,40 @@ import {
 } from '../../private/components/renderCounter.jsx';
 import BookCard from './BookCard.jsx';
 import styles from './BookList.module.css';
+// newimport { useMemo } from "react";
+// new
+// const handleToggleFavorite = useCallback((bookId) => {
+//     setFavorites((previousFavorites) =>
+//       previousFavorites.includes(bookId)
+//         ? previousFavorites.filter((id) => id !== bookId)
+//         : [...previousFavorites, bookId]
+//     );
+//   }, []);
+// const  sortedBooks = useMemo(() => {
+//   console.log('Re-sorting books...');
+// )
+// };
 
+//   return ([...books].sort((a, b) => {
+//     if (sortBy === 'title') {
+//       return a.title.localeCompare(b.title);
+
+//     }
+
+//     if (sortBy === 'author') {
+//       return a.author.localeCompare(b.author);
+//     }
+
+//     if (sortBy === 'rating') {
+//       return b.rating - a.rating;
+//     }
+
+//     return 0;
+//   });
+
+// [books, sortBy]);
+
+// new
 // Book List Component - Expensive sorting operation runs on every render
 function BookList({ books, sortBy, favorites, onToggleFavorite }) {
   const { count } = useRenderCounter('BookList');
