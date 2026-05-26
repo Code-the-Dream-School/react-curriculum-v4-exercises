@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import {
   useRenderCounter,
   RenderCounter,
@@ -11,22 +12,24 @@ function BookList({ books, sortBy, favorites, onToggleFavorite }) {
 
   // TODO #3: Optimize this expensive sorting operation with useMemo
   // This sorting runs on every render, even when books haven't changed
-  const sortedBooks = books.toSorted((a, b) => {
-    switch (sortBy) {
-      case 'title':
-        return a.title.localeCompare(b.title);
-      case 'author':
-        return a.author.localeCompare(b.author);
-      case 'rating':
-        return b.rating - a.rating;
-      case 'year':
-        return b.publishYear - a.publishYear;
-      case 'price':
-        return a.price - b.price;
-      default:
-        return 0;
-    }
-  });
+  const sortedBooks = useMemo(() => {
+    return books.toSorted((a, b) => {
+      switch (sortBy) {
+        case 'title':
+          return a.title.localeCompare(b.title);
+        case 'author':
+          return a.author.localeCompare(b.author);
+        case 'rating':
+          return b.rating - a.rating;
+        case 'year':
+          return b.publishYear - a.publishYear;
+        case 'price':
+          return a.price - b.price;
+        default:
+          return 0;
+      }
+    });
+  }, [books, sortBy]);
 
   return (
     <div className={styles.listContainer}>
