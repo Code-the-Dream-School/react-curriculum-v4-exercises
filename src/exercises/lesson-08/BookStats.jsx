@@ -4,6 +4,8 @@ import {
 } from '../../private/components/renderCounter.jsx';
 import styles from './BookStats.module.css';
 
+import { useMemo } from 'react';
+
 // Book Statistics Component - Expensive calculations run unnecessarily
 function BookStats({ books }) {
   const { count } = useRenderCounter('BookStats');
