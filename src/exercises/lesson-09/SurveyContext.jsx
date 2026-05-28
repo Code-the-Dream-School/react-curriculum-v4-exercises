@@ -1,6 +1,7 @@
 import { createContext, useReducer } from 'react';
 import { surveyReducer } from './surveyReducer';
 import { initialSurvey } from './surveyData';
+import { test } from 'vitest';
 
 // Survey Context
 export const SurveyContext = createContext();
@@ -14,7 +15,7 @@ const initialState = {
   },
 };
 
-// Context Provider Component
+// Context Prostate Component
 //
 // This component demonstrates the "useReducer + Context" pattern:
 // 1. useReducer creates a dispatch function that sends actions to surveyReducer
@@ -27,7 +28,10 @@ export function SurveyProvider({ children }) {
   // useReducer returns [currentState, dispatch]
   // - state: current survey data + UI state
   // - dispatch: function to send actions to the reducer
-  const [state, dispatch] = useReducer(surveyReducer, initialState);
+  const [state, dispatch] = useReducer(
+    surveyReducer,
+    initialState
+  );
 
   return (
     // Both state AND dispatch are provided to all children

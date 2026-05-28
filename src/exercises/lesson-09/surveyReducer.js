@@ -45,11 +45,16 @@ export function surveyReducer(state, action) {
         ...state,
         questions: [
           ...state.questions,
-          createNewQuestion(action.payload, state.questions.length),
+          createNewQuestion(
+            action.payload,
+            state.questions.length
+          ),
         ],
         survey: {
           ...state.survey,
-          lastModified: new Date().toISOString().split('T')[0],
+          lastModified: new Date()
+            .toISOString()
+            .split('T')[0],
         },
       };
 
@@ -58,7 +63,13 @@ export function surveyReducer(state, action) {
         ...state,
         questions: state.questions.map((q) =>
           q.id === action.payload.questionId
-            ? { ...q, options: [...q.options, action.payload.option] }
+            ? {
+                ...q,
+                options: [
+                  ...q.options,
+                  action.payload.option,
+                ],
+              }
             : q
         ),
       };
@@ -78,7 +89,9 @@ export function surveyReducer(state, action) {
         survey: {
           ...state.survey,
           title: action.payload.title,
-          lastModified: new Date().toISOString().split('T')[0],
+          lastModified: new Date()
+            .toISOString()
+            .split('T')[0],
         },
       };
 
@@ -96,13 +109,46 @@ export function surveyReducer(state, action) {
 
     case 'UPDATE_QUESTION_TEXT':
       // TODO: Implement this action
-      console.log('TODO: Implement UPDATE_QUESTION_TEXT action');
-      return state;
+      // console.log('TODO: Implement UPDATE_QUESTION_TEXT action');
+      return {
+        ...state,
+        questions: state.questions.map((currentQuestion) =>
+          currentQuestion.id === action.payload.id
+            ? {
+                ...currentQuestion,
+                question: action.payload.newText,
+              }
+            : currentQuestion
+        ),
+      };
 
+    // return state;
+    // state is the whole "BOX" of questions
     case 'DELETE_QUESTION':
       // TODO: Implement this action
       console.log('TODO: Implement DELETE_QUESTION action');
-      return state;
+      return {
+        ...state,
+        questions: state.questions.filter(
+          (currentQuestion) =>
+            currentQuestion.id !== action.payload.id
+        ),
+        ui: {
+          ...state.ui,
+          editingQuestionId:
+            action.payload.id === state.ui.editingQuestionId
+              ? null
+              : state.ui.editingQuestionId,
+        },
+      };
+    // return state;
+
+    case 'ADD_OPTION_TO_QUESTION':
+      //TODO: ADD NEW OPTION TO SPECIFIC QUESTION
+      // FIND QUESTION BY PAYLOAD.QUESTIONID
+      // ADD NEW OPTION WITH PAYLOAD.OPTIONTEXT TO THE QUESTIONS OPTIONS ARRAY
+      // ONLY WORKS FOR MULTIPLE CHOICE QUESTIONS
+      return null;
 
     default:
       return state;
