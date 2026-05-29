@@ -14,6 +14,7 @@ function BookList({ books, sortBy, favorites, onToggleFavorite }) {
   // TODO #3: Optimize this expensive sorting operation with useMemo
   // This sorting runs on every render, even when books haven't changed
   const sortedBooks = useMemo(() => {
+    // Test use: console.log('Test: stort running');
     return books.toSorted((a, b) => {
       switch (sortBy) {
         case 'title':
