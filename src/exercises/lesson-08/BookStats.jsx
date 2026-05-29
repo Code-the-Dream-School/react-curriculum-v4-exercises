@@ -8,6 +8,7 @@ import { useMemo } from 'react';
 
 // Book Statistics Component - Expensive calculations run unnecessarily
 function BookStats({ books }) {
+  // Test use: console.log('Test: BookStats books reference changed');
   const { count } = useRenderCounter('BookStats');
 
   // TODO #4: Optimize these expensive calculations with useMemo
