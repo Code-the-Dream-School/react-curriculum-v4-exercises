@@ -1,7 +1,6 @@
 import { createContext, useReducer } from 'react';
 import { surveyReducer } from './surveyReducer';
 import { initialSurvey } from './surveyData';
-import { test } from 'vitest';
 
 // Survey Context
 export const SurveyContext = createContext();
