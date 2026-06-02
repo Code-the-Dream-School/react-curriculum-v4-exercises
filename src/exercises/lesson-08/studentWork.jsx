@@ -1,7 +1,7 @@
 //Lesson-08 Advanced Hooks: useCallback and useMemo, Optimizing a React App
 //Exercise: Book Library Dashboard Performance Optimization
 
-import { useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { bookData, getAllGenres, filterBooksByGenre } from './bookData.js';
 import {
   useRenderCounter,
@@ -24,34 +24,36 @@ export default function StudentWork() {
 
   // TODO #1: Optimize this search handler with useCallback
   // This function is recreated on every render, causing BookCard re-renders
-  const handleSearch = (e) => {
+  const handleSearch = useCallback((e) => {
     setSearchTerm(e.target.value);
-  };
+  }, []);
 
   // TODO #2: Optimize this favorite toggle handler with useCallback
   // This function is recreated on every render, causing BookCard re-renders
-  const handleToggleFavorite = (bookId) => {
+  const handleToggleFavorite = useCallback((bookId) => {
     setFavorites((prev) =>
       prev.includes(bookId)
         ? prev.filter((id) => id !== bookId)
         : [...prev, bookId]
     );
-  };
+  }, []);
 
-  const handleGenreToggle = (genre) => {
+  const handleGenreToggle = useCallback((genre) => {
     setSelectedGenres((prev) =>
       prev.includes(genre) ? prev.filter((g) => g !== genre) : [...prev, genre]
     );
-  };
+  }, []);
 
   // Filter books by search term and selected genres
-  let filteredBooks = bookData.filter(
-    (book) =>
-      book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      book.author.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredBooks = useMemo(() => {
+    const searchResults = bookData.filter(
+      (book) =>
+        book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        book.author.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
-  filteredBooks = filterBooksByGenre(filteredBooks, selectedGenres);
+    return filterBooksByGenre(searchResults, selectedGenres);
+  }, [searchTerm, selectedGenres]);
 
   return (
     <div className={styles.dashboard}>
