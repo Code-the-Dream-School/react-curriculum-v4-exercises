@@ -105,6 +105,33 @@ export function QuestionItem({ question }) {
                     });
                   }}
                 />
+
+                <button
+                  onClick={() => {
+                    dispatch({
+                      type: 'UPDATE_OPTION_TEXT',
+                      payload: {
+                        questionId: question.id,
+                        optionIndex: index,
+                        newText: option,
+                      },
+                    });
+                  }}
+                >
+                  Save
+                </button>
+
+                <button
+                  disabled={question.options.length <= 2}
+                  onClick={() => {
+                    dispatch({
+                      type: 'DELETE_OPTION_FROM_QUESTION',
+                      payload: { questionId: question.id, optionIndex: index },
+                    });
+                  }}
+                >
+                  Delete
+                </button>
               </li>
             ))}
           </ul>
