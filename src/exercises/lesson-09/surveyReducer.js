@@ -123,7 +123,9 @@ export function surveyReducer(state, action) {
       };
 
     case 'ADD_OPTION_TO_QUESTION':
-      console.log('TODO: Implement ADD_OPTION_TO_QUESTIO action');
+      console.log(
+        'TODO: Add new option to specific question ADD_OPTION_TO_QUESTIO'
+      );
       return {
         ...state,
         questions: state.questions.map((q) => {
@@ -140,6 +142,24 @@ export function surveyReducer(state, action) {
         }),
       };
 
+    case 'UPDATE_OPTION_TEXT':
+      console.log('TODO: Implement UPDATE_OPTION_TEXT action');
+      return {
+        ...state,
+        questions: state.questions.map((q) => {
+          if (q.id === action.payload.questionId) {
+            return {
+              ...q,
+              options: q.options.map((option, index) =>
+                index === action.payload.optionIndex
+                  ? action.payload.newText
+                  : option
+              ),
+            };
+          }
+          return q;
+        }),
+      };
     default:
       return state;
   }
