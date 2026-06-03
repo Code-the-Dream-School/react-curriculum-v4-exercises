@@ -91,7 +91,20 @@ export function QuestionItem({ question }) {
           <ul>
             {question.options.map((option, index) => (
               <li key={index} className={styles['option-item']}>
-                <span className={styles['option-text']}>{option}</span>
+                <input
+                  type="text"
+                  value={option}
+                  onChange={(e) => {
+                    dispatch({
+                      type: 'UPDATE_OPTION_TEXT',
+                      payload: {
+                        questionId: question.id,
+                        optionIndex: index,
+                        newText: e.target.value,
+                      },
+                    });
+                  }}
+                />
               </li>
             ))}
           </ul>
