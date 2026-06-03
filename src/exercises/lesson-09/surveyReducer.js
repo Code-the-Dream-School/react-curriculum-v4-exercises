@@ -112,6 +112,14 @@ export function surveyReducer(state, action) {
       return {
         ...state,
         questions: state.questions.filter((q) => q.id !== action.payload.id),
+
+        ui: {
+          ...state.ui,
+          editingQuestionId:
+            state.ui.editingQuestionId === action.payload.id
+              ? null
+              : state.ui.editingQuestionId,
+        },
       };
 
     default:
