@@ -7,7 +7,7 @@ import styles from '../StudentWork.module.css';
 export function QuestionItem({ question }) {
   //HINT: use these with controlled form
   const [workingText, setWorkingText] = useState(question.question);
-  const { dispatch } = useContext(SurveyContext);
+  const { state, dispatch } = useContext(SurveyContext);
 
   // Helper function to convert type to title case
   const formatQuestionType = (type) => {
@@ -19,8 +19,14 @@ export function QuestionItem({ question }) {
 
   // TODO: Students will add edit functionality here
   const handleEdit = () => {
-    console.log('TODO: Implement edit functionality');
-    // Hint: Use SET_EDITING_QUESTION action
+    if (state.ui.editingQuestionId === question.id) {
+      dispatch({ type: 'SET_EDITING_QUESTION', payload: { questionId: null } });
+    } else {
+      dispatch({
+        type: 'SET_EDITING_QUESTION',
+        payload: { questionId: question.id },
+      });
+    }
   };
 
   // TODO: Students will add save functionality here
@@ -44,7 +50,7 @@ export function QuestionItem({ question }) {
         <div className={styles['question-actions']}>
           {/* TODO: Students add Edit and Delete buttons here */}
           <button className={styles['edit-btn']} onClick={handleEdit}>
-            Edit (TODO)
+            {state.ui.editingQuestionId === question.id ? 'Cancel' : 'Edit'}
           </button>
           <button className={styles['delete-btn']} onClick={handleDelete}>
             Delete (TODO)
