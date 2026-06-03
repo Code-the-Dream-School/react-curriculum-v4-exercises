@@ -31,8 +31,10 @@ export function QuestionItem({ question }) {
 
   // TODO: Students will add save functionality here
   const handleSave = () => {
-    console.log('TODO: Implement save functionality');
-    // Hint: Use UPDATE_QUESTION_TEXT action with workingText
+    dispatch({
+      type: 'UPDATE_QUESTION_TEXT',
+      payload: { id: question.id, newText: workingText },
+    });
   };
 
   // TODO: Students will add delete functionality here
@@ -61,6 +63,26 @@ export function QuestionItem({ question }) {
       {/* TODO: Students will add conditional controlled form to edit question here */}
       <div className={styles['question-content']}>
         <h3>{question.question}</h3>
+        {state.ui.editingQuestionId === question.id && (
+          <div>
+            <input
+              type="text"
+              value={workingText}
+              onChange={(e) => setWorkingText(e.target.value)}
+            />
+            <button onClick={handleSave}>Save</button>
+            <button
+              onClick={() =>
+                dispatch({
+                  type: 'SET_EDITING_QUESTION',
+                  payload: { questionId: null },
+                })
+              }
+            >
+              Cancel
+            </button>
+          </div>
+        )}
       </div>
 
       {question.type === QUESTION_TYPES.MULTIPLE_CHOICE && (
