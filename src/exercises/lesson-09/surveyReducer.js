@@ -160,6 +160,26 @@ export function surveyReducer(state, action) {
           return q;
         }),
       };
+
+    case 'DELETE_OPTION_FROM_QUESTION':
+      return {
+        ...state,
+        questions: state.questions.map((q) => {
+          if (q.id === action.payload.questionId) {
+            if (q.options.length <= 2) {
+              return q;
+            }
+            return {
+              ...q,
+              options: q.options.filter(
+                (_, index) => index !== action.payload.optionIndex
+              ),
+            };
+          }
+          return q;
+        }),
+      };
+
     default:
       return state;
   }
