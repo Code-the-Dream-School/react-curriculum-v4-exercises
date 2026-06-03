@@ -20,6 +20,7 @@ export function QuestionItem({ question }) {
   // TODO: Students will add edit functionality here
   const handleEdit = () => {
     if (state.ui.editingQuestionId === question.id) {
+      setWorkingText(question.question);
       dispatch({ type: 'SET_EDITING_QUESTION', payload: { questionId: null } });
     } else {
       dispatch({
@@ -80,12 +81,13 @@ export function QuestionItem({ question }) {
             />
             <button onClick={handleSave}>Save</button>
             <button
-              onClick={() =>
+              onClick={() => {
+                setWorkingText(question.question);
                 dispatch({
                   type: 'SET_EDITING_QUESTION',
                   payload: { questionId: null },
-                })
-              }
+                });
+              }}
             >
               Cancel
             </button>
