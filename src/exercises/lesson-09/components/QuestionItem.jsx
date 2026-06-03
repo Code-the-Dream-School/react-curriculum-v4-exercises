@@ -63,7 +63,7 @@ export function QuestionItem({ question }) {
             {state.ui.editingQuestionId === question.id ? 'Cancel' : 'Edit'}
           </button>
           <button className={styles['delete-btn']} onClick={handleDelete}>
-            Delete (TODO)
+            Delete
           </button>
         </div>
       </div>
