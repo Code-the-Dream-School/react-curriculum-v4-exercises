@@ -109,7 +109,10 @@ export function surveyReducer(state, action) {
     case 'DELETE_QUESTION':
       // TODO: Implement this action
       console.log('TODO: Implement DELETE_QUESTION action');
-      return state;
+      return {
+        ...state,
+        questions: state.questions.filter((q) => q.id !== action.payload.id),
+      };
 
     default:
       return state;
