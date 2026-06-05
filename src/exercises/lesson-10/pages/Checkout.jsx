@@ -1,11 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 
 export default function Checkout() {
-  const navigate = null;
+  const navigate = useNavigate();
 
-  function handleGoHome() {}
+  function handleGoHome() {
+    navigate('/');
+  }
 
-  function handleBack() {}
+  function handleBack() {
+    navigate(-1);
+  }
 
   return (
     <section>

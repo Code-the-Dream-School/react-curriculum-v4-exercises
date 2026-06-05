@@ -15,6 +15,17 @@ export default function Header({ user }) {
       <h1 style={{ margin: 0 }}>Lesson 10 Routing Demo</h1>
 
       <nav style={{ display: 'flex', gap: 12, marginTop: 8 }}>
+        <NavLink to="/" style={navLinkStyles}>
+          Home
+        </NavLink>
+        <NavLink to="/checkout" style={navLinkStyles}>
+          Checkout
+        </NavLink>
+        {user.isLoggedIn && (
+          <NavLink to="/account" style={navLinkStyles}>
+            Account
+          </NavLink>
+        )}
         <a
           href="https://developer.mozilla.org/en-US/docs/Web/API/History_API"
           target="_blank"

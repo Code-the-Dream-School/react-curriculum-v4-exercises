@@ -1,7 +1,7 @@
-import { Link, useParams } from 'react-router';
+import { Link, useParams } from 'react-router-dom';
 
 export default function ProductDetails({ products }) {
-  const id = null;
+  const { id } = useParams();
 
   const product = products.find((p) => p.id === id);
 
@@ -28,7 +28,9 @@ export default function ProductDetails({ products }) {
           No product found for id: <code>{String(id)}</code>
         </p>
       )}
-      <div style={{ marginTop: 12 }}>Go Home</div>
+      <div style={{ marginTop: 12 }}>
+        <Link to="/">Go Home</Link>
+      </div>
     </section>
   );
 }
