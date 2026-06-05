@@ -12,11 +12,13 @@
   Use the commented "Explanation" section at the bottom of this lesson's components.
 */
 
+import { useState } from 'react';
+
 export default function BugProps({ name = 'friend' }) {
-  let message = 'Hello, ' + name;
+  const [message, setMessage] = useState('Hello, ' + name);
 
   function handleChange() {
-    message = 'Hi, ' + name + '!';
+    setMessage('Hi, ' + name + '!');
   }
 
   return (
@@ -28,4 +30,7 @@ export default function BugProps({ name = 'friend' }) {
 }
 
 // Explanation:
-// (Write your explanation here)
+// The message was stored as a regular JavaScript variable, which React doesn't track.
+// When the button was clicked and the message changed, React had no way to know about it,
+// so it didn't re-render the UI. The fix was to convert message to state using useState.
+// Now when handleChange calls setMessage, React detects the state change and updates the UI.

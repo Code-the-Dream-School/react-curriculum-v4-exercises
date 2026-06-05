@@ -13,8 +13,7 @@ export default function BugMutatedState() {
   let [count, setCount] = useState(0);
 
   function handleAdd() {
-    count++;
-    setCount(count);
+    setCount(count + 1);
   }
 
   return (
@@ -26,4 +25,8 @@ export default function BugMutatedState() {
 }
 
 // Explanation:
-// (Write your explanation here)
+// The problem was that the state was being mutated directly by doing count++ first, then passing it to setCount.
+// React needs to see a NEW value to know that the state changed and trigger a re-render. When you mutate the
+// existing value, it's still technically the same reference, so React doesn't detect the change. The fix was
+// to pass the new value directly to setCount like setCount(count + 1). Now React sees a new value and
+// re-renders the component properly.
