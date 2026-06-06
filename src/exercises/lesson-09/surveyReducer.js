@@ -68,7 +68,7 @@ export function surveyReducer(state, action) {
         ...state,
         ui: {
           ...state.ui,
-          editingQuestionId: action.payload.questionId,
+          editingQuestionId: action.payload,
         },
       };
 
@@ -96,14 +96,87 @@ export function surveyReducer(state, action) {
 
     case 'UPDATE_QUESTION_TEXT':
       // TODO: Implement this action
-      console.log('TODO: Implement UPDATE_QUESTION_TEXT action');
-      return state;
+      return {
+        ...state,
+        questions: state.questions.map((q) =>
+          q.id === action.payload.id
+            ? { ...q, question: action.payload.newText } //Read the single payload property
+            : q
+        ), //map and if id matches,replace question with newText(user typed) and everything else stays same or stay all same/:q ->
+      };
 
     case 'DELETE_QUESTION':
       // TODO: Implement this action
-      console.log('TODO: Implement DELETE_QUESTION action');
-      return state;
+      return {
+        ...state,
+        questions: state.questions.filter((q) => q.id !== action.payload), // if id does not match filter out (only id matched stay)
+        ui: {
+          ...state.ui,
+          editingQuestionId:
+            state.ui.editingQuestionId === action.payload
+              ? null
+              : state.ui.editingQuestionId, //if deleting currently edited question, set to null
+        },
+      };
 
+    case 'ADD_OPTION_TO_QUESTION':
+      return {
+        ...state,
+        questions: state.questions.map((q) => {
+          //Find question by `payload.questionId`
+          if (
+            q.id === action.payload.questionId &&
+            q.type === QUESTION_TYPES.MULTIPLE_CHOICE
+          )
+            //Only works for multiple-choice questions
+            return {
+              ...q,
+              options: [...(q.options || []), action.payload.optionText], //Add new option with `payload.optionText` to the question's `options` array
+            };
+          return q;
+        }),
+      };
+
+    case 'UPDATE_OPTION_TEXT':
+      return {
+        ...state,
+        questions: state.questions.map((q) => {
+          //Find question by `payload.questionId`
+          if (q.id === action.payload.questionId) {
+            return {
+              ...q,
+              options: q.options.map(
+                (opt, idx) =>
+                  idx === action.payload.optionIndex
+                    ? action.payload.newText
+                    : opt //Update option at `payload.optionIndex` with `payload.newText`
+              ),
+            };
+          }
+          return q; //returning the completely updated question object with the option removed. It is not just returning the remaining options or a single item; it returns the entire question structure
+        }), // If id matches id, return inner block, If it does not match the ID, it skips the inner block entirely, moves down to the next line of code, and then executes return q.
+      };
+    case 'DELETE_OPTION_FROM_QUESTION':
+      return {
+        ...state,
+        questions: state.questions.map((q) => {
+          if (q.id === action.payload.questionId) {
+            //Find question by `payload.questionId`
+            if (q.options && q.options.length <= 2) {
+              //Ensure at least 2 options remain for multiple-choice questions
+              return q;
+            }
+            return {
+              ...q,
+              //_ is a valid variable name, but we don't use it. Because we only care about comparing the index numbers (idx) to delete the right item, we don't need the actual text of the option. Writing _ tells anyone reading your code, "Just skip over the first argument; we only care about the index."
+              options: q.options.filter(
+                (_, idx) => idx !== action.payload.optionIndex
+              ), //Remove option at `payload.optionIndex` from the question's `options` array
+            };
+          }
+          return q;
+        }),
+      };
     default:
       return state;
   }
