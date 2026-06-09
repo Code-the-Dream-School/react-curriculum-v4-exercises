@@ -23,9 +23,11 @@ export default function Header({ user }) {
           Checkout
         </NavLink>
 
-        <NavLink to="/account" style={navLinkStyles}>
-          Account
-        </NavLink>
+        {user.isLoggedIn && (
+          <NavLink to="/account" style={navLinkStyles}>
+            Account
+          </NavLink>
+        )}
       </nav>
 
       <div style={{ marginTop: 8 }}>
