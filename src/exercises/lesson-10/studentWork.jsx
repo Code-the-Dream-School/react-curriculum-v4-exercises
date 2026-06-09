@@ -49,7 +49,19 @@ export default function StudentWork() {
 
       <Header user={user} />
 
-      <main style={{ padding: 12 }}></main>
+      <main style={{ padding: 12 }}>
+        <Routes>
+          <Route path="/" element={<Home products={products} />} />
+
+          <Route path="/checkout" element={<Checkout />} />
+
+          <Route path="/products/:id" element={<ProductDetails />} />
+
+          {user.isLoggedIn && <Route path="/account" element={<Account />} />}
+
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
 
       <Footer />
     </div>
