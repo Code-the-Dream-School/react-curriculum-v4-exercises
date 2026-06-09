@@ -8,6 +8,8 @@ export default function NotFound() {
       <h2>404: Not Found</h2>
 
       <p>Invalid path: {location.pathname}</p>
+
+      <Link to="/">Go Home</Link>
     </section>
   );
 }
