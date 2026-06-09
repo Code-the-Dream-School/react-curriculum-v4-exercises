@@ -10,12 +10,14 @@ import Checkout from './pages/Checkout';
 import ProductDetails from './pages/ProductDetails';
 import Account from './pages/Account';
 import NotFound from './pages/NotFound';
+import productsData from './data/products';
 
 export default function StudentWork() {
   const [user, setUser] = useState({
     isLoggedIn: true,
     firstName: 'Avery',
   });
+  const [products] = useState(productsData);
 
   function toggleLogin() {
     setUser((u) => ({ ...u, isLoggedIn: !u.isLoggedIn }));
