@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 
+import { Routes, Route } from 'react-router';
+
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
+
+import Home from './pages/Home';
+import Checkout from './pages/Checkout';
+import ProductDetails from './pages/ProductDetails';
+import Account from './pages/Account';
+import NotFound from './pages/NotFound';
 
 export default function StudentWork() {
   const [user, setUser] = useState({
