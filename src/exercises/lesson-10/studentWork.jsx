@@ -32,7 +32,6 @@ export default function StudentWork() {
         margin: '0 auto',
       }}
     >
-      {/* Debug Panel */}
       <aside
         style={{
           padding: 12,
