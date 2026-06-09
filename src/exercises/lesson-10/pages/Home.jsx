@@ -16,37 +16,32 @@ export default function Home({ products }) {
         }}
       >
         {products.map((p) => (
-          <Link
+          <article
             key={p.id}
-            to={`/products/${p.id}`}
-            style={{ textDecoration: 'none', color: 'inherit' }}
+            style={{
+              border: '1px solid #ddd',
+              borderRadius: 10,
+              padding: 10,
+              background: '#fff',
+            }}
           >
-            <article
+            <img
+              src={p.previewImage}
+              alt={p.name}
               style={{
-                border: '1px solid #ddd',
-                borderRadius: 10,
-                padding: 10,
-                background: '#fff',
+                width: '100%',
+                height: 120,
+                objectFit: 'cover',
+                borderRadius: 8,
               }}
-            >
-              <img
-                src={p.previewImage}
-                alt={p.name}
-                style={{
-                  width: '100%',
-                  height: 120,
-                  objectFit: 'cover',
-                  borderRadius: 8,
-                }}
-              />
+            />
 
-              <h3 style={{ margin: '10px 0 4px' }}>{p.name}</h3>
+            <h3 style={{ margin: '10px 0 4px' }}>{p.name}</h3>
 
-              <p style={{ margin: 0 }}>
-                <strong>${p.price.toFixed(2)}</strong>
-              </p>
-            </article>
-          </Link>
+            <p style={{ margin: 0 }}>
+              <strong>${p.price.toFixed(2)}</strong>
+            </p>
+          </article>
         ))}
       </div>
     </section>
