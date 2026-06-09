@@ -24,3 +24,4 @@ export const products = [
     previewImage: 'https://placehold.co/600x400?text=CTD+Coffee+Mug',
   },
 ];
+export default products;
