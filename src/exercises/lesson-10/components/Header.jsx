@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
 export default function Header({ user }) {
-  // Active link styling helper
   const navLinkStyles = ({ isActive }) => ({
     fontWeight: isActive ? 700 : 400,
     textDecoration: isActive ? 'underline' : 'none',
