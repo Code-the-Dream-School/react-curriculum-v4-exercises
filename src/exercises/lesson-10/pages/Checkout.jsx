@@ -1,7 +1,7 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 export default function Checkout() {
-  const navigate = null;
+  const navigate = useNavigate();
 
   function handleGoHome() {}
 
