@@ -6,6 +6,8 @@ export default function NotFound() {
   return (
     <section>
       <h2>404: Not Found</h2>
+
+      <p>Invalid path: {location.pathname}</p>
     </section>
   );
 }
