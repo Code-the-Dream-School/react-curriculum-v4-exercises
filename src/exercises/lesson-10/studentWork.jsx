@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header.jsx';
@@ -10,6 +9,7 @@ import Checkout from './pages/Checkout';
 import ProductDetails from './pages/ProductDetails';
 import Account from './pages/Account';
 import NotFound from './pages/NotFound';
+
 import productsData from './data/products';
 
 export default function StudentWork() {
@@ -17,6 +17,7 @@ export default function StudentWork() {
     isLoggedIn: true,
     firstName: 'Avery',
   });
+
   const [products] = useState(productsData);
 
   function toggleLogin() {
@@ -31,6 +32,7 @@ export default function StudentWork() {
         margin: '0 auto',
       }}
     >
+      {/* Debug Panel */}
       <aside
         style={{
           padding: 12,
@@ -55,9 +57,14 @@ export default function StudentWork() {
 
           <Route path="/checkout" element={<Checkout />} />
 
-          <Route path="/products/:id" element={<ProductDetails />} />
+          <Route
+            path="/products/:id"
+            element={<ProductDetails products={products} />}
+          />
 
-          {user.isLoggedIn && <Route path="/account" element={<Account />} />}
+          {user.isLoggedIn && (
+            <Route path="/account" element={<Account user={user} />} />
+          )}
 
           <Route path="*" element={<NotFound />} />
         </Routes>
