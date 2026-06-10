@@ -14,16 +14,14 @@ export default function Header({ user }) {
       <h1 style={{ margin: 0 }}>Lesson 10 Routing Demo</h1>
 
       <nav style={{ display: 'flex', gap: 12, marginTop: 8 }}>
-        <NavLink to="." style={navLinkStyles} end>
+        <NavLink to={'/lessons/lesson-10'} style={navLinkStyles} end>
           Home
         </NavLink>
-
-        <NavLink to="checkout" style={navLinkStyles}>
+        <NavLink to={'/lessons/lesson-10/checkout'} style={navLinkStyles}>
           Checkout
         </NavLink>
-
         {user.isLoggedIn && (
-          <NavLink to="account" style={navLinkStyles}>
+          <NavLink to={'/lessons/lesson-10/account'} style={navLinkStyles}>
             Account
           </NavLink>
         )}
