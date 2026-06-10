@@ -1,7 +1,6 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Header({ user }) {
-  // Active link styling helper
   const navLinkStyles = ({ isActive }) => ({
     fontWeight: isActive ? 700 : 400,
     textDecoration: isActive ? 'underline' : 'none',
@@ -15,22 +14,28 @@ export default function Header({ user }) {
       <h1 style={{ margin: 0 }}>Lesson 10 Routing Demo</h1>
 
       <nav style={{ display: 'flex', gap: 12, marginTop: 8 }}>
-        <a
-          href="https://developer.mozilla.org/en-US/docs/Web/API/History_API"
-          target="_blank"
-          rel="noreferrer"
-        >
-          History API (MDN)
-        </a>
+        <NavLink to="/" end style={navLinkStyles}>
+          Home
+        </NavLink>
+
+        <NavLink to="/checkout" style={navLinkStyles}>
+          Checkout
+        </NavLink>
+
+        {user.isLoggedIn && (
+          <NavLink to="/account" style={navLinkStyles}>
+            Account
+          </NavLink>
+        )}
       </nav>
 
       <div style={{ marginTop: 8 }}>
         {user.isLoggedIn ? (
-          <span>
+          <p>
             Logged in as <strong>{user.firstName}</strong>
-          </span>
+          </p>
         ) : (
-          <span>Not logged in</span>
+          <p>Not logged in</p>
         )}
       </div>
     </header>
