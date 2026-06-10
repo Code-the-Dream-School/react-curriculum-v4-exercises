@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 export default function Home({ products }) {
   return (
@@ -41,9 +41,21 @@ export default function Home({ products }) {
             <p style={{ margin: 0 }}>
               <strong>${p.price.toFixed(2)}</strong>
             </p>
+            <Link to={`/products/${p.id}`}>View Details</Link>
           </article>
         ))}
       </div>
     </section>
   );
 }
+
+// <Link> = simple navigation
+// Think of it as:
+// “just go to this page”
+
+// <Link to="/about">About</Link>
+// What it does:
+// changes URL
+// renders new route
+// NO extra styling logic
+// always looks the same
