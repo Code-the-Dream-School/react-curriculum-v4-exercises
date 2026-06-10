@@ -9,7 +9,7 @@ export default function NotFound() {
 
       <p>Invalid path: {location.pathname}</p>
 
-      <Link to="/">Go Home</Link>
+      <Link to="..">Go Home</Link>
     </section>
   );
 }

@@ -43,7 +43,7 @@ export default function Home({ products }) {
             </p>
 
             <Link
-              to={`/products/${p.id}`}
+              to={`products/${p.id}`}
               style={{ marginTop: 8, display: 'inline-block' }}
             >
               View Details

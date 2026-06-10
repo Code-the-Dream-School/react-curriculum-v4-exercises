@@ -38,7 +38,7 @@ export default function ProductDetails({ products }) {
       )}
 
       <div style={{ marginTop: 12 }}>
-        <Link to="/">Go Home</Link>
+        <Link to="..">Go Home</Link>
       </div>
     </section>
   );
