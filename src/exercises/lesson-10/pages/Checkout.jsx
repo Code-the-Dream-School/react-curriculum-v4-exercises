@@ -4,7 +4,7 @@ export default function Checkout() {
   const navigate = useNavigate();
 
   function handleGoHome() {
-    navigate('/'); // go to Home page
+    navigate('.'); // go to Home page
   }
 
   function handleBack() {

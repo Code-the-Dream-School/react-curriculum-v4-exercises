@@ -41,7 +41,7 @@ export default function Home({ products }) {
             <p style={{ margin: 0 }}>
               <strong>${p.price.toFixed(2)}</strong>
             </p>
-            <Link to={`/products/${p.id}`}>View Details</Link>
+            <Link to={`products/${p.id}`}>View Details</Link>
           </article>
         ))}
       </div>

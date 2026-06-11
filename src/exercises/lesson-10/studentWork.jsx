@@ -49,16 +49,16 @@ export default function StudentWork() {
 
       <main style={{ padding: 12 }}>
         <Routes>
-          <Route path="/" element={<Home products={productsState} />}></Route>
-          <Route path="/checkout" element={<Checkout />}></Route>
+          <Route index element={<Home products={productsState} />}></Route>
+          <Route path="checkout" element={<Checkout />}></Route>
           <Route
-            path="/products/:id"
+            path="products/:id"
             element={<ProductDetails products={productsState} />}
           ></Route>
           {user.isLoggedIn && ( //only show account if logged in
-            <Route path="/account" element={<Account />}></Route>
+            <Route path="account" element={<Account />}></Route>
           )}
-          <Route path="/*" element={<NotFound />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
           {/* if nothing matches above, show 404 */}
         </Routes>
       </main>
