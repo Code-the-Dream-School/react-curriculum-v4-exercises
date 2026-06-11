@@ -28,8 +28,9 @@ export default function ProductDetails({ products }) {
           No product found for id: <code>{String(id)}</code>
         </p>
       )}
-      <div style={{ marginTop: 12 }}>Go Home</div>
-      <Link to=".">Go Home</Link>
+      <div style={{ marginTop: 12 }}>
+        <Link to="/lessons/lesson-10/">Go Home</Link>
+      </div>
     </section>
   );
 }

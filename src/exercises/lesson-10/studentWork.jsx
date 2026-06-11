@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Checkout from './pages/Checkout.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
@@ -55,9 +55,14 @@ export default function StudentWork() {
             path="products/:id"
             element={<ProductDetails products={productsState} />}
           ></Route>
-          {user.isLoggedIn && ( //only show account if logged in
-            <Route path="account" element={<Account />}></Route>
-          )}
+          {/* only show account if logged in */}
+          <Route
+            path="account"
+            element={
+              user.isLoggedIn ? <Account user={user} /> : <Navigate to="/" />
+            }
+          />
+
           <Route path="*" element={<NotFound />}></Route>
           {/* if nothing matches above, show 404 */}
         </Routes>

@@ -9,7 +9,7 @@ export default function NotFound() {
       <p>
         No found for <code>{location.pathname}</code>
       </p>
-      <Link to="/">Go Home</Link>
+      <Link to="/lessons/lesson-10">Go Home</Link>
     </section>
   );
 }

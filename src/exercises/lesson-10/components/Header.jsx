@@ -34,14 +34,14 @@ export default function Header({ user }) {
           <span>Not logged in</span>
         )}
       </div>
-      <NavLink to="." style={navLinkStyles}>
+      <NavLink to="/lessons/lesson-10/" style={navLinkStyles}>
         Home
       </NavLink>
-      <NavLink to="checkout" style={navLinkStyles}>
+      <NavLink to="/lessons/lesson-10/checkout" style={navLinkStyles}>
         Checkout
       </NavLink>
       {user.isLoggedIn && (
-        <NavLink to="account" style={navLinkStyles}>
+        <NavLink to="/lessons/lesson-10/account" style={navLinkStyles}>
           Account
         </NavLink>
       )}
