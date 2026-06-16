@@ -1,7 +1,4 @@
-//Lesson-08 Advanced Hooks: useCallback and useMemo, Optimizing a React App
-//Exercise: Book Library Dashboard Performance Optimization
-
-import { useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { bookData, getAllGenres, filterBooksByGenre } from './bookData.js';
 import {
   useRenderCounter,
@@ -11,7 +8,6 @@ import BookStats from './BookStats.jsx';
 import BookList from './BookList.jsx';
 import styles from './StudentWork.module.css';
 
-// Main Dashboard Component - Contains performance issues to be optimized
 export default function StudentWork() {
   const { count } = useRenderCounter('BookDashboard');
 
@@ -20,38 +16,50 @@ export default function StudentWork() {
   const [sortBy, setSortBy] = useState('title');
   const [favorites, setFavorites] = useState([]);
 
-  const allGenres = getAllGenres();
+  const allGenres = useMemo(() => {
+    // Lesson 08: getAllGenres is derived from static data, so calculate it once.
+    return getAllGenres();
+  }, []);
 
-  // TODO #1: Optimize this search handler with useCallback
-  // This function is recreated on every render, causing BookCard re-renders
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-  };
+  const handleSearch = useCallback((event) => {
+    // Lesson 08: useCallback keeps this function reference stable for child components.
+    setSearchTerm(event.target.value);
+  }, []);
 
-  // TODO #2: Optimize this favorite toggle handler with useCallback
-  // This function is recreated on every render, causing BookCard re-renders
-  const handleToggleFavorite = (bookId) => {
-    setFavorites((prev) =>
-      prev.includes(bookId)
-        ? prev.filter((id) => id !== bookId)
-        : [...prev, bookId]
+  const handleToggleFavorite = useCallback((bookId) => {
+    // Lesson 08: functional state update avoids needing favorites as a dependency.
+    setFavorites((previousFavorites) =>
+      previousFavorites.includes(bookId)
+        ? previousFavorites.filter((id) => id !== bookId)
+        : [...previousFavorites, bookId]
     );
-  };
+  }, []);
 
-  const handleGenreToggle = (genre) => {
-    setSelectedGenres((prev) =>
-      prev.includes(genre) ? prev.filter((g) => g !== genre) : [...prev, genre]
+  const handleGenreToggle = useCallback((genre) => {
+    setSelectedGenres((previousGenres) =>
+      previousGenres.includes(genre)
+        ? previousGenres.filter((currentGenre) => currentGenre !== genre)
+        : [...previousGenres, genre]
     );
-  };
+  }, []);
 
-  // Filter books by search term and selected genres
-  let filteredBooks = bookData.filter(
-    (book) =>
-      book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      book.author.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const handleSortChange = useCallback((event) => {
+    setSortBy(event.target.value);
+  }, []);
 
-  filteredBooks = filterBooksByGenre(filteredBooks, selectedGenres);
+  const filteredBooks = useMemo(() => {
+    // Lesson 08: filtering creates a new array, so useMemo keeps it stable
+    // unless the search term or selected genres actually change.
+    const normalizedSearchTerm = searchTerm.toLowerCase();
+
+    const searchFilteredBooks = bookData.filter(
+      (book) =>
+        book.title.toLowerCase().includes(normalizedSearchTerm) ||
+        book.author.toLowerCase().includes(normalizedSearchTerm)
+    );
+
+    return filterBooksByGenre(searchFilteredBooks, selectedGenres);
+  }, [searchTerm, selectedGenres]);
 
   return (
     <div className={styles.dashboard}>
@@ -64,24 +72,22 @@ export default function StudentWork() {
       <h1 className={styles.title}>📚 Professional Book Library Dashboard</h1>
 
       <div className={styles.performanceNotice}>
-        <h3>⚠️ Performance Notice</h3>
+        <h3>✅ Performance Optimized</h3>
         <p>
-          This dashboard has performance issues! Watch the render counters on
-          the top-right of the component as you interact with the interface.
+          This dashboard now uses useCallback, useMemo, and memo to reduce
+          unnecessary renders and repeated calculations.
         </p>
         <p>
-          <strong>Try:</strong> Type in the search box, change filters, or click
-          buttons and observe the render counts.
+          <strong>Try:</strong> Type in the search box, change filters, sort
+          books, and favorite books while watching the render counters.
         </p>
       </div>
 
-      {/* Statistics and Favorites Section */}
       <div className={styles.statsAndFavorites}>
         <div className={styles.statsSection}>
           <BookStats books={filteredBooks} />
         </div>
 
-        {/* Favorites Summary */}
         <div className={styles.favoritesSection}>
           {favorites.length > 0 ? (
             <div
@@ -94,6 +100,7 @@ export default function StudentWork() {
               }}
             >
               <h3>❤️ Your Favorites ({favorites.length})</h3>
+
               <div
                 style={{
                   display: 'flex',
@@ -109,6 +116,7 @@ export default function StudentWork() {
                 <span>Title</span>
                 <span>Remove from Favorites</span>
               </div>
+
               <ul
                 style={{
                   listStyle: 'none',
@@ -117,7 +125,8 @@ export default function StudentWork() {
                 }}
               >
                 {favorites.map((favoriteId) => {
-                  const book = bookData.find((b) => b.id === favoriteId);
+                  const book = bookData.find((book) => book.id === favoriteId);
+
                   return book ? (
                     <li
                       key={book.id}
@@ -133,7 +142,9 @@ export default function StudentWork() {
                       <span style={{ flexGrow: 1, paddingRight: '8px' }}>
                         {book.title}
                       </span>
+
                       <button
+                        type="button"
                         onClick={() => handleToggleFavorite(book.id)}
                         style={{
                           background: 'none',
@@ -161,13 +172,16 @@ export default function StudentWork() {
         </div>
       </div>
 
-      {/* Search Controls */}
       <div className={styles.searchControls}>
         <h3>Search & Filter Controls</h3>
 
         <div className={styles.searchGroup}>
-          <label className={styles.searchLabel}>Search Books:</label>
+          <label className={styles.searchLabel} htmlFor="bookSearch">
+            Search Books:
+          </label>
+
           <input
+            id="bookSearch"
             type="text"
             value={searchTerm}
             onChange={handleSearch}
@@ -177,10 +191,14 @@ export default function StudentWork() {
         </div>
 
         <div className={styles.searchGroup}>
-          <label className={styles.searchLabel}>Sort By:</label>
+          <label className={styles.searchLabel} htmlFor="bookSort">
+            Sort By:
+          </label>
+
           <select
+            id="bookSort"
             value={sortBy}
-            onChange={(e) => setSortBy(e.target.value)}
+            onChange={handleSortChange}
             className={styles.sortSelect}
           >
             <option value="title">Title</option>
@@ -193,9 +211,11 @@ export default function StudentWork() {
 
         <div>
           <label className={styles.searchLabel}>Filter by Genre:</label>
+
           <div className={styles.genreFilters}>
             {allGenres.map((genre) => (
               <button
+                type="button"
                 key={genre}
                 onClick={() => handleGenreToggle(genre)}
                 className={`${styles.genreButton} ${
@@ -211,10 +231,8 @@ export default function StudentWork() {
         </div>
       </div>
 
-      {/* Book List */}
       <BookList
         books={filteredBooks}
-        searchTerm={searchTerm}
         sortBy={sortBy}
         favorites={favorites}
         onToggleFavorite={handleToggleFavorite}
