@@ -1,39 +1,136 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { SurveyContext } from '../SurveyContext';
 import { QUESTION_TYPES } from '../surveyReducer';
 import styles from '../StudentWork.module.css';
 
-// Question Item Component - Students will add Edit/Delete functionality here
 export function QuestionItem({ question }) {
-  //HINT: use these with controlled form
-  const [workingText, setWorkingText] = useState(question.question);
-  const { dispatch } = useContext(SurveyContext);
+  const { state, dispatch } = useContext(SurveyContext);
 
-  // Helper function to convert type to title case
-  const formatQuestionType = (type) => {
-    return type
+  const isEditing = state.ui.editingQuestionId === question.id;
+
+  const [workingText, setWorkingText] = useState(question.question);
+  const [optionDrafts, setOptionDrafts] = useState(question.options || []);
+  const [newOptionText, setNewOptionText] = useState('');
+
+  useEffect(() => {
+    setWorkingText(question.question);
+    setOptionDrafts(question.options || []);
+  }, [question.question, question.options]);
+
+  const formatQuestionType = (type) =>
+    type
       .split('-')
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join('-');
-  };
 
-  // TODO: Students will add edit functionality here
-  const handleEdit = () => {
-    console.log('TODO: Implement edit functionality');
-    // Hint: Use SET_EDITING_QUESTION action
-  };
+  function handleEdit() {
+    setWorkingText(question.question);
+    setOptionDrafts(question.options || []);
 
-  // TODO: Students will add save functionality here
-  const handleSave = () => {
-    console.log('TODO: Implement save functionality');
-    // Hint: Use UPDATE_QUESTION_TEXT action with workingText
-  };
+    dispatch({
+      type: 'SET_EDITING_QUESTION',
+      payload: { questionId: question.id },
+    });
+  }
 
-  // TODO: Students will add delete functionality here
-  const handleDelete = () => {
-    console.log('TODO: Implement delete functionality');
-    // Hint: Show confirmation dialog, then use DELETE_QUESTION action
-  };
+  function handleCancelEdit() {
+    setWorkingText(question.question);
+    setOptionDrafts(question.options || []);
+    setNewOptionText('');
+
+    dispatch({
+      type: 'SET_EDITING_QUESTION',
+      payload: { questionId: null },
+    });
+  }
+
+  function handleSaveQuestionText() {
+    const trimmedText = workingText.trim();
+
+    if (!trimmedText) {
+      return;
+    }
+
+    dispatch({
+      type: 'UPDATE_QUESTION_TEXT',
+      payload: {
+        id: question.id,
+        newText: trimmedText,
+      },
+    });
+  }
+
+  function handleDelete() {
+    const shouldDelete = window.confirm(
+      'Are you sure you want to delete this question?'
+    );
+
+    if (!shouldDelete) {
+      return;
+    }
+
+    dispatch({
+      type: 'DELETE_QUESTION',
+      payload: { id: question.id },
+    });
+  }
+
+  function handleOptionDraftChange(index, value) {
+    setOptionDrafts((previousDrafts) =>
+      previousDrafts.map((option, optionIndex) =>
+        optionIndex === index ? value : option
+      )
+    );
+  }
+
+  function handleSaveOption(index) {
+    const trimmedOption = optionDrafts[index].trim();
+
+    if (!trimmedOption) {
+      return;
+    }
+
+    dispatch({
+      type: 'UPDATE_OPTION_TEXT',
+      payload: {
+        questionId: question.id,
+        optionIndex: index,
+        newText: trimmedOption,
+      },
+    });
+  }
+
+  function handleDeleteOption(index) {
+    if (question.options.length <= 2) {
+      return;
+    }
+
+    dispatch({
+      type: 'DELETE_OPTION_FROM_QUESTION',
+      payload: {
+        questionId: question.id,
+        optionIndex: index,
+      },
+    });
+  }
+
+  function handleAddOption() {
+    const trimmedOption = newOptionText.trim();
+
+    if (!trimmedOption) {
+      return;
+    }
+
+    dispatch({
+      type: 'ADD_OPTION_TO_QUESTION',
+      payload: {
+        questionId: question.id,
+        optionText: trimmedOption,
+      },
+    });
+
+    setNewOptionText('');
+  }
 
   return (
     <div className={styles['question-item']}>
@@ -41,32 +138,132 @@ export function QuestionItem({ question }) {
         <span className={styles['question-type']}>
           Question Type: {formatQuestionType(question.type)}
         </span>
+
         <div className={styles['question-actions']}>
-          {/* TODO: Students add Edit and Delete buttons here */}
-          <button className={styles['edit-btn']} onClick={handleEdit}>
-            Edit (TODO)
-          </button>
+          {isEditing ? (
+            <button className={styles['edit-btn']} onClick={handleCancelEdit}>
+              Cancel
+            </button>
+          ) : (
+            <button className={styles['edit-btn']} onClick={handleEdit}>
+              Edit
+            </button>
+          )}
+
           <button className={styles['delete-btn']} onClick={handleDelete}>
-            Delete (TODO)
+            Delete
           </button>
         </div>
       </div>
 
-      {/* TODO: Students will add conditional controlled form to edit question here */}
       <div className={styles['question-content']}>
-        <h3>{question.question}</h3>
+        {isEditing ? (
+          <div>
+            <label htmlFor={`question-${question.id}`}>
+              Edit Question Text:
+            </label>
+
+            <textarea
+              id={`question-${question.id}`}
+              value={workingText}
+              onChange={(event) => setWorkingText(event.target.value)}
+              className={styles['question-input']}
+              rows={3}
+            />
+
+            <div className={styles['title-actions']}>
+              <button
+                className={styles['save-btn']}
+                onClick={handleSaveQuestionText}
+                disabled={!workingText.trim()}
+              >
+                Save Question
+              </button>
+
+              <button
+                className={styles['cancel-btn']}
+                onClick={handleCancelEdit}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        ) : (
+          <h3>{question.question}</h3>
+        )}
       </div>
 
       {question.type === QUESTION_TYPES.MULTIPLE_CHOICE && (
         <div className={styles['options-section']}>
           <h4>Answer Options:</h4>
+
           <ul>
             {question.options.map((option, index) => (
-              <li key={index} className={styles['option-item']}>
-                <span className={styles['option-text']}>{option}</span>
+              <li
+                key={`${question.id}-${index}`}
+                className={styles['option-item']}
+              >
+                {isEditing ? (
+                  <>
+                    <input
+                      type="text"
+                      value={optionDrafts[index] || ''}
+                      onChange={(event) =>
+                        handleOptionDraftChange(index, event.target.value)
+                      }
+                      className={styles['option-input']}
+                    />
+
+                    <div className={styles['option-actions']}>
+                      <button
+                        type="button"
+                        className={styles['option-edit-btn']}
+                        onClick={() => handleSaveOption(index)}
+                        disabled={!optionDrafts[index]?.trim()}
+                      >
+                        Save
+                      </button>
+
+                      <button
+                        type="button"
+                        className={styles['option-delete-btn']}
+                        onClick={() => handleDeleteOption(index)}
+                        disabled={question.options.length <= 2}
+                        title={
+                          question.options.length <= 2
+                            ? 'Multiple choice questions must have at least 2 options'
+                            : 'Delete option'
+                        }
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <span className={styles['option-text']}>{option}</span>
+                )}
               </li>
             ))}
           </ul>
+
+          {isEditing && (
+            <div className={styles['add-option']}>
+              <input
+                type="text"
+                value={newOptionText}
+                onChange={(event) => setNewOptionText(event.target.value)}
+                placeholder="Add a new option..."
+              />
+
+              <button
+                type="button"
+                onClick={handleAddOption}
+                disabled={!newOptionText.trim()}
+              >
+                + Add Option
+              </button>
+            </div>
+          )}
         </div>
       )}
     </div>

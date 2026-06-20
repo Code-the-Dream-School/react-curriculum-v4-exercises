@@ -46,7 +46,10 @@ export const router = createBrowserRouter([
     element: <Pages.Lesson09></Pages.Lesson09>,
   },
   {
-    path: '/lessons/lesson-10',
+    // Trailing "/*" (splat) lets this lesson own every sub-path
+    // (e.g. /lessons/lesson-10/products/hat-001) so the descendant
+    // <Routes> inside studentWork.jsx can handle client-side navigation.
+    path: '/lessons/lesson-10/*',
     element: <Pages.Lesson10></Pages.Lesson10>,
   },
   {

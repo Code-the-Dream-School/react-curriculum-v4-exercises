@@ -1,11 +1,20 @@
 import { useNavigate } from 'react-router-dom';
 
 export default function Checkout() {
-  const navigate = null;
+  // useNavigate() returns a function for programmatic navigation
+  // (navigating from event handlers / buttons instead of a <Link>).
+  const navigate = useNavigate();
 
-  function handleGoHome() {}
+  // Navigate to the Home route on click. ".." steps up from the
+  // "checkout" route to the lesson base (Home).
+  function handleGoHome() {
+    navigate('..');
+  }
 
-  function handleBack() {}
+  // navigate(-1) goes back one entry in history — same as the browser Back button
+  function handleBack() {
+    navigate(-1);
+  }
 
   return (
     <section>

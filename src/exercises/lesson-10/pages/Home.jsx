@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 export default function Home({ products }) {
   return (
@@ -40,6 +40,13 @@ export default function Home({ products }) {
 
             <p style={{ margin: 0 }}>
               <strong>${p.price.toFixed(2)}</strong>
+            </p>
+
+            {/* Dynamic Link — builds a RELATIVE url from each product's id.
+                From Home (the lesson base) this resolves to
+                /lessons/lesson-10/products/<product-id> without a reload. */}
+            <p style={{ marginTop: 8 }}>
+              <Link to={`products/${p.id}`}>View Details</Link>
             </p>
           </article>
         ))}
